@@ -41,6 +41,8 @@ jobs:
         id: feeds
         continue-on-error: true
         timeout-minutes: 25   # if a source hangs, still commit what was fetched
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python feeds.py
 
       - name: Commit new data

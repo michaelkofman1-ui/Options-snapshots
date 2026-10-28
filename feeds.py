@@ -55,6 +55,9 @@ VOL_INDICES = [
 ]
 
 FRED_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}"
+# The public CSV link times out from GitHub's runners (seen 2026-10-28), so the
+# official API is used whenever the repo has a FRED_API_KEY secret.
+FRED_API = "https://api.stlouisfed.org/fred/series/observations"
 # series id -> revises its own history (skip the 2% revision guard)
 FRED_SERIES = {
     # credit (Moody's back to the 1980s; ICE OAS only ~3 years since 2023)
@@ -110,6 +113,7 @@ RUN_STARTED = time.monotonic()
 
 # ── http ───────────────────────────────────────────────────────────────────
 def http_get(url: str, tries: int = 3, timeout: int = 60) -> bytes:
+    # Errors never include the URL, which can carry an API key.
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     last = None
     for i in range(tries):
@@ -117,10 +121,11 @@ def http_get(url: str, tries: int = 3, timeout: int = 60) -> bytes:
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.read()
         except Exception as e:
-            last = e
+            last = type(e).__name__ + (f" {e.code}" if hasattr(e, "code") else "") + \
+                (": timed out" if "timed out" in str(e) else "")
             if i < tries - 1:
                 time.sleep(5 * 2 ** i)
-    raise RuntimeError(f"GET failed after {tries} tries: {last}")
+    raise RuntimeError(f"GET failed after {tries} tries ({last})")
 
 
 # ── safe merge ─────────────────────────────────────────────────────────────
@@ -203,12 +208,18 @@ def fetch_vol(sym: str) -> pd.DataFrame:
 
 # ── FRED ───────────────────────────────────────────────────────────────────
 def fetch_fred(sid: str) -> pd.DataFrame:
-    raw = http_get(FRED_URL.format(sid=sid))
-    df = pd.read_csv(io.BytesIO(raw))
-    if df.shape[1] < 2:
-        raise ValueError("unexpected FRED csv")
-    df = df.iloc[:, :2]
-    df.columns = ["date", "value"]
+    key = os.environ.get("FRED_API_KEY", "").strip()
+    if key:
+        q = urllib.parse.urlencode({"series_id": sid, "api_key": key, "file_type": "json"})
+        obs = json.loads(http_get(f"{FRED_API}?{q}", tries=3, timeout=60))["observations"]
+        df = pd.DataFrame(obs)[["date", "value"]]
+    else:
+        raw = http_get(FRED_URL.format(sid=sid), tries=1, timeout=30)
+        df = pd.read_csv(io.BytesIO(raw))
+        if df.shape[1] < 2:
+            raise ValueError("unexpected FRED csv")
+        df = df.iloc[:, :2]
+        df.columns = ["date", "value"]
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
     df = df.dropna(subset=["value"])
     df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
@@ -332,8 +343,11 @@ def run_cot(report: str, now: datetime, rec: Recorder) -> None:
             seen_dates |= set(df["report_date"])
             status, msg = merge_store(path, df[["report_date", "code"] + cols],
                                       ["report_date", "code"], partial=path.exists())
-        except Exception as e:
+        except Refused as e:
             status, msg = "FAIL", str(e)[:300]
+        except Exception as e:
+            rec.add(name, "FAIL", str(e)[:300], time.monotonic() - t0)
+            break  # API trouble: don't spend the run retrying every year
         rec.add(name, status, msg, time.monotonic() - t0)
     if seen_dates:
         update_cot_releases(seen_dates, now)
@@ -348,27 +362,36 @@ def main(argv=None) -> int:
     now = datetime.now(timezone.utc)
     rec = Recorder()
 
-    def run(name, fn, path, keys, revises=False):
+    fails = {}  # consecutive fetch failures per source
+
+    def run(source, name, fn, path, keys, revises=False):
         t0 = time.monotonic()
         if out_of_time():
             rec.add(name, "todo", "deferred to the next run", 0)
             return
+        if fails.get(source, 0) >= 2:
+            rec.add(name, "FAIL", f"skipped: {source} unreachable this run", 0)
+            return
         try:
             status, msg = merge_store(path, fn(), keys, revises)
+            fails[source] = 0
+        except Refused as e:
+            status, msg = "FAIL", str(e)[:300]
         except Exception as e:
             status, msg = "FAIL", str(e)[:300]
+            fails[source] = fails.get(source, 0) + 1
         rec.add(name, status, msg, time.monotonic() - t0)
 
     if "vol" in which:
         for sym in VOL_INDICES:
-            run(f"vol/{sym}", lambda s=sym: fetch_vol(s), EXT / "vol" / f"{sym}.csv", ["date"])
-    if "fred" in which:
-        for sid, revises in FRED_SERIES.items():
-            run(f"fred/{sid}", lambda s=sid: fetch_fred(s), EXT / "fred" / f"{sid}.csv",
-                ["date"], revises)
+            run("cboe", f"vol/{sym}", lambda s=sym: fetch_vol(s), EXT / "vol" / f"{sym}.csv", ["date"])
     if "cot" in which:
         for report in COT_REPORTS:
             run_cot(report, now, rec)
+    if "fred" in which:
+        for sid, revises in FRED_SERIES.items():
+            run("fred", f"fred/{sid}", lambda s=sid: fetch_fred(s), EXT / "fred" / f"{sid}.csv",
+                ["date"], revises)
 
     step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if step_summary:

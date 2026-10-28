@@ -110,6 +110,16 @@ def main():
     assert (tmp / "_last_run.csv").exists()
 
     assert F.cot_release_nominal(date(2026, 10, 20)).strftime("%a %H:%M") == "Fri 15:30"
+
+    # FRED official API path (used when the repo has a FRED_API_KEY secret).
+    import os
+    os.environ["FRED_API_KEY"] = "test"
+    F.http_get = lambda url, **k: json.dumps({"observations": [
+        {"date": "1986-01-02", "value": "1.90", "realtime_start": "x"},
+        {"date": "1986-01-03", "value": "."}]}).encode()
+    fa = F.fetch_fred("BAA10Y")
+    assert fa["value"].tolist() == [1.90] and list(fa.columns) == ["date", "value"]
+    del os.environ["FRED_API_KEY"]
     print("all checks passed")
 
 
