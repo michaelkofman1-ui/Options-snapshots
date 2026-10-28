@@ -100,6 +100,11 @@ COT_REPORTS = {
     ]),
 }
 COT_REFRESH_DAYS = 63  # re-pull the last 9 weeks every run to catch corrections
+# The first backfill (2006 on) is slow through CFTC's API, so each run spends at
+# most this long on missing years, newest first, commits, and the next run
+# continues. The current year is always refreshed.
+BACKFILL_BUDGET_S = 900
+RUN_STARTED = time.monotonic()
 
 
 # ── http ───────────────────────────────────────────────────────────────────
@@ -251,10 +256,10 @@ def update_cot_markets(meta: pd.DataFrame, report: str) -> None:
     m = meta.sort_values("report_date").drop_duplicates("code", keep="last")
     m = m[["code"] + COT_META].assign(report=report, last_seen=m["report_date"])
     old = pd.read_csv(path, dtype=str) if path.exists() else pd.DataFrame(columns=m.columns)
-    key = old["code"] + "|" + old["report"] if not old.empty else pd.Series(dtype=str)
-    newkey = m["code"] + "|" + m["report"]
-    out = pd.concat([old[~key.isin(newkey)], m.astype(str)], ignore_index=True)
-    out = out.sort_values(["report", "code"])
+    out = pd.concat([old, m.astype(str)], ignore_index=True)
+    out = (out.sort_values("last_seen")
+              .drop_duplicates(["code", "report"], keep="last")  # newest name wins
+              .sort_values(["report", "code"]))
     path.parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(path, index=False)
 
@@ -282,7 +287,7 @@ def run_cot(report: str, now: datetime) -> list[tuple[str, str, str]]:
     ds, cols = COT_REPORTS[report]
     results = []
     today = now.date()
-    years = range(COT_FIRST_YEAR, today.year + 1)
+    years = range(today.year, COT_FIRST_YEAR - 1, -1)
     refresh_from = today - timedelta(days=COT_REFRESH_DAYS)
     seen_dates: set[str] = set()
     for y in years:
@@ -292,6 +297,10 @@ def run_cot(report: str, now: datetime) -> list[tuple[str, str, str]]:
         start = date(y, 1, 1) if not path.exists() else max(date(y, 1, 1), refresh_from)
         end = date(y + 1, 1, 1)
         name = f"cot/{report}/{y}"
+        if not path.exists() and y != today.year and \
+                time.monotonic() - RUN_STARTED > BACKFILL_BUDGET_S:
+            results.append((name, "todo", "backfill deferred to the next run"))
+            continue
         try:
             df = fetch_cot(ds, cols, start, end)
             if df.empty:
