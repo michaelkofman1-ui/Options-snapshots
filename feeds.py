@@ -349,6 +349,12 @@ def main(argv=None) -> int:
                 results.append(r)
                 print(f"{r[0]:22s} {r[1]:5s} {r[2]}", flush=True)
 
+    # Last run's per-feed status, committed with the data so it's readable
+    # without the Actions logs.
+    EXT.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(results, columns=["feed", "status", "detail"]).to_csv(
+        EXT / "_last_run.csv", index=False)
+
     step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if step_summary:
         with open(step_summary, "a") as f:
