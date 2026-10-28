@@ -1,4 +1,11 @@
-# options-snapshots
+# Options-snapshots
+
+The fund's cloud data collector: daily option-chain snapshots plus the public
+external feeds (vol indices, COT, FRED). Everything here runs in GitHub
+Actions, with no laptop and no LLM in the data path. Sierra Chart intraday
+data stays on the gaming-laptop collector.
+
+## Option-chain snapshots
 
 Builds the fund's own options history: one snapshot of each chain per trading
 day, taken automatically after the close. This is the history the premium-book
@@ -54,7 +61,34 @@ underscore prefix (`_SPX`).
 `data/chains/` into the collector's Parquet store and delete it here, so the
 repo stays small.
 
-**Tests.** `python tests/test_snapshot.py` checks parsing, filtering, the
-replace rules and the IV math on a synthetic chain, with no network.
+## External feeds
+
+`feeds.py` (workflow `.github/workflows/feeds.yml`) runs weekday evenings and
+weekday mornings. It pulls from primary sources only and writes CSVs under
+`data/external/`.
+
+| Path | Source | History |
+|---|---|---|
+| `vol/<INDEX>.csv` | Cboe: VIX, VIX9D, VIX3M, VIX6M, VVIX, VXN, RVX, SKEW, GVZ, OVX, VXEEM | VIX and SKEW from 1990; most others from 2009 |
+| `cot/{legacy,tff,disagg}/<YEAR>.csv` | CFTC public reporting API, futures only | 2006 on, every market |
+| `cot/markets.csv` | contract code → market name and group | |
+| `cot/releases.csv` | nominal release (Friday 3:30 PM ET) and when we first saw each report | |
+| `fred/<SERIES>.csv` | FRED official API: Moody's BAA/AAA spreads, NASDAQ-100, VXN (2001 on), Treasury yields, real yields, breakevens, NFCI, Fed balance sheet, RRP, TGA, dollar, WTI, claims | back to the 1980s for credit and NASDAQ-100 |
+| `_last_run.csv` | status and seconds per feed for the latest run | |
+
+FRED needs a `FRED_API_KEY` repository secret: its public CSV link times out
+from GitHub's runners. Without the secret, FRED shows as waiting, not failed.
+
+**Rules.** A row we hold is never dropped, even if the source stops
+publishing it. An update that would change more than 2% of held values is
+refused unless the series revises itself (NFCI, ANFCI, claims). Git history
+is the point-in-time record: the files as of any commit are exactly what we
+knew then. The first COT backfill took about 3 minutes. Each run caps
+backfill at 10 minutes and stops starting fetches after 20, so a slow source
+can't lose a run.
+
+**Tests.** `python tests/test_snapshot.py` and `python tests/test_feeds.py`
+check parsing, filtering, the replace and merge rules, and the IV math on
+synthetic data, with no network.
 
 The data is Cboe's delayed feed, kept for personal research.

@@ -62,8 +62,8 @@ FRED_API = "https://api.stlouisfed.org/fred/series/observations"
 FRED_SERIES = {
     # credit (Moody's back to the 1980s; ICE OAS only ~3 years since 2023)
     "BAA10Y": False, "AAA10Y": False, "BAMLH0A0HYM2": False, "BAMLC0A0CM": False,
-    # equities with long history
-    "NASDAQ100": False, "NASDAQCOM": False,
+    # equities with long history; VXN from 2001 (Cboe's own file starts in 2009)
+    "NASDAQ100": False, "NASDAQCOM": False, "VXNCLS": False,
     # rates and inflation expectations
     "DGS3MO": False, "DGS2": False, "DGS10": False, "T10Y2Y": False,
     "T10Y3M": False, "DFII10": False, "T10YIE": False,
@@ -388,7 +388,12 @@ def main(argv=None) -> int:
     if "cot" in which:
         for report in COT_REPORTS:
             run_cot(report, now, rec)
-    if "fred" in which:
+    if "fred" in which and not os.environ.get("FRED_API_KEY", "").strip():
+        # FRED's public CSV link times out from GitHub's runners, so without a
+        # key there's nothing to try. Not a failure: it's waiting on setup.
+        for sid in FRED_SERIES:
+            rec.add(f"fred/{sid}", "todo", "waiting for the FRED_API_KEY repo secret", 0)
+    elif "fred" in which:
         for sid, revises in FRED_SERIES.items():
             run("fred", f"fred/{sid}", lambda s=sid: fetch_fred(s), EXT / "fred" / f"{sid}.csv",
                 ["date"], revises)
