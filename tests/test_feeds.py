@@ -92,7 +92,9 @@ def main():
     F.http_get = fake_cot
     F.COT_FIRST_YEAR = 2025
     now = datetime(2026, 10, 28, 18, tzinfo=timezone.utc)
-    res = F.run_cot("tff", now)
+    rec = F.Recorder()
+    F.run_cot("tff", now, rec)
+    res = rec.rows
     assert ("cot/tff/2026", "saved") in [(r[0], r[1]) for r in res], res
     y = pd.read_csv(tmp / "cot" / "tff" / "2026.csv", dtype={"code": str})
     assert len(y) == 4 and y["lev_money_positions_short"].iloc[0] == 300
@@ -102,8 +104,10 @@ def main():
     assert rel["release_nominal_et"].tolist() == ["2026-10-16 15:30", "2026-10-23 15:30"]
     assert rel["backfilled"].tolist() == ["True", "True"]
     # Second run only refreshes the window and changes nothing.
-    res2 = F.run_cot("tff", now)
-    assert all(r[1] in ("same",) for r in res2 if r[0].endswith("2026")), res2
+    rec2 = F.Recorder()
+    F.run_cot("tff", now, rec2)
+    assert all(r[1] == "same" for r in rec2.rows if r[0].endswith("2026")), rec2.rows
+    assert (tmp / "_last_run.csv").exists()
 
     assert F.cot_release_nominal(date(2026, 10, 20)).strftime("%a %H:%M") == "Fri 15:30"
     print("all checks passed")

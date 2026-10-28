@@ -103,12 +103,13 @@ COT_REFRESH_DAYS = 63  # re-pull the last 9 weeks every run to catch corrections
 # The first backfill (2006 on) is slow through CFTC's API, so each run spends at
 # most this long on missing years, newest first, commits, and the next run
 # continues. The current year is always refreshed.
-BACKFILL_BUDGET_S = 900
+BACKFILL_BUDGET_S = 600
+RUN_BUDGET_S = 1200  # stop starting new fetches after 20 minutes
 RUN_STARTED = time.monotonic()
 
 
 # ── http ───────────────────────────────────────────────────────────────────
-def http_get(url: str, tries: int = 4, timeout: int = 120) -> bytes:
+def http_get(url: str, tries: int = 3, timeout: int = 60) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     last = None
     for i in range(tries):
@@ -283,39 +284,59 @@ def update_cot_releases(report_dates: set[str], now: datetime) -> None:
         out.to_csv(path, index=False)
 
 
-def run_cot(report: str, now: datetime) -> list[tuple[str, str, str]]:
+class Recorder:
+    """Collects per-feed results and rewrites _last_run.csv after every feed,
+    so a run cut off by the step timeout still leaves a readable status."""
+
+    def __init__(self):
+        self.rows: list[tuple[str, str, str, float]] = []
+
+    def add(self, name: str, status: str, msg: str, secs: float) -> None:
+        self.rows.append((name, status, msg, round(secs, 1)))
+        print(f"{name:22s} {status:5s} {secs:6.1f}s  {msg}", flush=True)
+        EXT.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame(self.rows, columns=["feed", "status", "detail", "seconds"]).to_csv(
+            EXT / "_last_run.csv", index=False)
+
+    @property
+    def failed(self) -> bool:
+        return any(r[1] == "FAIL" for r in self.rows)
+
+
+def out_of_time() -> bool:
+    return time.monotonic() - RUN_STARTED > RUN_BUDGET_S
+
+
+def run_cot(report: str, now: datetime, rec: Recorder) -> None:
     ds, cols = COT_REPORTS[report]
-    results = []
     today = now.date()
-    years = range(today.year, COT_FIRST_YEAR - 1, -1)
     refresh_from = today - timedelta(days=COT_REFRESH_DAYS)
     seen_dates: set[str] = set()
-    for y in years:
+    for y in range(today.year, COT_FIRST_YEAR - 1, -1):
         path = EXT / "cot" / report / f"{y}.csv"
         if path.exists() and date(y, 12, 31) < refresh_from:
             continue  # closed year already held
         start = date(y, 1, 1) if not path.exists() else max(date(y, 1, 1), refresh_from)
-        end = date(y + 1, 1, 1)
         name = f"cot/{report}/{y}"
-        if not path.exists() and y != today.year and \
-                time.monotonic() - RUN_STARTED > BACKFILL_BUDGET_S:
-            results.append((name, "todo", "backfill deferred to the next run"))
+        t0 = time.monotonic()
+        if out_of_time() or (not path.exists() and y != today.year and
+                             t0 - RUN_STARTED > BACKFILL_BUDGET_S):
+            rec.add(name, "todo", "deferred to the next run", 0)
             continue
         try:
-            df = fetch_cot(ds, cols, start, end)
+            df = fetch_cot(ds, cols, start, date(y + 1, 1, 1))
             if df.empty:
-                results.append((name, "same", "no rows in window"))
+                rec.add(name, "same", "no rows in window", time.monotonic() - t0)
                 continue
             update_cot_markets(df[["report_date", "code"] + COT_META], report)
             seen_dates |= set(df["report_date"])
             status, msg = merge_store(path, df[["report_date", "code"] + cols],
                                       ["report_date", "code"], partial=path.exists())
-            results.append((name, status, msg))
         except Exception as e:
-            results.append((name, "FAIL", str(e)[:300]))
+            status, msg = "FAIL", str(e)[:300]
+        rec.add(name, status, msg, time.monotonic() - t0)
     if seen_dates:
         update_cot_releases(seen_dates, now)
-    return results
 
 
 # ── main ───────────────────────────────────────────────────────────────────
@@ -325,15 +346,18 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
     which = set(args.only or ["vol", "fred", "cot"])
     now = datetime.now(timezone.utc)
-    results: list[tuple[str, str, str]] = []
+    rec = Recorder()
 
     def run(name, fn, path, keys, revises=False):
+        t0 = time.monotonic()
+        if out_of_time():
+            rec.add(name, "todo", "deferred to the next run", 0)
+            return
         try:
             status, msg = merge_store(path, fn(), keys, revises)
         except Exception as e:
             status, msg = "FAIL", str(e)[:300]
-        results.append((name, status, msg))
-        print(f"{name:22s} {status:5s} {msg}", flush=True)
+        rec.add(name, status, msg, time.monotonic() - t0)
 
     if "vol" in which:
         for sym in VOL_INDICES:
@@ -342,27 +366,18 @@ def main(argv=None) -> int:
         for sid, revises in FRED_SERIES.items():
             run(f"fred/{sid}", lambda s=sid: fetch_fred(s), EXT / "fred" / f"{sid}.csv",
                 ["date"], revises)
-            time.sleep(0.5)
     if "cot" in which:
         for report in COT_REPORTS:
-            for r in run_cot(report, now):
-                results.append(r)
-                print(f"{r[0]:22s} {r[1]:5s} {r[2]}", flush=True)
-
-    # Last run's per-feed status, committed with the data so it's readable
-    # without the Actions logs.
-    EXT.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame(results, columns=["feed", "status", "detail"]).to_csv(
-        EXT / "_last_run.csv", index=False)
+            run_cot(report, now, rec)
 
     step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if step_summary:
         with open(step_summary, "a") as f:
-            f.write("| Feed | Status | Detail |\n|---|---|---|\n")
-            for name, status, msg in results:
-                f.write(f"| {name} | {status} | {msg} |\n")
+            f.write("| Feed | Status | Seconds | Detail |\n|---|---|---|---|\n")
+            for name, status, msg, secs in rec.rows:
+                f.write(f"| {name} | {status} | {secs} | {msg} |\n")
 
-    return 1 if any(s == "FAIL" for _, s, _ in results) else 0
+    return 1 if rec.failed else 0
 
 
 if __name__ == "__main__":
