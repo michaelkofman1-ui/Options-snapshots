@@ -1,96 +1,96 @@
 feed,status,detail,seconds
-vol/VIX,saved,9303 rows (+9303).,0.3
-vol/VIX9D,saved,3977 rows (+3977).,0.2
-vol/VIX3M,saved,4303 rows (+4303).,0.2
-vol/VIX6M,saved,4735 rows (+4735).,0.2
-vol/VVIX,saved,5134 rows (+5134).,0.1
-vol/VXN,saved,4309 rows (+4309).,0.1
-vol/RVX,saved,4300 rows (+4300).,0.1
-vol/SKEW,saved,9257 rows (+9257).,0.2
-vol/GVZ,saved,4301 rows (+4301).,0.2
-vol/OVX,saved,4301 rows (+4301).,0.1
-vol/VXEEM,saved,3924 rows (+3924).,0.3
-fred/BAA10Y,FAIL,GET failed after 3 tries: The read operation timed out,195.5
-fred/AAA10Y,FAIL,GET failed after 3 tries: The read operation timed out,195.4
-fred/BAMLH0A0HYM2,FAIL,GET failed after 3 tries: The read operation timed out,195.2
-fred/BAMLC0A0CM,FAIL,GET failed after 3 tries: The read operation timed out,195.3
-fred/NASDAQ100,FAIL,GET failed after 3 tries: The read operation timed out,195.3
-fred/NASDAQCOM,FAIL,GET failed after 3 tries: The read operation timed out,195.4
-fred/DGS3MO,FAIL,GET failed after 3 tries: The read operation timed out,195.4
-fred/DGS2,todo,deferred to the next run,0.0
-fred/DGS10,todo,deferred to the next run,0.0
-fred/T10Y2Y,todo,deferred to the next run,0.0
-fred/T10Y3M,todo,deferred to the next run,0.0
-fred/DFII10,todo,deferred to the next run,0.0
-fred/T10YIE,todo,deferred to the next run,0.0
-fred/NFCI,todo,deferred to the next run,0.0
-fred/ANFCI,todo,deferred to the next run,0.0
-fred/WALCL,todo,deferred to the next run,0.0
-fred/RRPONTSYD,todo,deferred to the next run,0.0
-fred/WTREGEN,todo,deferred to the next run,0.0
-fred/DTWEXBGS,todo,deferred to the next run,0.0
-fred/DCOILWTICO,todo,deferred to the next run,0.0
-fred/ICSA,todo,deferred to the next run,0.0
-cot/legacy/2026,todo,deferred to the next run,0.0
-cot/legacy/2025,todo,deferred to the next run,0.0
-cot/legacy/2024,todo,deferred to the next run,0.0
-cot/legacy/2023,todo,deferred to the next run,0.0
-cot/legacy/2022,todo,deferred to the next run,0.0
-cot/legacy/2021,todo,deferred to the next run,0.0
-cot/legacy/2020,todo,deferred to the next run,0.0
-cot/legacy/2019,todo,deferred to the next run,0.0
-cot/legacy/2018,todo,deferred to the next run,0.0
-cot/legacy/2017,todo,deferred to the next run,0.0
-cot/legacy/2016,todo,deferred to the next run,0.0
-cot/legacy/2015,todo,deferred to the next run,0.0
-cot/legacy/2014,todo,deferred to the next run,0.0
-cot/legacy/2013,todo,deferred to the next run,0.0
-cot/legacy/2012,todo,deferred to the next run,0.0
-cot/legacy/2011,todo,deferred to the next run,0.0
-cot/legacy/2010,todo,deferred to the next run,0.0
-cot/legacy/2009,todo,deferred to the next run,0.0
-cot/legacy/2008,todo,deferred to the next run,0.0
-cot/legacy/2007,todo,deferred to the next run,0.0
-cot/legacy/2006,todo,deferred to the next run,0.0
-cot/tff/2026,todo,deferred to the next run,0.0
-cot/tff/2025,todo,deferred to the next run,0.0
-cot/tff/2024,todo,deferred to the next run,0.0
-cot/tff/2023,todo,deferred to the next run,0.0
-cot/tff/2022,todo,deferred to the next run,0.0
-cot/tff/2021,todo,deferred to the next run,0.0
-cot/tff/2020,todo,deferred to the next run,0.0
-cot/tff/2019,todo,deferred to the next run,0.0
-cot/tff/2018,todo,deferred to the next run,0.0
-cot/tff/2017,todo,deferred to the next run,0.0
-cot/tff/2016,todo,deferred to the next run,0.0
-cot/tff/2015,todo,deferred to the next run,0.0
-cot/tff/2014,todo,deferred to the next run,0.0
-cot/tff/2013,todo,deferred to the next run,0.0
-cot/tff/2012,todo,deferred to the next run,0.0
-cot/tff/2011,todo,deferred to the next run,0.0
-cot/tff/2010,todo,deferred to the next run,0.0
-cot/tff/2009,todo,deferred to the next run,0.0
-cot/tff/2008,todo,deferred to the next run,0.0
-cot/tff/2007,todo,deferred to the next run,0.0
-cot/tff/2006,todo,deferred to the next run,0.0
-cot/disagg/2026,todo,deferred to the next run,0.0
-cot/disagg/2025,todo,deferred to the next run,0.0
-cot/disagg/2024,todo,deferred to the next run,0.0
-cot/disagg/2023,todo,deferred to the next run,0.0
-cot/disagg/2022,todo,deferred to the next run,0.0
-cot/disagg/2021,todo,deferred to the next run,0.0
-cot/disagg/2020,todo,deferred to the next run,0.0
-cot/disagg/2019,todo,deferred to the next run,0.0
-cot/disagg/2018,todo,deferred to the next run,0.0
-cot/disagg/2017,todo,deferred to the next run,0.0
-cot/disagg/2016,todo,deferred to the next run,0.0
-cot/disagg/2015,todo,deferred to the next run,0.0
-cot/disagg/2014,todo,deferred to the next run,0.0
-cot/disagg/2013,todo,deferred to the next run,0.0
-cot/disagg/2012,todo,deferred to the next run,0.0
-cot/disagg/2011,todo,deferred to the next run,0.0
-cot/disagg/2010,todo,deferred to the next run,0.0
-cot/disagg/2009,todo,deferred to the next run,0.0
-cot/disagg/2008,todo,deferred to the next run,0.0
-cot/disagg/2007,todo,deferred to the next run,0.0
-cot/disagg/2006,todo,deferred to the next run,0.0
+vol/VIX,same,"9303 rows, unchanged.",0.3
+vol/VIX9D,same,"3977 rows, unchanged.",0.2
+vol/VIX3M,same,"4303 rows, unchanged.",0.2
+vol/VIX6M,same,"4735 rows, unchanged.",0.2
+vol/VVIX,same,"5134 rows, unchanged.",0.1
+vol/VXN,same,"4309 rows, unchanged.",0.2
+vol/RVX,same,"4300 rows, unchanged.",0.2
+vol/SKEW,same,"9257 rows, unchanged.",0.2
+vol/GVZ,same,"4301 rows, unchanged.",0.1
+vol/OVX,same,"4301 rows, unchanged.",0.1
+vol/VXEEM,same,"3924 rows, unchanged.",0.2
+cot/legacy/2026,saved,15171 rows (+15171).,1.6
+cot/legacy/2025,saved,17316 rows (+17316).,8.5
+cot/legacy/2024,saved,16764 rows (+16764).,1.4
+cot/legacy/2023,saved,15343 rows (+15343).,1.2
+cot/legacy/2022,saved,14245 rows (+14245).,1.1
+cot/legacy/2021,saved,13307 rows (+13307).,1.6
+cot/legacy/2020,saved,13131 rows (+13131).,1.2
+cot/legacy/2019,saved,13468 rows (+13468).,8.3
+cot/legacy/2018,saved,13410 rows (+13410).,1.2
+cot/legacy/2017,saved,12314 rows (+12314).,5.3
+cot/legacy/2016,saved,12434 rows (+12434).,9.0
+cot/legacy/2015,saved,11610 rows (+11610).,2.8
+cot/legacy/2014,saved,12131 rows (+12131).,1.2
+cot/legacy/2013,saved,10159 rows (+10159).,1.8
+cot/legacy/2012,saved,7838 rows (+7838).,1.3
+cot/legacy/2011,saved,7365 rows (+7365).,1.6
+cot/legacy/2010,saved,7308 rows (+7308).,3.0
+cot/legacy/2009,saved,6570 rows (+6570).,1.1
+cot/legacy/2008,saved,5631 rows (+5631).,1.2
+cot/legacy/2007,saved,5394 rows (+5394).,1.6
+cot/legacy/2006,saved,4926 rows (+4926).,3.4
+cot/tff/2026,saved,3724 rows (+3724).,1.5
+cot/tff/2025,saved,3686 rows (+3686).,2.0
+cot/tff/2024,saved,3163 rows (+3163).,1.0
+cot/tff/2023,saved,2809 rows (+2809).,6.3
+cot/tff/2022,saved,2719 rows (+2719).,6.6
+cot/tff/2021,saved,2603 rows (+2603).,6.3
+cot/tff/2020,saved,2345 rows (+2345).,2.1
+cot/tff/2019,saved,2518 rows (+2518).,0.8
+cot/tff/2018,saved,2538 rows (+2538).,6.5
+cot/tff/2017,saved,2110 rows (+2110).,0.8
+cot/tff/2016,saved,1914 rows (+1914).,0.8
+cot/tff/2015,saved,1848 rows (+1848).,1.4
+cot/tff/2014,saved,1860 rows (+1860).,0.8
+cot/tff/2013,saved,1889 rows (+1889).,0.9
+cot/tff/2012,saved,1900 rows (+1900).,0.9
+cot/tff/2011,saved,1879 rows (+1879).,5.1
+cot/tff/2010,saved,1761 rows (+1761).,0.8
+cot/tff/2009,saved,1597 rows (+1597).,1.0
+cot/tff/2008,saved,1655 rows (+1655).,1.4
+cot/tff/2007,saved,1703 rows (+1703).,4.5
+cot/tff/2006,saved,905 rows (+905).,7.6
+cot/disagg/2026,saved,11447 rows (+11447).,1.9
+cot/disagg/2025,saved,13630 rows (+13630).,3.2
+cot/disagg/2024,saved,13601 rows (+13601).,2.4
+cot/disagg/2023,saved,12534 rows (+12534).,8.4
+cot/disagg/2022,saved,11526 rows (+11526).,1.8
+cot/disagg/2021,saved,10704 rows (+10704).,1.6
+cot/disagg/2020,saved,10786 rows (+10786).,3.7
+cot/disagg/2019,saved,10954 rows (+10954).,7.6
+cot/disagg/2018,saved,10874 rows (+10874).,1.2
+cot/disagg/2017,saved,10204 rows (+10204).,1.5
+cot/disagg/2016,saved,10520 rows (+10520).,1.1
+cot/disagg/2015,saved,9762 rows (+9762).,9.4
+cot/disagg/2014,saved,10271 rows (+10271).,1.1
+cot/disagg/2013,saved,8270 rows (+8270).,1.6
+cot/disagg/2012,saved,5938 rows (+5938).,1.0
+cot/disagg/2011,saved,5486 rows (+5486).,0.9
+cot/disagg/2010,saved,5547 rows (+5547).,1.0
+cot/disagg/2009,saved,4968 rows (+4968).,1.4
+cot/disagg/2008,saved,3961 rows (+3961).,6.4
+cot/disagg/2007,saved,3626 rows (+3626).,1.0
+cot/disagg/2006,saved,1850 rows (+1850).,3.4
+fred/BAA10Y,FAIL,GET failed after 1 tries (TimeoutError: timed out),30.1
+fred/AAA10Y,FAIL,GET failed after 1 tries (TimeoutError: timed out),30.2
+fred/BAMLH0A0HYM2,FAIL,skipped: fred unreachable this run,0.0
+fred/BAMLC0A0CM,FAIL,skipped: fred unreachable this run,0.0
+fred/NASDAQ100,FAIL,skipped: fred unreachable this run,0.0
+fred/NASDAQCOM,FAIL,skipped: fred unreachable this run,0.0
+fred/DGS3MO,FAIL,skipped: fred unreachable this run,0.0
+fred/DGS2,FAIL,skipped: fred unreachable this run,0.0
+fred/DGS10,FAIL,skipped: fred unreachable this run,0.0
+fred/T10Y2Y,FAIL,skipped: fred unreachable this run,0.0
+fred/T10Y3M,FAIL,skipped: fred unreachable this run,0.0
+fred/DFII10,FAIL,skipped: fred unreachable this run,0.0
+fred/T10YIE,FAIL,skipped: fred unreachable this run,0.0
+fred/NFCI,FAIL,skipped: fred unreachable this run,0.0
+fred/ANFCI,FAIL,skipped: fred unreachable this run,0.0
+fred/WALCL,FAIL,skipped: fred unreachable this run,0.0
+fred/RRPONTSYD,FAIL,skipped: fred unreachable this run,0.0
+fred/WTREGEN,FAIL,skipped: fred unreachable this run,0.0
+fred/DTWEXBGS,FAIL,skipped: fred unreachable this run,0.0
+fred/DCOILWTICO,FAIL,skipped: fred unreachable this run,0.0
+fred/ICSA,FAIL,skipped: fred unreachable this run,0.0
