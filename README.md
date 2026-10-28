@@ -32,10 +32,20 @@ in where one exists.
   symbol is missing that day's close. If no symbol has a close, the day is
   treated as a market holiday.
 
+**Timing.** Quotes lag the feed's stamp by about 15 minutes, and SPY/QQQ/IWM
+options trade until 4:15 PM, so only a stamp from 4:30 PM New York on counts
+as a close.
+
 **Proxies.** CME futures options aren't in this feed, so SPX stands in for
-/ES, NDX for /NQ, GLD for /GC, SLV for /SI, TLT for /ZB, USO for /CL, UNG for
-/NG and FXE for /6E. When the Tastytrade account exists, its API can add the
-real futures chains.
+/ES, NDX for /NQ, GLD for /GC, SLV for /SI, TLT for /ZB and USO for /CL.
+/NG and /6E have no usable proxy here (UNG's and FXE's Cboe feeds are stale),
+so they wait for the Tastytrade API, which can also add the real futures
+chains.
+
+**VIX caveat.** Cboe's IVs for VIX options look wrong: on day one the ATM IV
+came out near 218%, with puts richer than calls. The likely cause is that
+they're computed against spot VIX rather than the VIX future each option
+settles to. Use VIX option prices, not their IV or delta columns.
 
 **Changing the list.** Edit `symbols.txt`. Index options take Cboe's
 underscore prefix (`_SPX`).

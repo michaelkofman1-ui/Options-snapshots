@@ -12,8 +12,8 @@ GLD     # proxy for /GC
 SLV     # proxy for /SI
 TLT     # proxy for /ZB
 USO     # proxy for /CL
-UNG     # proxy for /NG
-FXE     # proxy for /6E
+# UNG and FXE (/NG, /6E) left out: on 2026-10-28 Cboe's UNG feed was stuck
+# on Oct 14 and FXE's only refreshes overnight. Get those from Tastytrade later.
 XLE
 EEM
 NVDA    # AI-trade names, for assignment-based longs

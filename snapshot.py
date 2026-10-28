@@ -57,6 +57,9 @@ MIN_QUOTED_SHARE = 0.3  # at least this share of kept rows must have a live ask
 SHRINK_LIMIT = 0.5      # refuse to replace a file with one under half its rows
 
 SESSION_RANK = {"intraday": 1, "close": 2}
+# Quotes lag the feed stamp by about 15 minutes, and SPY/QQQ/IWM options trade
+# until 4:15 PM, so only a stamp from 4:30 PM New York on is a true close.
+CLOSE_STAMP = dtime(16, 30)
 
 OCC = re.compile(r"^(?P<root>[A-Z]+)(?P<exp>\d{6})(?P<cp>[CP])(?P<strike>\d{8})$")
 NUM_COLS = [
@@ -107,7 +110,7 @@ def classify(ts_utc: datetime):
     t = ny.time()
     if ny.weekday() >= 5 or t < dtime(9, 30) or t >= dtime(20, 15):
         return None, ny
-    return ("close" if t >= dtime(16, 0) else "intraday"), ny
+    return ("close" if t >= CLOSE_STAMP else "intraday"), ny
 
 
 # ── parsing ────────────────────────────────────────────────────────────────
@@ -149,7 +152,7 @@ def keep_rows(df: pd.DataFrame) -> pd.DataFrame:
 def feed_scalars(payload: dict) -> dict:
     """Underlying-level fields Cboe sends alongside the chain (price, iv30...)."""
     data = payload.get("data") or {}
-    return {f"feed_{k}": v for k, v in data.items()
+    return {f"cboe_{k}": v for k, v in data.items()
             if k != "options" and (v is None or isinstance(v, (int, float, str, bool)))}
 
 
@@ -308,7 +311,7 @@ def process(sym: str, payload: dict, summ: pd.DataFrame, fetched_at: datetime):
     }
     scal = feed_scalars(payload)
     try:
-        feed_spot = float(scal.get("feed_current_price"))
+        feed_spot = float(scal.get("cboe_current_price"))
     except (TypeError, ValueError):
         feed_spot = float("nan")
     row["spot_parity"] = spot_from_parity(full)
