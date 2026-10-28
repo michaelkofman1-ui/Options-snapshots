@@ -1,0 +1,96 @@
+feed,status,detail,seconds
+vol/VIX,saved,9303 rows (+9303).,0.3
+vol/VIX9D,saved,3977 rows (+3977).,0.2
+vol/VIX3M,saved,4303 rows (+4303).,0.2
+vol/VIX6M,saved,4735 rows (+4735).,0.2
+vol/VVIX,saved,5134 rows (+5134).,0.1
+vol/VXN,saved,4309 rows (+4309).,0.1
+vol/RVX,saved,4300 rows (+4300).,0.1
+vol/SKEW,saved,9257 rows (+9257).,0.2
+vol/GVZ,saved,4301 rows (+4301).,0.2
+vol/OVX,saved,4301 rows (+4301).,0.1
+vol/VXEEM,saved,3924 rows (+3924).,0.3
+fred/BAA10Y,FAIL,GET failed after 3 tries: The read operation timed out,195.5
+fred/AAA10Y,FAIL,GET failed after 3 tries: The read operation timed out,195.4
+fred/BAMLH0A0HYM2,FAIL,GET failed after 3 tries: The read operation timed out,195.2
+fred/BAMLC0A0CM,FAIL,GET failed after 3 tries: The read operation timed out,195.3
+fred/NASDAQ100,FAIL,GET failed after 3 tries: The read operation timed out,195.3
+fred/NASDAQCOM,FAIL,GET failed after 3 tries: The read operation timed out,195.4
+fred/DGS3MO,FAIL,GET failed after 3 tries: The read operation timed out,195.4
+fred/DGS2,todo,deferred to the next run,0.0
+fred/DGS10,todo,deferred to the next run,0.0
+fred/T10Y2Y,todo,deferred to the next run,0.0
+fred/T10Y3M,todo,deferred to the next run,0.0
+fred/DFII10,todo,deferred to the next run,0.0
+fred/T10YIE,todo,deferred to the next run,0.0
+fred/NFCI,todo,deferred to the next run,0.0
+fred/ANFCI,todo,deferred to the next run,0.0
+fred/WALCL,todo,deferred to the next run,0.0
+fred/RRPONTSYD,todo,deferred to the next run,0.0
+fred/WTREGEN,todo,deferred to the next run,0.0
+fred/DTWEXBGS,todo,deferred to the next run,0.0
+fred/DCOILWTICO,todo,deferred to the next run,0.0
+fred/ICSA,todo,deferred to the next run,0.0
+cot/legacy/2026,todo,deferred to the next run,0.0
+cot/legacy/2025,todo,deferred to the next run,0.0
+cot/legacy/2024,todo,deferred to the next run,0.0
+cot/legacy/2023,todo,deferred to the next run,0.0
+cot/legacy/2022,todo,deferred to the next run,0.0
+cot/legacy/2021,todo,deferred to the next run,0.0
+cot/legacy/2020,todo,deferred to the next run,0.0
+cot/legacy/2019,todo,deferred to the next run,0.0
+cot/legacy/2018,todo,deferred to the next run,0.0
+cot/legacy/2017,todo,deferred to the next run,0.0
+cot/legacy/2016,todo,deferred to the next run,0.0
+cot/legacy/2015,todo,deferred to the next run,0.0
+cot/legacy/2014,todo,deferred to the next run,0.0
+cot/legacy/2013,todo,deferred to the next run,0.0
+cot/legacy/2012,todo,deferred to the next run,0.0
+cot/legacy/2011,todo,deferred to the next run,0.0
+cot/legacy/2010,todo,deferred to the next run,0.0
+cot/legacy/2009,todo,deferred to the next run,0.0
+cot/legacy/2008,todo,deferred to the next run,0.0
+cot/legacy/2007,todo,deferred to the next run,0.0
+cot/legacy/2006,todo,deferred to the next run,0.0
+cot/tff/2026,todo,deferred to the next run,0.0
+cot/tff/2025,todo,deferred to the next run,0.0
+cot/tff/2024,todo,deferred to the next run,0.0
+cot/tff/2023,todo,deferred to the next run,0.0
+cot/tff/2022,todo,deferred to the next run,0.0
+cot/tff/2021,todo,deferred to the next run,0.0
+cot/tff/2020,todo,deferred to the next run,0.0
+cot/tff/2019,todo,deferred to the next run,0.0
+cot/tff/2018,todo,deferred to the next run,0.0
+cot/tff/2017,todo,deferred to the next run,0.0
+cot/tff/2016,todo,deferred to the next run,0.0
+cot/tff/2015,todo,deferred to the next run,0.0
+cot/tff/2014,todo,deferred to the next run,0.0
+cot/tff/2013,todo,deferred to the next run,0.0
+cot/tff/2012,todo,deferred to the next run,0.0
+cot/tff/2011,todo,deferred to the next run,0.0
+cot/tff/2010,todo,deferred to the next run,0.0
+cot/tff/2009,todo,deferred to the next run,0.0
+cot/tff/2008,todo,deferred to the next run,0.0
+cot/tff/2007,todo,deferred to the next run,0.0
+cot/tff/2006,todo,deferred to the next run,0.0
+cot/disagg/2026,todo,deferred to the next run,0.0
+cot/disagg/2025,todo,deferred to the next run,0.0
+cot/disagg/2024,todo,deferred to the next run,0.0
+cot/disagg/2023,todo,deferred to the next run,0.0
+cot/disagg/2022,todo,deferred to the next run,0.0
+cot/disagg/2021,todo,deferred to the next run,0.0
+cot/disagg/2020,todo,deferred to the next run,0.0
+cot/disagg/2019,todo,deferred to the next run,0.0
+cot/disagg/2018,todo,deferred to the next run,0.0
+cot/disagg/2017,todo,deferred to the next run,0.0
+cot/disagg/2016,todo,deferred to the next run,0.0
+cot/disagg/2015,todo,deferred to the next run,0.0
+cot/disagg/2014,todo,deferred to the next run,0.0
+cot/disagg/2013,todo,deferred to the next run,0.0
+cot/disagg/2012,todo,deferred to the next run,0.0
+cot/disagg/2011,todo,deferred to the next run,0.0
+cot/disagg/2010,todo,deferred to the next run,0.0
+cot/disagg/2009,todo,deferred to the next run,0.0
+cot/disagg/2008,todo,deferred to the next run,0.0
+cot/disagg/2007,todo,deferred to the next run,0.0
+cot/disagg/2006,todo,deferred to the next run,0.0
