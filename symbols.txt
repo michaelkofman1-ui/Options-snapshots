@@ -1,0 +1,20 @@
+# Underlyings to snapshot every trading day. One per line; "#" starts a comment.
+# Index options use Cboe's underscore prefix. CME futures options (/ES, /CL...)
+# are not in this feed, so each one is covered by its closest listed proxy.
+
+_SPX    # S&P 500 index options, proxy for /ES
+_NDX    # Nasdaq-100 index options, proxy for /NQ
+_VIX    # VIX options, for vol-of-vol and the VVIX idea
+SPY
+QQQ
+IWM
+GLD     # proxy for /GC
+SLV     # proxy for /SI
+TLT     # proxy for /ZB
+USO     # proxy for /CL
+UNG     # proxy for /NG
+FXE     # proxy for /6E
+XLE
+EEM
+NVDA    # AI-trade names, for assignment-based longs
+TSLA
