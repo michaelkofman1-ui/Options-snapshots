@@ -1,0 +1,65 @@
+name: external-feeds
+
+# Cboe vol indices, FRED series and CFTC COT. Times in UTC.
+#   22:15 Mon-Fri  ->  6:15 PM New York in summer time, 5:15 PM in winter
+#                      (Friday's run picks up the 3:30 PM ET COT release)
+#   11:15 Tue-Sat  ->  morning catch-up for files the sources post overnight
+on:
+  schedule:
+    - cron: "15 22 * * 1-5"
+    - cron: "15 11 * * 2-6"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - feeds.py
+      - requirements.txt
+      - .github/workflows/feeds.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: external-feeds
+  cancel-in-progress: false
+
+jobs:
+  feeds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Update feeds
+        id: feeds
+        continue-on-error: true
+        run: python feeds.py
+
+      - name: Commit new data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No new data."
+            exit 0
+          fi
+          git commit -q -m "feeds $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            git pull -q --rebase && git push -q && exit 0
+            sleep 10
+          done
+          exit 1
+
+      - name: Fail the run if any feed failed
+        if: steps.feeds.outcome == 'failure'
+        run: |
+          echo "One or more feeds failed. See the Update feeds step."
+          exit 1
