@@ -1,18 +1,18 @@
 feed,status,detail,seconds
-vol/VIX,same,"9303 rows, unchanged.",0.3
-vol/VIX9D,same,"3977 rows, unchanged.",0.1
-vol/VIX3M,same,"4303 rows, unchanged.",0.2
-vol/VIX6M,same,"4735 rows, unchanged.",0.1
-vol/VVIX,same,"5134 rows, unchanged.",0.2
-vol/VXN,same,"4309 rows, unchanged.",0.1
-vol/RVX,same,"4300 rows, unchanged.",0.1
-vol/SKEW,same,"9257 rows, unchanged.",0.2
-vol/GVZ,same,"4301 rows, unchanged.",0.1
-vol/OVX,same,"4301 rows, unchanged.",0.1
-vol/VXEEM,same,"3924 rows, unchanged.",0.4
-cot/legacy/2026,same,"15171 rows, unchanged.",1.2
-cot/tff/2026,same,"3724 rows, unchanged.",0.9
-cot/disagg/2026,same,"11447 rows, unchanged.",1.4
+vol/VIX,saved,9304 rows (+1).,0.4
+vol/VIX9D,saved,3978 rows (+1).,0.2
+vol/VIX3M,saved,4304 rows (+1).,0.2
+vol/VIX6M,saved,4736 rows (+1).,0.2
+vol/VVIX,saved,5135 rows (+1).,0.2
+vol/VXN,saved,4310 rows (+1).,0.2
+vol/RVX,saved,4301 rows (+1).,0.2
+vol/SKEW,saved,9258 rows (+1).,0.2
+vol/GVZ,saved,4302 rows (+1).,0.1
+vol/OVX,saved,4302 rows (+1).,0.1
+vol/VXEEM,saved,3925 rows (+1).,0.2
+cot/legacy/2026,same,"15171 rows, unchanged.",1.3
+cot/tff/2026,same,"3724 rows, unchanged.",1.0
+cot/disagg/2026,same,"11447 rows, unchanged.",1.2
 fred/BAA10Y,todo,waiting for the FRED_API_KEY repo secret,0.0
 fred/AAA10Y,todo,waiting for the FRED_API_KEY repo secret,0.0
 fred/BAMLH0A0HYM2,todo,waiting for the FRED_API_KEY repo secret,0.0
