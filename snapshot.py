@@ -30,7 +30,7 @@ import re
 import sys
 import time
 import urllib.request
-from datetime import datetime, time as dtime, timezone
+from datetime import datetime, time as dtime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -102,15 +102,43 @@ def feed_time(payload: dict) -> datetime:
     return datetime.strptime(raw, "%Y-%m-%d %H:%M:%S").replace(tzinfo=FEED_TZ)
 
 
-def classify(ts_utc: datetime):
-    """Return (session, ny_time). session is None when the stamp can't be
-    tied to a regular session: weekends, overnight, or Cboe global trading
-    hours (from 20:15 New York)."""
+def prev_weekday(d):
+    d -= timedelta(days=1)
+    while d.weekday() >= 5:
+        d -= timedelta(days=1)
+    return d
+
+
+def last_trade(payload: dict):
+    """Latest per-contract trade time in the chain (New York, naive) or None."""
+    opts = (payload.get("data") or {}).get("options") or []
+    times = pd.to_datetime(pd.Series([o.get("last_trade_time") for o in opts], dtype="object"),
+                           errors="coerce")
+    t = times.max()
+    return None if pd.isna(t) else t.to_pydatetime()
+
+
+def classify(ts_utc: datetime, last_trade_ny: datetime | None = None):
+    """Return (session, ny_stamp, trade_date).
+
+    The trading day is the stamp's own day once that day's session has
+    opened, otherwise the previous weekday, so a run delayed past midnight
+    still files the close it sees. If the chain's latest trade is after
+    16:20 on that day, Cboe's overnight session (SPX, NDX, VIX) has moved the
+    quotes off the close and session is None. On a day with no trades at all
+    (a holiday), the quotes are the last trading day's close."""
     ny = ts_utc.astimezone(NY)
-    t = ny.time()
-    if ny.weekday() >= 5 or t < dtime(9, 30) or t >= dtime(20, 15):
-        return None, ny
-    return ("close" if t >= CLOSE_STAMP else "intraday"), ny
+    d = ny.date()
+    if ny.weekday() >= 5 or ny.time() < dtime(9, 30):
+        d, session = prev_weekday(d), "close"
+    else:
+        session = "close" if ny.time() >= CLOSE_STAMP else "intraday"
+    if last_trade_ny is not None:
+        if session == "close" and last_trade_ny.date() < d:
+            d = last_trade_ny.date()
+        if last_trade_ny > datetime.combine(d, dtime(16, 20)) and session == "close":
+            return None, ny, d
+    return session, ny, d
 
 
 # ── parsing ────────────────────────────────────────────────────────────────
@@ -261,8 +289,12 @@ def save_summary(summ: pd.DataFrame) -> None:
 
 
 def is_better(existing: pd.Series | None, session: str, ts_iso: str) -> bool:
+    """A close beats an intraday snapshot; a later intraday beats an earlier
+    one. The first close saved for a day is kept: quotes don't move after it."""
     if existing is None:
         return True
+    if existing.get("session") == "close":
+        return False
     old = (SESSION_RANK.get(existing.get("session"), 0), str(existing.get("feed_ts_utc")))
     return (SESSION_RANK[session], ts_iso) > old
 
@@ -271,10 +303,12 @@ def is_better(existing: pd.Series | None, session: str, ts_iso: str) -> bool:
 def process(sym: str, payload: dict, summ: pd.DataFrame, fetched_at: datetime):
     """Returns (status, message, updated summary)."""
     ts = feed_time(payload)
-    session, ny = classify(ts)
+    lt = last_trade(payload)
+    session, ny, d = classify(ts, lt)
     if session is None:
-        return "skip", f"feed stamped {ny:%a %Y-%m-%d %H:%M} NY, outside a regular session", summ
-    trade_date = ny.date().isoformat()
+        return "skip", (f"stamped {ny:%a %m-%d %H:%M} NY with trades at {lt:%m-%d %H:%M}: "
+                        f"overnight session, close of {d} not available"), summ
+    trade_date = d.isoformat()
     ts_iso = ts.isoformat()
 
     mask = (summ["trade_date"] == trade_date) & (summ["symbol"] == sym)
@@ -369,18 +403,20 @@ def main(argv=None) -> int:
     failed = [r for r in results if r[1] == "FAIL"]
 
     if args.require_close:
-        today = datetime.now(NY).date()
-        if today.weekday() < 5:
-            d = today.isoformat()
-            have = (set(summ.loc[(summ["trade_date"] == d) & (summ["session"] == "close"), "symbol"])
-                    if "session" in summ else set())
-            if have:  # nothing at all means the market was closed today
-                for sym in syms:
-                    if sym not in have:
-                        failed.append((sym, "FAIL", f"no post-close snapshot for {d}"))
-                        print(f"{sym:6s} FAIL  no post-close snapshot for {d}")
-            else:
-                print(f"No post-close snapshots for {d}; treating it as a market holiday.")
+        now_ny = datetime.now(NY)
+        today = now_ny.date()
+        # The most recent session that has finished.
+        last = today if (today.weekday() < 5 and now_ny.time() >= CLOSE_STAMP) else prev_weekday(today)
+        d = last.isoformat()
+        have = (set(summ.loc[(summ["trade_date"] == d) & (summ["session"] == "close"), "symbol"])
+                if "session" in summ else set())
+        if have:  # nothing at all means the market was closed that day
+            for sym in syms:
+                if sym not in have:
+                    failed.append((sym, "FAIL", f"no post-close snapshot for {d}"))
+                    print(f"{sym:6s} FAIL  no post-close snapshot for {d}")
+        else:
+            print(f"No post-close snapshots for {d}; treating it as a market holiday.")
 
     step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if step_summary:

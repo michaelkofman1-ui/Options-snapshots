@@ -1,16 +1,24 @@
 name: options-snapshot
 
-# Three evening passes, in UTC. Each only replaces a day's file with a better
-# snapshot, so extra or late runs are harmless.
-#   21:30  ->  5:30 PM New York in summer time, 4:30 PM in winter
-#   23:00  ->  7:00 PM / 6:00 PM
-#   00:10  ->  8:10 PM / 7:10 PM (previous New York day). Final pass: also
-#              fails the run if any symbol is missing today's close.
+# GitHub can start scheduled runs hours late (on Oct 28 the 21:30 UTC run
+# started at 01:06), so there are many short passes at odd minutes. Each only
+# replaces a day's file with a better snapshot, so extra or late runs are
+# harmless. Times in UTC; New York is UTC-4 in summer time, UTC-5 in winter.
+#   20:41 ... 23:41  every 30 min: from 4:41 PM NY (summer) / 3:41 PM (winter)
+#                    until before SPX/NDX overnight trading starts at 8:15 PM NY
+#   11:07 Tue-Sat    morning catch-up: rescues ETF/stock closes a late night missed
+#   12:37 Tue-Sat    check: fails the run if any symbol lacks the last close
 on:
   schedule:
-    - cron: "30 21 * * 1-5"
-    - cron: "0 23 * * 1-5"
-    - cron: "10 0 * * 2-6"
+    - cron: "41 20 * * 1-5"
+    - cron: "11 21 * * 1-5"
+    - cron: "41 21 * * 1-5"
+    - cron: "11 22 * * 1-5"
+    - cron: "41 22 * * 1-5"
+    - cron: "11 23 * * 1-5"
+    - cron: "41 23 * * 1-5"
+    - cron: "7 11 * * 2-6"
+    - cron: "37 12 * * 2-6"
   workflow_dispatch:
   push:
     branches: [main]
@@ -45,7 +53,7 @@ jobs:
         id: snap
         continue-on-error: true
         run: |
-          if [ "${{ github.event.schedule }}" = "10 0 * * 2-6" ]; then
+          if [ "${{ github.event.schedule }}" = "37 12 * * 2-6" ]; then
             python snapshot.py --require-close
           else
             python snapshot.py

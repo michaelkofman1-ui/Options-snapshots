@@ -13,7 +13,8 @@ backtests (Tom King 1-1-2s, Sosnoff strangles) need and that we'd otherwise
 have to buy.
 
 **How it runs.** A GitHub Actions job (`.github/workflows/snapshot.yml`) runs
-three times each weekday evening. It pulls Cboe's free 15-minute-delayed
+every 30 minutes each weekday evening, plus a morning catch-up. GitHub can
+start scheduled runs hours late, so the schedule is redundant on purpose. It pulls Cboe's free 15-minute-delayed
 chains, which carry bid/ask, IV, greeks, open interest and volume, and commits
 the results here. It doesn't need a laptop, an API key or Claude.
 
@@ -30,14 +31,20 @@ in where one exists.
 
 **Rules it follows**
 - It replaces a day's file only with a better snapshot: post-close beats
-  intraday, and a later stamp beats an earlier one. Reruns are safe.
+  intraday, a later intraday stamp beats an earlier one, and the first close
+  saved for a day is kept. Reruns are safe.
 - It refuses to replace a file with one under half its size, and rejects a
   chain with fewer than 20 contracts or few live quotes.
-- Stamps from Cboe's overnight session (from 8:15 PM New York) are never
-  filed as a day's close.
-- The last pass each night fails the run (GitHub emails the owner) if any
-  symbol is missing that day's close. If no symbol has a close, the day is
-  treated as a market holiday.
+- Each snapshot is filed under its trading day: the stamp's own day once that
+  session has opened, otherwise the previous weekday. A run delayed past
+  midnight still files the close it sees.
+- If the chain shows trades after 4:20 PM, Cboe's overnight session (SPX,
+  NDX and VIX, from 8:15 PM New York) has moved the quotes, and the snapshot
+  is not filed as a close. Those three need a run between 4:30 and 8:15 PM;
+  ETF and stock chains can be caught any time before the next open.
+- A morning check (7:37 AM CT) fails the run (GitHub emails the owner) if
+  any symbol is missing the last session's close. If no symbol has one, the
+  day is treated as a market holiday.
 
 **Timing.** Quotes lag the feed's stamp by about 15 minutes, and SPY/QQQ/IWM
 options trade until 4:15 PM, so only a stamp from 4:30 PM New York on counts

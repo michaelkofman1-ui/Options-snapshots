@@ -31,7 +31,8 @@ def smile(k, spot, base=0.20, slope=-0.4):
     return max(0.05, base + slope * math.log(k / spot))
 
 
-def fake_payload(trade_day: date, stamp_utc: str, spot=600.0, n_strikes=81, skew=-0.4):
+def fake_payload(trade_day: date, stamp_utc: str, spot=600.0, n_strikes=81, skew=-0.4,
+                 last_trade=None):
     opts = []
     for dte in (0, 3, 10, 24, 38, 52, 80, 115, 170, 400):
         exp = trade_day + timedelta(days=dte)
@@ -47,7 +48,7 @@ def fake_payload(trade_day: date, stamp_utc: str, spot=600.0, n_strikes=81, skew
                     "bid_size": 10.0, "ask_size": 10.0, "iv": vol, "delta": delta,
                     "gamma": 0.0, "vega": 0.0, "theta": 0.0, "rho": 0.0, "theo": px,
                     "open_interest": 100.0, "volume": 50.0 if dte == 0 else 10.0,
-                    "last_trade_time": None, "prev_day_close": px,
+                    "last_trade_time": last_trade, "prev_day_close": px,
                 })
     return {"timestamp": stamp_utc, "data": {"options": opts, "current_price": spot, "iv30": 0.2}}
 
@@ -59,11 +60,22 @@ def main():
     now = datetime.now(timezone.utc)
 
     # Session classification (feed stamps are UTC; NY is UTC-4 on this date).
-    assert S.classify(S.feed_time({"timestamp": "2026-10-28 16:10:17"}))[0] == "intraday"
-    assert S.classify(S.feed_time({"timestamp": "2026-10-28 20:30:00"}))[0] == "close"
-    assert S.classify(S.feed_time({"timestamp": "2026-10-29 00:05:31"}))[0] == "close"  # 8:05 PM NY
-    assert S.classify(S.feed_time({"timestamp": "2026-10-29 00:20:00"}))[0] is None     # GTH
-    assert S.classify(S.feed_time({"timestamp": "2026-10-28 11:00:00"}))[0] is None     # 7 AM NY
+    from datetime import datetime as DT
+    def cls(stamp, lt=None):
+        s, _, d = S.classify(S.feed_time({"timestamp": stamp}), DT.fromisoformat(lt) if lt else None)
+        return s, d.isoformat()
+    assert cls("2026-10-28 16:10:17") == ("intraday", "2026-10-28")
+    assert cls("2026-10-28 20:30:00") == ("close", "2026-10-28")           # 4:30 PM NY
+    assert cls("2026-10-29 00:05:31") == ("close", "2026-10-28")           # 8:05 PM NY
+    # A run delayed past midnight still files the close it sees...
+    assert cls("2026-10-29 04:20:00", "2026-10-28T16:14:59") == ("close", "2026-10-28")
+    assert cls("2026-10-28 11:00:00") == ("close", "2026-10-27")           # 7 AM NY
+    assert cls("2026-10-31 15:00:00", "2026-10-30T16:14:00") == ("close", "2026-10-30")  # Saturday
+    # ...unless overnight trading (SPX/NDX/VIX) has moved the quotes.
+    assert cls("2026-10-29 01:06:00", "2026-10-28T20:59:00")[0] is None
+    assert cls("2026-10-29 04:20:00", "2026-10-29T00:15:00")[0] is None
+    # Holiday: stamp on a weekday with no trades that day -> previous close.
+    assert cls("2026-11-26 22:00:00", "2026-11-25T16:14:00") == ("close", "2026-11-25")
 
     summ = S.load_summary()
 
@@ -79,14 +91,22 @@ def main():
     # 4) a later intraday stamp never replaces a close
     st, msg, summ = S.process("SPY", fake_payload(day, "2026-10-28 19:59:00"), summ, now)
     assert st == "same", msg
-    # 5) a much smaller chain is refused
+    # 5) the first close is kept; a later close is a no-op
+    st, msg, summ = S.process("SPY", fake_payload(day, "2026-10-28 23:00:00"), summ, now)
+    assert st == "same", msg
+    # 6) a much smaller chain is refused (later intraday over intraday)
+    _, _, summ = S.process("QQQ", fake_payload(day, "2026-10-28 15:00:00"), summ, now)
     try:
-        S.process("SPY", fake_payload(day, "2026-10-28 23:00:00", n_strikes=21), summ, now)
+        S.process("QQQ", fake_payload(day, "2026-10-28 16:00:00", n_strikes=21), summ, now)
         raise AssertionError("shrink guard did not fire")
     except ValueError as e:
         assert "shrink" in str(e)
+    # 7) overnight-session quotes are skipped
+    st, msg, summ = S.process("SPX", fake_payload(day, "2026-10-29 01:06:00",
+                                                  last_trade="2026-10-28T21:00:00"), summ, now)
+    assert st == "skip", msg
 
-    row = summ.iloc[-1]
+    row = summ[summ.symbol == "SPY"].iloc[0]
     df = S.pd.read_parquet(S.chain_path("SPY", "2026-10-28"))
     print(f"kept {len(df)} of {row.n_raw} contracts, {row.n_expirations} expirations, "
           f"file {S.chain_path('SPY', '2026-10-28').stat().st_size / 1024:.0f} KB")
