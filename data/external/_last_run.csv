@@ -1,37 +1,37 @@
 feed,status,detail,seconds
-vol/VIX,saved,9304 rows (+1).,0.4
-vol/VIX9D,saved,3978 rows (+1).,0.2
-vol/VIX3M,saved,4304 rows (+1).,0.2
-vol/VIX6M,saved,4736 rows (+1).,0.2
-vol/VVIX,saved,5135 rows (+1).,0.2
-vol/VXN,saved,4310 rows (+1).,0.2
-vol/RVX,saved,4301 rows (+1).,0.2
-vol/SKEW,saved,9258 rows (+1).,0.2
-vol/GVZ,saved,4302 rows (+1).,0.1
-vol/OVX,saved,4302 rows (+1).,0.1
-vol/VXEEM,saved,3925 rows (+1).,0.2
-cot/legacy/2026,same,"15171 rows, unchanged.",1.3
-cot/tff/2026,same,"3724 rows, unchanged.",1.0
-cot/disagg/2026,same,"11447 rows, unchanged.",1.2
-fred/BAA10Y,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/AAA10Y,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/BAMLH0A0HYM2,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/BAMLC0A0CM,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/NASDAQ100,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/NASDAQCOM,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/VXNCLS,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/DGS3MO,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/DGS2,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/DGS10,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/T10Y2Y,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/T10Y3M,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/DFII10,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/T10YIE,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/NFCI,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/ANFCI,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/WALCL,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/RRPONTSYD,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/WTREGEN,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/DTWEXBGS,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/DCOILWTICO,todo,waiting for the FRED_API_KEY repo secret,0.0
-fred/ICSA,todo,waiting for the FRED_API_KEY repo secret,0.0
+vol/VIX,same,"9304 rows, unchanged.",0.4
+vol/VIX9D,same,"3978 rows, unchanged.",0.1
+vol/VIX3M,same,"4304 rows, unchanged.",0.2
+vol/VIX6M,same,"4736 rows, unchanged.",0.2
+vol/VVIX,same,"5135 rows, unchanged.",0.2
+vol/VXN,same,"4310 rows, unchanged.",0.2
+vol/RVX,same,"4301 rows, unchanged.",0.2
+vol/SKEW,same,"9258 rows, unchanged.",0.1
+vol/GVZ,same,"4302 rows, unchanged.",0.2
+vol/OVX,same,"4302 rows, unchanged.",0.2
+vol/VXEEM,same,"3925 rows, unchanged.",0.5
+cot/legacy/2026,same,"15171 rows, unchanged.",1.1
+cot/tff/2026,same,"3724 rows, unchanged.",0.8
+cot/disagg/2026,same,"11447 rows, unchanged.",0.8
+fred/BAA10Y,saved,10204 rows (+10204).,0.6
+fred/AAA10Y,saved,10951 rows (+10951).,0.4
+fred/BAMLH0A0HYM2,saved,785 rows (+785).,0.6
+fred/BAMLC0A0CM,saved,784 rows (+784).,0.4
+fred/NASDAQ100,saved,10287 rows (+10287).,0.4
+fred/NASDAQCOM,saved,14051 rows (+14051).,0.5
+fred/VXNCLS,saved,6472 rows (+6472).,0.5
+fred/DGS3MO,saved,11288 rows (+11288).,0.4
+fred/DGS2,saved,12598 rows (+12598).,0.4
+fred/DGS10,saved,16190 rows (+16190).,0.5
+fred/T10Y2Y,saved,12599 rows (+12599).,0.7
+fred/T10Y3M,saved,11208 rows (+11208).,0.4
+fred/DFII10,saved,5959 rows (+5959).,0.5
+fred/T10YIE,saved,5960 rows (+5960).,0.3
+fred/NFCI,saved,2912 rows (+2912).,0.6
+fred/ANFCI,saved,2912 rows (+2912).,0.4
+fred/WALCL,saved,1245 rows (+1245).,0.4
+fred/RRPONTSYD,saved,3356 rows (+3356).,0.4
+fred/WTREGEN,saved,1245 rows (+1245).,0.3
+fred/DTWEXBGS,saved,5217 rows (+5217).,0.3
+fred/DCOILWTICO,saved,9532 rows (+9532).,0.4
+fred/ICSA,saved,3120 rows (+3120).,0.4
