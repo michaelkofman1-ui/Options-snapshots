@@ -105,8 +105,18 @@ def main() -> int:
     ap.add_argument("--fails", help="status CSV whose FAIL rows to append")
     args = ap.parse_args()
     if args.setup:
-        setup()
-        return 0
+        # Outcome goes to a committed file too, since the Actions logs aren't
+        # always at hand. Messages never contain the token.
+        status = CONFIG.parent / "telegram_setup_status.txt"
+        status.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            setup()
+            status.write_text("ok\n")
+            return 0
+        except (RuntimeError, SystemExit) as e:
+            status.write_text(f"failed: {e}\n")
+            print(e)
+            return 1
     text = args.text or "(no text)"
     if args.fails:
         lines = fail_lines(args.fails)

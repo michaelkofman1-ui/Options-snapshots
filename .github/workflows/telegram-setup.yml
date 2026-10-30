@@ -24,13 +24,14 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: python notify.py --setup
 
-      - name: Save the chat id
+      - name: Save the chat id and setup status
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add config
           if git diff --cached --quiet; then exit 0; fi
-          git commit -q -m "Connect Telegram chat for alerts"
+          git commit -q -m "Telegram setup: $(cat config/telegram_setup_status.txt | head -c 60)"
           for i in 1 2 3; do
             git pull -q --rebase && git push -q && exit 0
             sleep 10
