@@ -1,0 +1,38 @@
+name: telegram-setup
+
+# Run once after adding the TELEGRAM_BOT_TOKEN secret and tapping Start in
+# the bot's chat. Saves the chat id to config/telegram.json and sends a test.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Connect the bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python notify.py --setup
+
+      - name: Save the chat id
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -q -m "Connect Telegram chat for alerts"
+          for i in 1 2 3; do
+            git pull -q --rebase && git push -q && exit 0
+            sleep 10
+          done
+          exit 1

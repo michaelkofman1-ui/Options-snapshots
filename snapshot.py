@@ -418,6 +418,13 @@ def main(argv=None) -> int:
         else:
             print(f"No post-close snapshots for {d}; treating it as a market holiday.")
 
+    # Last run's per-symbol status, committed with the data so it's readable
+    # without the Actions logs (and used by the Telegram failure alert).
+    report = results + [r for r in failed if r not in results]
+    DATA.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(report, columns=["symbol", "status", "detail"]).to_csv(
+        DATA / "_last_snapshot_run.csv", index=False)
+
     step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if step_summary:
         with open(step_summary, "a") as f:

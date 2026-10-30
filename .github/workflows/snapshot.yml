@@ -75,6 +75,12 @@ jobs:
           done
           exit 1
 
+      - name: Alert on Telegram
+        if: steps.snap.outcome == 'failure' || failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python notify.py "⚠️ Option snapshots run had failures. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" --fails data/_last_snapshot_run.csv
+
       - name: Fail the run if any symbol failed
         if: steps.snap.outcome == 'failure'
         run: |

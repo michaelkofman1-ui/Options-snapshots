@@ -61,6 +61,12 @@ jobs:
           done
           exit 1
 
+      - name: Alert on Telegram
+        if: steps.feeds.outcome == 'failure' || failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python notify.py "⚠️ External feeds run had failures. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" --fails data/external/_last_run.csv
+
       - name: Fail the run if any feed failed
         if: steps.feeds.outcome == 'failure'
         run: |
