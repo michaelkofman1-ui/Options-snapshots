@@ -1,1 +1,1 @@
-failed: TELEGRAM_BOT_TOKEN is not set
+failed: No messages to @OMHF_Alert_Bot yet. Open the bot in Telegram, tap Start, then run this again.
