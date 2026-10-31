@@ -81,6 +81,11 @@ weekday mornings. It pulls from primary sources only and writes CSVs under
 | `cot/markets.csv` | contract code → market name and group | |
 | `cot/releases.csv` | nominal release (Friday 3:30 PM ET) and when we first saw each report | |
 | `fred/<SERIES>.csv` | FRED official API: Moody's BAA/AAA spreads, NASDAQ-100, VXN (2001 on), Treasury yields, real yields, breakevens, NFCI, Fed balance sheet, RRP, TGA, dollar, WTI, claims | back to the 1980s for credit and NASDAQ-100 |
+| `bars/<TICKER>.csv` | Yahoo daily OHLCV, dividends, splits: 40 ETFs, indexes, AI names, crypto | full history (QQQ from 1999) |
+| `events/macro.csv` | FRED release dates: CPI, jobs, PPI, retail sales, GDP, PCE, JOLTS, claims | 2000 on, plus scheduled |
+| `events/fomc.csv` | FOMC decision days (Fed calendar page) | 2021 on, plus scheduled |
+| `events/earnings.csv` | earnings dates, EPS estimate/actual, surprise %: 12 AI and mega-cap names | ~2002 on, plus next date |
+| `events/events.csv` | all catalysts in one table, with a `scheduled` flag | |
 | `_last_run.csv` | status and seconds per feed for the latest run | |
 
 FRED needs a `FRED_API_KEY` repository secret: its public CSV link times out
@@ -90,7 +95,13 @@ from GitHub's runners. Without the secret, FRED shows as waiting, not failed.
 publishing it. An update that would change more than 2% of held values is
 refused unless the series revises itself (NFCI, ANFCI, claims). Git history
 is the point-in-time record: the files as of any commit are exactly what we
-knew then. The first COT backfill took about 3 minutes. Each run caps
+knew then. Bars keep Yahoo's split-adjusted close (not the dividend-adjusted
+one, which Yahoo rewrites on every dividend); closes older than 5 days must
+match what's held, and a split reloads that ticker. In the event files, past
+rows are never dropped and upcoming rows follow the source, so a rescheduled
+release doesn't leave a ghost. Yahoo's EPS surprise can compare GAAP results
+to adjusted estimates; check one-off items before calling a quarter a beat
+or a miss. The first COT backfill took about 3 minutes. Each run caps
 backfill at 10 minutes and stops starting fetches after 20, so a slow source
 can't lose a run.
 

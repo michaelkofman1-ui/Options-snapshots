@@ -183,8 +183,10 @@ def fetch_earnings(tickers: list[str]) -> pd.DataFrame:
         for i, r in e.iterrows():
             when = ts.iloc[i]
             hm = when.hour * 60 + when.minute
+            # These names report outside market hours; a mid-session time is
+            # Yahoo's placeholder for a date whose time isn't confirmed yet.
             session = ("before open" if hm < 9 * 60 + 30 else
-                       "after close" if hm >= 16 * 60 else "during session")
+                       "after close" if hm >= 16 * 60 else "time not confirmed")
             rows.append({
                 "symbol": t, "date": when.strftime("%Y-%m-%d"), "time_et": when.strftime("%H:%M"),
                 "session": session,
