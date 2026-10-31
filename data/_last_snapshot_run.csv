@@ -1,15 +1,15 @@
 symbol,status,detail
-_SPX,saved,"2026-10-30 close @ 19:59 NY, 10370 contracts"
-_NDX,saved,"2026-10-30 close @ 19:59 NY, 6730 contracts"
-_VIX,saved,"2026-10-30 close @ 19:59 NY, 674 contracts"
-SPY,saved,"2026-10-30 close @ 19:59 NY, 3162 contracts"
-QQQ,saved,"2026-10-30 close @ 19:59 NY, 2838 contracts"
-IWM,saved,"2026-10-30 close @ 19:59 NY, 1387 contracts"
-GLD,saved,"2026-10-30 close @ 19:59 NY, 1676 contracts"
-SLV,saved,"2026-10-30 close @ 19:59 NY, 979 contracts"
-TLT,saved,"2026-10-30 close @ 19:59 NY, 602 contracts"
-USO,saved,"2026-10-30 close @ 19:59 NY, 1352 contracts"
-XLE,saved,"2026-10-30 close @ 19:59 NY, 508 contracts"
-EEM,saved,"2026-10-30 close @ 18:20 NY, 565 contracts"
-NVDA,saved,"2026-10-30 close @ 19:59 NY, 738 contracts"
-TSLA,saved,"2026-10-30 close @ 19:59 NY, 1294 contracts"
+_SPX,same,2026-10-30 close already saved
+_NDX,same,2026-10-30 close already saved
+_VIX,same,2026-10-30 close already saved
+SPY,same,2026-10-30 close already saved
+QQQ,same,2026-10-30 close already saved
+IWM,same,2026-10-30 close already saved
+GLD,same,2026-10-30 close already saved
+SLV,same,2026-10-30 close already saved
+TLT,same,2026-10-30 close already saved
+USO,same,2026-10-30 close already saved
+XLE,same,2026-10-30 close already saved
+EEM,same,2026-10-30 close already saved
+NVDA,same,2026-10-30 close already saved
+TSLA,same,2026-10-30 close already saved
