@@ -18,7 +18,9 @@ def main():
     assert I.expression("NQ", "short", 25_000, tab=t).startswith("QQQ puts")
     assert I.expression("NQ", "short", 600_000, tab=t).startswith("MNQ micro future (short)")
     assert I.expression("6E", "long", 50_000, tab=t).startswith("M6E")           # $150 risk fits
-    assert I.expression("6J", "long", 1e9, tab=t).startswith("FXY")               # unverified listing
+    assert I.expression("NQ", "short", 60_000, tab=t).startswith("NNQ nano future (short)")  # $272 risk
+    assert "NNQ needs a ~$54,000 book" in I.expression("NQ", "short", 25_000, tab=t)
+    assert I.expression("6J", "long", 1e9, tab=t).startswith("FXY")               # no ATR in fixture
     assert I.expression("ZB", "short", 1e9, tab=t).startswith("TLT puts")
     assert I.expression("SB", "short", None, tab=t).startswith("CANE small put debit")
     assert I.expression("HE", "long", None, tab=t) == "watch-only: no ETF"

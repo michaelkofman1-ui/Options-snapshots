@@ -34,9 +34,8 @@ OUT = ROOT / "data" / "derived" / "instruments.csv"
 STOP_ATR = 2.0
 DEFAULT_RISK_PCT = 0.5
 
-# rh_status: confirmed = on Robinhood's futures page; reported = named by a
-# 2026 broker comparison; unverified = exists at CME, Robinhood listing unknown
-# (check in the app); none = no micro at Robinhood.
+# rh_status: confirmed = Michael checked it in the Robinhood app (Oct 31, 2026);
+# none = no micro at Robinhood.
 # etf_chain (checked via the Robinhood connector Oct 30): weekly = weekly
 # expirations (liquid); monthly = monthly only (thin: check spreads);
 # index = cash-settled index options.
@@ -53,23 +52,23 @@ MAP = {
     "TN": ("", "none", None, "IEF", "weekly", ""),
     "ZB": ("", "none", None, "TLT", "weekly", ""),
     "UB": ("", "none", None, "TLT", "weekly", ""),
-    "6E": ("M6E", "reported", 12_500, "FXE", "monthly", ""),
-    "6J": ("MJY", "unverified", 1_250_000, "FXY", "monthly", ""),
-    "6B": ("M6B", "unverified", 6_250, "FXB", "monthly", ""),
-    "6A": ("M6A", "reported", 10_000, "FXA", "monthly", ""),
-    "6C": ("MCD", "unverified", 10_000, "FXC", "monthly", ""),
-    "6S": ("MSF", "unverified", 12_500, "FXF", "monthly", ""),
+    "6E": ("M6E", "confirmed", 12_500, "FXE", "monthly", ""),
+    "6J": ("MJY", "confirmed", 1_250_000, "FXY", "monthly", ""),
+    "6B": ("M6B", "confirmed", 6_250, "FXB", "monthly", ""),
+    "6A": ("M6A", "confirmed", 10_000, "FXA", "monthly", ""),
+    "6C": ("MCD", "confirmed", 10_000, "FXC", "monthly", ""),
+    "6S": ("MSF", "confirmed", 12_500, "FXF", "monthly", ""),
     "6M": ("", "none", None, "", "none", "no micro, no ETF: watch-only"),
     "DX": ("", "none", None, "UUP", "monthly", ""),
-    "BTC": ("MBT", "reported", 0.1, "IBIT", "weekly", ""),
-    "ETH": ("MET", "reported", 0.1, "ETHA", "weekly", ""),
-    "CL": ("MCL", "reported", 100, "USO", "weekly", "roll drag on multi-week holds"),
-    "NG": ("MNG", "unverified", 1_000, "UNG", "weekly", "heavy roll drag on multi-week holds"),
+    "BTC": ("MBT", "confirmed", 0.1, "IBIT", "weekly", ""),
+    "ETH": ("MET", "confirmed", 0.1, "ETHA", "weekly", ""),
+    "CL": ("MCL", "confirmed", 100, "USO", "weekly", "roll drag on multi-week holds"),
+    "NG": ("MNG", "confirmed", 1_000, "UNG", "weekly", "heavy roll drag on multi-week holds"),
     "RB": ("", "none", None, "UGA", "monthly", "roll drag"),
     "HO": ("", "none", None, "", "none", "no ETF: watch-only"),
-    "GC": ("MGC", "reported", 10, "GLD", "weekly", ""),
-    "SI": ("SIL", "unverified", 1_000, "SLV", "weekly", ""),
-    "HG": ("MHG", "unverified", 2_500, "CPER", "monthly", ""),
+    "GC": ("MGC", "confirmed", 10, "GLD", "weekly", ""),
+    "SI": ("SIL", "confirmed", 1_000, "SLV", "weekly", ""),
+    "HG": ("MHG", "confirmed", 2_500, "CPER", "monthly", ""),
     "PL": ("", "none", None, "PPLT", "monthly", ""),
     "ZC": ("", "none", None, "CORN", "monthly", "roll drag"),
     "ZS": ("", "none", None, "SOYB", "monthly", "roll drag"),
@@ -86,6 +85,12 @@ MAP = {
 }
 
 
+# Index markets also have E-nano contracts at Robinhood (CME, launched Aug
+# 2026): 1/10 of a micro, so they fit books 10x smaller. New and likely thinner,
+# so check the spread before trading.
+NANO = {"ES": ("NES", 0.5), "NQ": ("NNQ", 0.2), "RTY": ("N2K", 0.5), "YM": ("NDOW", 0.05)}
+
+
 def table(risk_pct: float = DEFAULT_RISK_PCT, latest: Path = LATEST) -> pd.DataFrame:
     px = pd.read_csv(latest) if latest.exists() else pd.DataFrame()
     if not {"symbol", "close", "atr14"} <= set(px.columns):  # no price context this week
@@ -95,10 +100,15 @@ def table(risk_pct: float = DEFAULT_RISK_PCT, latest: Path = LATEST) -> pd.DataF
         r = px[px["symbol"] == sym]
         atr = float(r["atr14"].iloc[0]) if len(r) and pd.notna(r["atr14"].iloc[0]) else None
         risk = STOP_ATR * atr * mult if (atr and mult) else None
+        nano, nmult = NANO.get(sym, ("", None))
+        nrisk = STOP_ATR * atr * nmult if (atr and nmult) else None
         rows.append({
             "symbol": sym, "rh_future": fut, "rh_status": status, "micro_multiplier": mult,
             "atr14": atr, "stop_usd_per_micro": round(risk) if risk else None,
             "min_book_usd": round(risk / (risk_pct / 100), -3) if risk else None,
+            "nano": nano, "nano_multiplier": nmult,
+            "stop_usd_per_nano": round(nrisk) if nrisk else None,
+            "min_book_nano_usd": round(nrisk / (risk_pct / 100), -3) if nrisk else None,
             "etf": etf, "etf_chain": chain, "note": note,
         })
     return pd.DataFrame(rows)
@@ -111,6 +121,10 @@ def expression(sym: str, direction: str, book_usd: float | None = None,
     fut_ok = t["rh_status"] in ("confirmed", "reported") and pd.notna(t["stop_usd_per_micro"])
     if fut_ok and book_usd and book_usd >= t["min_book_usd"]:
         return f"{t['rh_future']} micro future ({direction}), 1 contract risks ~${t['stop_usd_per_micro']:,.0f}"
+    nano_ok = isinstance(t.get("nano"), str) and bool(t.get("nano")) and pd.notna(t.get("stop_usd_per_nano"))
+    if nano_ok and book_usd and book_usd >= t["min_book_nano_usd"]:
+        return (f"{t['nano']} nano future ({direction}), 1 contract risks ~${t['stop_usd_per_nano']:,.0f}; "
+                f"new contract, check the spread")
     if t["etf"] and t["etf_chain"] != "none":
         if t["etf_chain"] == "index":
             how = "call spread" if direction == "long" else "put spread"
@@ -123,7 +137,9 @@ def expression(sym: str, direction: str, book_usd: float | None = None,
             how = "small put debit spread, limit orders (thin chain)"
         extra = f"; {t['note']}" if t["note"] else ""
         why = ""
-        if fut_ok:
+        if nano_ok:
+            why = f" (one {t['nano']} needs a ~${t['min_book_nano_usd']:,.0f} book)"
+        elif fut_ok:
             why = f" (one {t['rh_future']} needs a ~${t['min_book_usd']:,.0f} book)"
         return f"{t['etf']} {how}{why}{extra}"
     return "watch-only" + (f": {t['note']}" if t["note"] else "")

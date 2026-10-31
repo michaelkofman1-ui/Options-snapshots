@@ -142,10 +142,11 @@ the weekly job rewrites `data/derived/instruments.csv`.
   in the taxable account.
 - **Watch-only** when there's neither: Mexican peso, heating oil, soybean
   oil and meal, coffee, cocoa, cotton, cattle and hogs.
-- `rh_status`: confirmed (on Robinhood's futures page: MES, MNQ, M2K, MYM),
-  reported (MCL, MGC, M6E, M6A, MBT, MET), unverified (check in the app).
-  Robinhood also lists Nano index contracts (NES, NNQ, NDOW, N2K); their
-  size isn't verified yet, but they could cut the index minimums a lot.
+- `rh_status`: confirmed means checked in the Robinhood app on Oct 31, 2026.
+  That covers all index, FX, metals, energy and crypto micros in the map.
+  Index markets also have E-nano contracts (NES $0.50, NNQ $0.20, N2K $0.50,
+  NDOW $0.05 per point; 1/10 of a micro), so index trades fit books 10x
+  smaller. They're new (Aug 2026), so check the spread.
 - `config/fund.json` holds the swing book size (null until the book-map
   decision) and the risk per trade.
 
