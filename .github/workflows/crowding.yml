@@ -1,0 +1,72 @@
+name: crowding-monitor
+
+# Weekly COT crowding report to Telegram. COT comes out Friday 3:30 PM ET and
+# the feeds job picks it up Friday evening; GitHub runs these ~3-4 hours late.
+#   Sat 14:07 UTC  ->  Saturday morning US time
+#   Mon 14:07 UTC  ->  catch-up for holiday weeks, when CFTC publishes Monday
+# A report is sent once; reruns don't repeat it.
+on:
+  schedule:
+    - cron: "7 14 * * 6"
+    - cron: "7 14 * * 1"
+  workflow_dispatch:
+    inputs:
+      force_send:
+        description: "Send even if this report was already sent"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crowding-monitor
+  cancel-in-progress: false
+
+jobs:
+  crowding:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      # yfinance is left unpinned on purpose: old versions break when Yahoo changes.
+      - run: pip install -r requirements.txt yfinance
+
+      - name: Compute and send
+        id: crowd
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python crowding.py ${{ inputs.force_send && '--force-send' || '' }}
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/derived
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -q -m "crowding $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            git pull -q --rebase && git push -q && exit 0
+            sleep 10
+          done
+          exit 1
+
+      - name: Alert on Telegram
+        if: steps.crowd.outcome == 'failure' || failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python notify.py "⚠️ Crowding monitor failed. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Fail the run if the monitor failed
+        if: steps.crowd.outcome == 'failure'
+        run: exit 1

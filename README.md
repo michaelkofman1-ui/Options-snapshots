@@ -94,7 +94,28 @@ knew then. The first COT backfill took about 3 minutes. Each run caps
 backfill at 10 minutes and stops starting fetches after 20, so a slow source
 can't lose a run.
 
-**Tests.** `python tests/test_snapshot.py` and `python tests/test_feeds.py`
+## Crowding monitor
+
+`crowding.py` (workflow `.github/workflows/crowding.yml`, Saturday mornings plus
+a Monday catch-up) reads the COT files and ranks 41 core futures by how extreme
+positioning is. Output goes to `data/derived/crowding/history.csv` (every market,
+every report since 2006) and `latest.csv`, and a summary goes to Telegram once
+per new report.
+
+- **COT index:** where net positioning sits in its 3-year (156-report) range,
+  0 to 100. Crowded long means 90 or higher; crowded short means 10 or lower.
+- **Primary group:** leveraged funds for financials, managed money for
+  commodities. Large speculators (legacy) are shown alongside.
+- **Price context:** 4-week range and distance from the 20- and 50-day averages
+  in ATRs, from Yahoo's continuous futures (Sierra replaces this later). A
+  crowded market whose price has crossed its 20-day against the crowd is flagged.
+- **Point-in-time:** each report carries `available_at`; `as_of()` only returns
+  reports public at a given moment. Tested in `tests/test_crowding.py`.
+
+Crowding is context, not a signal: the trigger is price failing against the
+crowd.
+
+**Tests.** `python tests/test_snapshot.py`, `python tests/test_crowding.py` and `python tests/test_feeds.py`
 check parsing, filtering, the replace and merge rules, and the IV math on
 synthetic data, with no network.
 
