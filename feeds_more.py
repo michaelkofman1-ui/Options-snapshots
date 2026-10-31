@@ -39,6 +39,9 @@ BARS = [
     "GLD", "SLV", "USO", "UNG", "DBA", "XLE", "XLF", "EEM", "FXI",
     # crypto
     "BTC-USD", "ETH-USD", "SOL-USD",
+    # overseas legs of the AI trade, for cross-market news failures
+    # (Oct 28, 2026: KOSPI +6.6% on SK hynix results, Nasdaq-100 +0.55%)
+    "^KS11", "000660.KS", "005930.KS", "^TWII", "2330.TW", "EWY", "EWT", "ASML",
 ]
 EARNINGS = ["NVDA", "MSFT", "GOOGL", "AMZN", "META", "AAPL", "AVGO", "TSLA", "AMD",
             "TSM", "ORCL", "PLTR"]
