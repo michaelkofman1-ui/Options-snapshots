@@ -126,7 +126,30 @@ per new report.
 Crowding is context, not a signal: the trigger is price failing against the
 crowd.
 
-**Tests.** `python tests/test_snapshot.py`, `python tests/test_crowding.py` and `python tests/test_feeds.py`
+## Instrument map
+
+`instruments.py` says how each of the 41 markets gets traded at Robinhood
+(Part 2 of an alert). The crowding report's "fade via" lines come from it, and
+the weekly job rewrites `data/derived/instruments.csv`.
+
+- **Micro future** when Robinhood lists it and one contract's stop risk fits
+  the per-trade budget. The stop is provisionally 2 x daily ATR(14), until the
+  backtests give a median stop per market. The minimum book is that dollar
+  risk divided by the risk per trade (0.5%).
+- **ETF proxy** otherwise: shares for longs; for shorts, puts or put debit
+  spreads (weekly chains), or small limit-order put spreads (monthly-only
+  chains). Commodity ETFs carry roll drag on multi-week holds. ETF trades go
+  in the taxable account.
+- **Watch-only** when there's neither: Mexican peso, heating oil, soybean
+  oil and meal, coffee, cocoa, cotton, cattle and hogs.
+- `rh_status`: confirmed (on Robinhood's futures page: MES, MNQ, M2K, MYM),
+  reported (MCL, MGC, M6E, M6A, MBT, MET), unverified (check in the app).
+  Robinhood also lists Nano index contracts (NES, NNQ, NDOW, N2K); their
+  size isn't verified yet, but they could cut the index minimums a lot.
+- `config/fund.json` holds the swing book size (null until the book-map
+  decision) and the risk per trade.
+
+**Tests.** `python tests/test_*.py` (snapshot, crowding, feeds, feeds_more, instruments, notify)
 check parsing, filtering, the replace and merge rules, and the IV math on
 synthetic data, with no network.
 

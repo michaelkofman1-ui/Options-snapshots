@@ -250,8 +250,25 @@ def fmt_row(r: pd.Series) -> str:
         px = f"\n    price {r['pos_in_4wk_range']:.0f}% of 4-wk range, {r['vs_sma20_atr']:+.1f} ATR vs 20-day"
         if r.get("against_crowd"):
             px += f"  ⚠️ {r['against_crowd']}"
+    via = ""
+    if r.get("crowded") in ("long", "short"):
+        try:
+            import instruments
+            fade = "short" if r["crowded"] == "long" else "long"
+            cfg = fund_config()
+            via = (f"\n    fade via: {instruments.expression(r['symbol'], fade, cfg.get('swing_book_usd'), cfg.get('risk_pct', 0.5))}")
+        except Exception as e:  # the map is a convenience; never block the report
+            via = f"\n    fade via: (instrument map error: {type(e).__name__})"
     return (f"• {r['symbol']} {r['name']}: {g} index {r['primary_index']:.0f} "
-            f"(z {r.get(r['primary'] + '_z', np.nan):+.1f}{wow_s}{spec_s}){px}")
+            f"(z {r.get(r['primary'] + '_z', np.nan):+.1f}{wow_s}{spec_s}){px}{via}")
+
+
+def fund_config() -> dict:
+    """config/fund.json: swing_book_usd (null until the book-map decision) and
+    risk_pct per trade."""
+    import json
+    p = ROOT / "config" / "fund.json"
+    return json.loads(p.read_text()) if p.exists() else {}
 
 
 def message(tab: pd.DataFrame) -> str:
@@ -292,6 +309,12 @@ def main(argv=None) -> int:
     hist.to_csv(OUT / "history.csv", index=False, float_format="%.6g")
     tab = latest_table(hist, now)
     tab.to_csv(OUT / "latest.csv", index=False, float_format="%.6g")
+    try:
+        import instruments
+        instruments.table(fund_config().get("risk_pct", 0.5), OUT / "latest.csv").to_csv(
+            instruments.OUT, index=False)
+    except Exception as e:
+        print(f"instrument map not refreshed: {type(e).__name__}: {e}")
     text = message(tab)
     print(text)
 

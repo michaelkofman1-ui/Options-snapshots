@@ -1,0 +1,5 @@
+{
+  "swing_book_usd": null,
+  "risk_pct": 0.5,
+  "_note": "swing_book_usd stays null until the book-map decision (Todoist 00). With null, alerts use the ETF proxy and show the book a micro future would need."
+}

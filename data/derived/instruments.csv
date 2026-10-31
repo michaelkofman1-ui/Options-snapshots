@@ -1,0 +1,42 @@
+symbol,rh_future,rh_status,micro_multiplier,atr14,stop_usd_per_micro,min_book_usd,etf,etf_chain,note
+ES,MES,confirmed,5.0,94.2679,943.0,189000.0,SPY,weekly,
+NQ,MNQ,confirmed,2.0,680.089,2720.0,544000.0,QQQ,weekly,
+RTY,M2K,confirmed,5.0,47.5429,475.0,95000.0,IWM,weekly,
+YM,MYM,confirmed,0.5,664.286,664.0,133000.0,DIA,weekly,
+VX,,none,,2.48214,,,VIX,index,VIX index options (and VIXW weeklies); no shares
+ZT,,none,,0.188616,,,SHY,monthly,
+ZF,,none,,0.447545,,,IEI,monthly,
+ZN,,none,,0.65067,,,IEF,weekly,
+TN,,none,,0.803571,,,IEF,weekly,
+ZB,,none,,1.21205,,,TLT,weekly,
+UB,,none,,1.39955,,,TLT,weekly,
+6E,M6E,reported,12500.0,0.0059607,149.0,30000.0,FXE,monthly,
+6J,MJY,unverified,1250000.0,2.98214e-05,75.0,15000.0,FXY,monthly,
+6B,M6B,unverified,6250.0,0.00617857,77.0,15000.0,FXB,monthly,
+6A,M6A,reported,10000.0,0.00338929,68.0,14000.0,FXA,monthly,
+6C,MCD,unverified,10000.0,0.00281071,56.0,11000.0,FXC,monthly,
+6S,MSF,unverified,12500.0,0.00764643,191.0,38000.0,FXF,monthly,
+6M,,none,,0.000319286,,,,none,"no micro, no ETF: watch-only"
+DX,,none,,,,,UUP,monthly,
+BTC,MBT,reported,0.1,2585.71,517.0,103000.0,IBIT,weekly,
+ETH,MET,reported,0.1,104.643,21.0,4000.0,ETHA,weekly,
+CL,MCL,reported,100.0,4.25857,852.0,170000.0,USO,weekly,roll drag on multi-week holds
+NG,MNG,unverified,1000.0,0.168071,336.0,67000.0,UNG,weekly,heavy roll drag on multi-week holds
+RB,,none,,0.10575,,,UGA,monthly,roll drag
+HO,,none,,0.197814,,,,none,no ETF: watch-only
+GC,MGC,reported,10.0,74.95,1499.0,300000.0,GLD,weekly,
+SI,SIL,unverified,1000.0,1.34493,2690.0,538000.0,SLV,weekly,
+HG,MHG,unverified,2500.0,0.0882144,441.0,88000.0,CPER,monthly,
+PL,,none,,33.1286,,,PPLT,monthly,
+ZC,,none,,7.19643,,,CORN,monthly,roll drag
+ZS,,none,,17.3393,,,SOYB,monthly,roll drag
+ZW,,none,,14.1607,,,WEAT,monthly,roll drag
+KE,,none,,14.0,,,WEAT,monthly,"WEAT tracks Chicago wheat, not KC: loose proxy"
+ZL,,none,,1.07928,,,,none,no ETF: watch-only
+ZM,,none,,6.84286,,,,none,no ETF: watch-only
+KC,,none,,10.8071,,,,none,no listed coffee ETF: watch-only
+SB,,none,,0.543571,,,CANE,monthly,roll drag
+CC,,none,,223.214,,,,none,no listed cocoa ETF: watch-only
+CT,,none,,1.22,,,,none,no listed cotton ETF: watch-only
+LE,,none,,2.30536,,,,none,watch-only
+HE,,none,,2.06786,,,,none,watch-only
