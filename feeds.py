@@ -353,12 +353,96 @@ def run_cot(report: str, now: datetime, rec: Recorder) -> None:
         update_cot_releases(seen_dates, now)
 
 
+def check_bar_history(path: Path, new: pd.DataFrame, settle_days: int = 5) -> None:
+    """Yahoo finalizes the last few bars after the fact, so those may change.
+    Older closes must match what we hold to 0.5%, or the update is refused."""
+    if not path.exists():
+        return
+    old = pd.read_csv(path, dtype={"date": str}).set_index("date")["close"]
+    nw = new.set_index("date")["close"]
+    common = old.index.intersection(nw.index).sort_values()[:-settle_days]
+    if len(common):
+        diff = ((nw[common] - old[common]).abs() / old[common].abs()).max()
+        if diff > 0.005:
+            raise Refused(f"held closes would change by up to {diff:.1%}; kept old data")
+
+
+def run_bars(rec: Recorder) -> None:
+    import feeds_more as M
+    bdir = EXT / "bars"
+    t0 = time.monotonic()
+    if out_of_time():
+        rec.add("bars", "todo", "deferred to the next run", 0)
+        return
+    new = [t for t in M.BARS if not (bdir / M.bar_file(t)).exists()]
+    held = [t for t in M.BARS if t not in new]
+    got: dict = {}
+    try:
+        if new:
+            got.update(M.fetch_bars(new, "max"))
+        if held:
+            got.update(M.fetch_bars(held, "1mo"))
+        # A split rewrites the whole split-adjusted history: reload it in full.
+        split = [t for t in held if t in got and "splits" in got[t]
+                 and (got[t]["splits"].fillna(0) != 0).any()]
+        if split:
+            got.update(M.fetch_bars(split, "max"))
+    except Exception as e:
+        rec.add("bars", "FAIL", f"Yahoo download failed: {type(e).__name__}: {str(e)[:150]}",
+                time.monotonic() - t0)
+        return
+    for t in M.BARS:
+        name, path = f"bars/{t}", bdir / M.bar_file(t)
+        if t not in got:
+            rec.add(name, "FAIL", "no data from Yahoo", 0)
+            continue
+        try:
+            if t not in split:
+                check_bar_history(path, got[t])
+            status, msg = merge_store(path, got[t], ["date"], revises=True,
+                                      partial=t in held and t not in split)
+            if t in split:
+                msg = "split: history reloaded. " + msg
+        except Refused as e:
+            status, msg = "FAIL", str(e)[:300]
+        rec.add(name, status, msg, 0)
+
+
+def run_events(rec: Recorder, now: datetime) -> None:
+    import feeds_more as M
+    ev = EXT / "events"
+    today = now.astimezone(NY).date().isoformat()
+    jobs = [("events/fomc", M.fetch_fomc, "fomc.csv", ["date"]),
+            ("events/earnings", lambda: M.fetch_earnings(M.EARNINGS), "earnings.csv", ["symbol", "date"])]
+    if os.environ.get("FRED_API_KEY", "").strip():
+        jobs.insert(0, ("events/macro", M.fetch_macro, "macro.csv", ["date", "event"]))
+    else:
+        rec.add("events/macro", "todo", "waiting for the FRED_API_KEY repo secret", 0)
+    for name, fn, fname, keys in jobs:
+        t0 = time.monotonic()
+        if out_of_time():
+            rec.add(name, "todo", "deferred to the next run", 0)
+            continue
+        try:
+            df = fn()
+            status, msg = M.merge_calendar(ev / fname, df, keys, today)
+            errs = getattr(df, "attrs", {}).get("errors")
+            if errs:
+                status, msg = "warn", msg + f". No data for: {', '.join(errs)[:150]}"
+        except Exception as e:
+            status, msg = "FAIL", f"{type(e).__name__}: {str(e)[:250]}"
+        rec.add(name, status, msg, time.monotonic() - t0)
+    allev = M.combine_events(ev, today)
+    if not allev.empty:
+        allev.to_csv(ev / "events.csv", index=False)
+
+
 # ── main ───────────────────────────────────────────────────────────────────
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", nargs="*", choices=["vol", "fred", "cot"])
+    ap.add_argument("--only", nargs="*", choices=["vol", "fred", "cot", "bars", "events"])
     args = ap.parse_args(argv)
-    which = set(args.only or ["vol", "fred", "cot"])
+    which = set(args.only or ["vol", "fred", "cot", "bars", "events"])
     now = datetime.now(timezone.utc)
     rec = Recorder()
 
@@ -397,6 +481,11 @@ def main(argv=None) -> int:
         for sid, revises in FRED_SERIES.items():
             run("fred", f"fred/{sid}", lambda s=sid: fetch_fred(s), EXT / "fred" / f"{sid}.csv",
                 ["date"], revises)
+
+    if "bars" in which:
+        run_bars(rec)
+    if "events" in which:
+        run_events(rec, now)
 
     step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if step_summary:
