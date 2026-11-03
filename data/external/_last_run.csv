@@ -1,88 +1,88 @@
 feed,status,detail,seconds
-vol/VIX,same,"9306 rows, unchanged.",0.3
-vol/VIX9D,same,"3980 rows, unchanged.",0.1
-vol/VIX3M,same,"4306 rows, unchanged.",0.1
-vol/VIX6M,same,"4738 rows, unchanged.",0.1
-vol/VVIX,same,"5137 rows, unchanged.",0.1
-vol/VXN,same,"4312 rows, unchanged.",0.1
-vol/RVX,same,"4303 rows, unchanged.",0.1
-vol/SKEW,same,"9260 rows, unchanged.",0.1
-vol/GVZ,same,"4304 rows, unchanged.",0.1
-vol/OVX,same,"4304 rows, unchanged.",0.1
-vol/VXEEM,same,"3927 rows, unchanged.",0.1
-cot/legacy/2026,same,"15556 rows, unchanged.",0.9
-cot/tff/2026,same,"3824 rows, unchanged.",0.7
-cot/disagg/2026,same,"11732 rows, unchanged.",0.9
-fred/BAA10Y,same,"10207 rows, unchanged.",0.4
-fred/AAA10Y,same,"10954 rows, unchanged.",0.5
-fred/BAMLH0A0HYM2,warn,"787 rows, unchanged. source no longer has 1 rows we hold; kept them.",0.2
-fred/BAMLC0A0CM,warn,"786 rows, unchanged. source no longer has 1 rows we hold; kept them.",0.4
-fred/NASDAQ100,same,"10288 rows, unchanged.",0.3
+vol/VIX,saved,9307 rows (+1).,0.4
+vol/VIX9D,saved,3981 rows (+1).,0.2
+vol/VIX3M,saved,4307 rows (+1).,0.2
+vol/VIX6M,saved,4739 rows (+1).,0.2
+vol/VVIX,saved,5138 rows (+1).,0.2
+vol/VXN,saved,4313 rows (+1).,0.2
+vol/RVX,saved,4304 rows (+1).,0.2
+vol/SKEW,saved,9261 rows (+1).,0.2
+vol/GVZ,saved,4305 rows (+1).,0.2
+vol/OVX,saved,4305 rows (+1).,0.2
+vol/VXEEM,saved,3928 rows (+1).,0.2
+cot/legacy/2026,same,"15556 rows, unchanged.",2.0
+cot/tff/2026,same,"3824 rows, unchanged.",0.8
+cot/disagg/2026,same,"11732 rows, unchanged.",1.1
+fred/BAA10Y,saved,10208 rows (+1).,0.4
+fred/AAA10Y,saved,10955 rows (+1).,0.3
+fred/BAMLH0A0HYM2,warn,788 rows (+1). source no longer has 4 rows we hold; kept them.,0.2
+fred/BAMLC0A0CM,warn,787 rows (+1). source no longer has 4 rows we hold; kept them.,0.2
+fred/NASDAQ100,same,"10288 rows, unchanged.",0.2
 fred/NASDAQCOM,same,"14052 rows, unchanged.",0.4
-fred/VXNCLS,same,"6474 rows, unchanged.",0.4
-fred/DGS3MO,same,"11290 rows, unchanged.",0.3
-fred/DGS2,same,"12600 rows, unchanged.",0.4
-fred/DGS10,same,"16192 rows, unchanged.",0.4
-fred/T10Y2Y,same,"12601 rows, unchanged.",0.3
-fred/T10Y3M,same,"11210 rows, unchanged.",0.3
-fred/DFII10,same,"5961 rows, unchanged.",0.3
-fred/T10YIE,same,"5962 rows, unchanged.",0.3
+fred/VXNCLS,saved,6475 rows (+1).,0.4
+fred/DGS3MO,saved,11291 rows (+1).,0.3
+fred/DGS2,saved,12601 rows (+1).,0.3
+fred/DGS10,saved,16193 rows (+1).,0.4
+fred/T10Y2Y,saved,12602 rows (+1).,0.3
+fred/T10Y3M,saved,11211 rows (+1).,0.3
+fred/DFII10,saved,5962 rows (+1).,0.2
+fred/T10YIE,saved,5963 rows (+1).,0.3
 fred/NFCI,same,"2912 rows, unchanged.",0.2
 fred/ANFCI,same,"2912 rows, unchanged.",0.2
-fred/WALCL,same,"1246 rows, unchanged.",0.5
-fred/RRPONTSYD,same,"3358 rows, unchanged.",0.4
+fred/WALCL,same,"1246 rows, unchanged.",0.2
+fred/RRPONTSYD,saved,3359 rows (+1).,0.2
 fred/WTREGEN,same,"1246 rows, unchanged.",0.2
-fred/DTWEXBGS,same,"5217 rows, unchanged.",0.4
+fred/DTWEXBGS,saved,5222 rows (+5).,0.2
 fred/DCOILWTICO,same,"9532 rows, unchanged.",0.3
-fred/ICSA,same,"3121 rows, unchanged.",0.3
-bars/QQQ,same,"6955 rows, unchanged.",0.0
-bars/SPY,same,"8497 rows, unchanged.",0.0
-bars/IWM,same,"6647 rows, unchanged.",0.0
-bars/DIA,same,"7241 rows, unchanged.",0.0
-bars/^NDX,saved,10351 rows (+0). 1 values revised.,0.0
-bars/^GSPC,saved,24826 rows (+0). 1 values revised.,0.0
-bars/^RUT,saved,9860 rows (+0). 3 values revised.,0.0
-bars/SMH,same,"6642 rows, unchanged.",0.0
-bars/SOXX,same,"6363 rows, unchanged.",0.0
-bars/XLK,same,"7007 rows, unchanged.",0.0
-bars/NVDA,same,"6987 rows, unchanged.",0.0
-bars/MSFT,same,"10238 rows, unchanged.",0.0
-bars/GOOGL,same,"5586 rows, unchanged.",0.0
-bars/AMZN,same,"7412 rows, unchanged.",0.0
-bars/META,same,"3634 rows, unchanged.",0.0
-bars/AAPL,same,"11564 rows, unchanged.",0.0
-bars/AVGO,same,"4336 rows, unchanged.",0.0
-bars/TSLA,same,"4111 rows, unchanged.",0.0
-bars/AMD,same,"11752 rows, unchanged.",0.0
-bars/TSM,same,"7310 rows, unchanged.",0.0
-bars/ORCL,same,"10239 rows, unchanged.",0.0
-bars/PLTR,same,"1529 rows, unchanged.",0.0
-bars/TLT,same,"6104 rows, unchanged.",0.0
-bars/IEF,same,"6104 rows, unchanged.",0.0
-bars/SHY,same,"6104 rows, unchanged.",0.0
-bars/HYG,same,"4922 rows, unchanged.",0.0
-bars/LQD,same,"6104 rows, unchanged.",0.0
-bars/UUP,same,"4950 rows, unchanged.",0.0
-bars/GLD,same,"5522 rows, unchanged.",0.0
-bars/SLV,same,"5160 rows, unchanged.",0.0
-bars/USO,same,"5173 rows, unchanged.",0.0
-bars/UNG,same,"4917 rows, unchanged.",0.0
-bars/DBA,same,"4987 rows, unchanged.",0.0
-bars/XLE,same,"7007 rows, unchanged.",0.0
-bars/XLF,same,"7007 rows, unchanged.",0.0
-bars/EEM,same,"5926 rows, unchanged.",0.0
-bars/FXI,same,"5551 rows, unchanged.",0.0
-bars/BTC-USD,saved,4428 rows (+1). 4 values revised.,0.0
-bars/ETH-USD,saved,3279 rows (+1). 4 values revised.,0.0
-bars/SOL-USD,saved,2396 rows (+1). 3 values revised.,0.0
-bars/^KS11,same,"7355 rows, unchanged.",0.0
-bars/000660.KS,same,"6704 rows, unchanged.",0.0
-bars/005930.KS,same,"6704 rows, unchanged.",0.0
-bars/^TWII,same,"7186 rows, unchanged.",0.0
-bars/2330.TW,same,"6668 rows, unchanged.",0.0
-bars/EWY,same,"6657 rows, unchanged.",0.0
-bars/EWT,same,"6628 rows, unchanged.",0.0
-bars/ASML,same,"7961 rows, unchanged.",0.0
-events/macro,same,"3183 rows, unchanged",4.5
-events/fomc,same,"58 rows, unchanged",0.1
-events/earnings,saved,1004 rows (12 upcoming),7.3
+fred/ICSA,same,"3121 rows, unchanged.",0.2
+bars/QQQ,saved,6956 rows (+1). 1 values revised.,0.0
+bars/SPY,saved,8498 rows (+1). 1 values revised.,0.0
+bars/IWM,saved,6648 rows (+1). 1 values revised.,0.0
+bars/DIA,saved,7242 rows (+1).,0.0
+bars/^NDX,saved,10352 rows (+1).,0.0
+bars/^GSPC,saved,24827 rows (+1).,0.0
+bars/^RUT,saved,9861 rows (+1).,0.0
+bars/SMH,saved,6643 rows (+1). 1 values revised.,0.0
+bars/SOXX,saved,6364 rows (+1). 1 values revised.,0.0
+bars/XLK,saved,7008 rows (+1).,0.0
+bars/NVDA,saved,6988 rows (+1). 1 values revised.,0.0
+bars/MSFT,saved,10239 rows (+1). 1 values revised.,0.0
+bars/GOOGL,saved,5587 rows (+1). 1 values revised.,0.0
+bars/AMZN,saved,7413 rows (+1). 1 values revised.,0.0
+bars/META,saved,3635 rows (+1). 1 values revised.,0.0
+bars/AAPL,saved,11565 rows (+1). 1 values revised.,0.0
+bars/AVGO,saved,4337 rows (+1). 1 values revised.,0.0
+bars/TSLA,saved,4112 rows (+1). 1 values revised.,0.0
+bars/AMD,saved,11753 rows (+1). 1 values revised.,0.0
+bars/TSM,saved,7311 rows (+1). 1 values revised.,0.0
+bars/ORCL,saved,10240 rows (+1). 1 values revised.,0.0
+bars/PLTR,saved,1530 rows (+1). 1 values revised.,0.0
+bars/TLT,saved,6105 rows (+1). 1 values revised.,0.0
+bars/IEF,saved,6105 rows (+1).,0.0
+bars/SHY,saved,6105 rows (+1).,0.0
+bars/HYG,saved,4923 rows (+1).,0.0
+bars/LQD,saved,6105 rows (+1).,0.0
+bars/UUP,saved,4951 rows (+1).,0.0
+bars/GLD,saved,5523 rows (+1). 1 values revised.,0.0
+bars/SLV,saved,5161 rows (+1). 1 values revised.,0.0
+bars/USO,saved,5174 rows (+1). 1 values revised.,0.0
+bars/UNG,saved,4918 rows (+1). 1 values revised.,0.0
+bars/DBA,saved,4988 rows (+1).,0.0
+bars/XLE,saved,7008 rows (+1). 1 values revised.,0.0
+bars/XLF,saved,7008 rows (+1).,0.0
+bars/EEM,saved,5927 rows (+1).,0.0
+bars/FXI,saved,5552 rows (+1).,0.0
+bars/BTC-USD,saved,4430 rows (+2). 5 values revised.,0.0
+bars/ETH-USD,saved,3281 rows (+2). 5 values revised.,0.0
+bars/SOL-USD,saved,2398 rows (+2). 5 values revised.,0.0
+bars/^KS11,saved,7357 rows (+2).,0.0
+bars/000660.KS,saved,6706 rows (+2).,0.0
+bars/005930.KS,saved,6706 rows (+2).,0.0
+bars/^TWII,saved,7188 rows (+2).,0.0
+bars/2330.TW,saved,6670 rows (+2).,0.0
+bars/EWY,saved,6658 rows (+1).,0.0
+bars/EWT,saved,6629 rows (+1).,0.0
+bars/ASML,saved,7962 rows (+1).,0.0
+events/macro,same,"3183 rows, unchanged",3.2
+events/fomc,same,"58 rows, unchanged",0.2
+events/earnings,saved,1004 rows (10 upcoming),7.9
