@@ -1,15 +1,15 @@
 symbol,status,detail
-_SPX,same,2026-11-02 close already saved
-_NDX,same,2026-11-02 close already saved
-_VIX,same,2026-11-02 close already saved
-SPY,same,2026-11-02 close already saved
-QQQ,same,2026-11-02 close already saved
-IWM,same,2026-11-02 close already saved
-GLD,same,2026-11-02 close already saved
-SLV,same,2026-11-02 close already saved
-TLT,same,2026-11-02 close already saved
-USO,same,2026-11-02 close already saved
-XLE,same,2026-11-02 close already saved
-EEM,same,2026-11-02 close already saved
-NVDA,same,2026-11-02 close already saved
-TSLA,same,2026-11-02 close already saved
+_SPX,saved,"2026-11-03 intraday @ 13:22 NY, 11355 contracts"
+_NDX,saved,"2026-11-03 intraday @ 13:22 NY, 7764 contracts"
+_VIX,saved,"2026-11-03 intraday @ 13:22 NY, 668 contracts"
+SPY,saved,"2026-11-03 intraday @ 13:22 NY, 3596 contracts"
+QQQ,saved,"2026-11-03 intraday @ 13:22 NY, 3239 contracts"
+IWM,saved,"2026-11-03 intraday @ 13:22 NY, 1502 contracts"
+GLD,saved,"2026-11-03 intraday @ 13:22 NY, 1905 contracts"
+SLV,saved,"2026-11-03 intraday @ 13:22 NY, 963 contracts"
+TLT,saved,"2026-11-03 intraday @ 13:22 NY, 683 contracts"
+USO,saved,"2026-11-03 intraday @ 13:22 NY, 1633 contracts"
+XLE,saved,"2026-11-03 intraday @ 13:22 NY, 564 contracts"
+EEM,saved,"2026-11-03 intraday @ 13:22 NY, 557 contracts"
+NVDA,saved,"2026-11-03 intraday @ 13:22 NY, 817 contracts"
+TSLA,saved,"2026-11-03 intraday @ 13:22 NY, 1251 contracts"
