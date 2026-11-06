@@ -42,6 +42,12 @@ BARS = [
     # overseas legs of the AI trade, for cross-market news failures
     # (Oct 28, 2026: KOSPI +6.6% on SK hynix results, Nasdaq-100 +0.55%)
     "^KS11", "000660.KS", "005930.KS", "^TWII", "2330.TW", "EWY", "EWT", "ASML",
+    # continuous front-month futures for the 41-market swing universe (daily
+    # OHLC for the scanner and the news-failure backtest; roll gaps included)
+    "ES=F", "NQ=F", "RTY=F", "YM=F", "ZT=F", "ZF=F", "ZN=F", "TN=F", "ZB=F", "UB=F",
+    "6E=F", "6J=F", "6B=F", "6A=F", "6C=F", "6S=F", "6M=F", "DX=F", "BTC=F", "ETH=F",
+    "CL=F", "NG=F", "RB=F", "HO=F", "GC=F", "SI=F", "HG=F", "PL=F", "ZC=F", "ZS=F",
+    "ZW=F", "KE=F", "ZL=F", "ZM=F", "KC=F", "SB=F", "CC=F", "CT=F", "LE=F", "HE=F", "^VIX",
 ]
 EARNINGS = ["NVDA", "MSFT", "GOOGL", "AMZN", "META", "AAPL", "AVGO", "TSLA", "AMD",
             "TSM", "ORCL", "PLTR"]
