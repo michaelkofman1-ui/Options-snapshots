@@ -4204,7 +4204,7 @@ date,time_et,event,symbol,detail,scheduled
 2026-11-03,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
 2026-11-03,16:00,Earnings,AMD,"after close, surprise +7.5%",False
 2026-11-05,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
-2026-11-06,08:30,Jobs report,,Employment Situation,True
+2026-11-06,08:30,Jobs report,,Employment Situation,False
 2026-11-10,08:30,CPI,,Consumer Price Index,True
 2026-11-12,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,True
 2026-11-13,08:30,PPI,,Producer Price Index,True
