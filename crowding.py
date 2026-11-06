@@ -72,7 +72,7 @@ UNIVERSE = [
     ("6C", "Canadian dollar", "fx", "090741", "6C=F"),
     ("6S", "Swiss franc", "fx", "092741", "6S=F"),
     ("6M", "Mexican peso", "fx", "095741", "6M=F"),
-    ("DX", "US dollar index", "fx", "098662", "DX=F"),
+    ("DX", "US dollar index", "fx", "098662", "DX-Y.NYB"),
     ("BTC", "Bitcoin", "crypto", "133741", "BTC=F"),
     ("ETH", "Ether", "crypto", "146021", "ETH=F"),
     ("CL", "WTI crude", "energy", "067651", "CL=F"),

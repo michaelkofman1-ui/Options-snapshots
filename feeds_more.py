@@ -45,7 +45,7 @@ BARS = [
     # continuous front-month futures for the 41-market swing universe (daily
     # OHLC for the scanner and the news-failure backtest; roll gaps included)
     "ES=F", "NQ=F", "RTY=F", "YM=F", "ZT=F", "ZF=F", "ZN=F", "TN=F", "ZB=F", "UB=F",
-    "6E=F", "6J=F", "6B=F", "6A=F", "6C=F", "6S=F", "6M=F", "DX=F", "BTC=F", "ETH=F",
+    "6E=F", "6J=F", "6B=F", "6A=F", "6C=F", "6S=F", "6M=F", "DX-Y.NYB", "BTC=F", "ETH=F",
     "CL=F", "NG=F", "RB=F", "HO=F", "GC=F", "SI=F", "HG=F", "PL=F", "ZC=F", "ZS=F",
     "ZW=F", "KE=F", "ZL=F", "ZM=F", "KC=F", "SB=F", "CC=F", "CT=F", "LE=F", "HE=F", "^VIX",
 ]
