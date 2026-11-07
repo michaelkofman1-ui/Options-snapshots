@@ -1,42 +1,42 @@
 symbol,rh_future,rh_status,micro_multiplier,atr14,stop_usd_per_micro,min_book_usd,nano,nano_multiplier,stop_usd_per_nano,min_book_nano_usd,etf,etf_chain,note
-ES,MES,confirmed,5.0,100.946,1009.0,202000.0,NES,0.5,101.0,20000.0,SPY,weekly,
-NQ,MNQ,confirmed,2.0,714.0,2856.0,571000.0,NNQ,0.2,286.0,57000.0,QQQ,weekly,
-RTY,M2K,confirmed,5.0,47.7714,478.0,96000.0,N2K,0.5,48.0,10000.0,IWM,weekly,
-YM,MYM,confirmed,0.5,656.214,656.0,131000.0,NDOW,0.05,66.0,13000.0,DIA,weekly,
-VX,,none,,2.71786,,,,,,,VIX,index,VIX index options (and VIXW weeklies); no shares
-ZT,,none,,0.1875,,,,,,,SHY,monthly,
-ZF,,none,,0.449219,,,,,,,IEI,monthly,
-ZN,,none,,0.655134,,,,,,,IEF,weekly,
-TN,,none,,0.810268,,,,,,,IEF,weekly,
-ZB,,none,,1.22545,,,,,,,TLT,weekly,
-UB,,none,,1.43304,,,,,,,TLT,weekly,
-6E,M6E,confirmed,12500.0,0.00619642,155.0,31000.0,,,,,FXE,monthly,
-6J,MJY,confirmed,1250000.0,2.89286e-05,72.0,14000.0,,,,,FXY,monthly,
-6B,M6B,confirmed,6250.0,0.00627857,78.0,16000.0,,,,,FXB,monthly,
-6A,M6A,confirmed,10000.0,0.00336071,67.0,13000.0,,,,,FXA,monthly,
-6C,MCD,confirmed,10000.0,0.00261429,52.0,10000.0,,,,,FXC,monthly,
-6S,MSF,confirmed,12500.0,0.00810715,203.0,41000.0,,,,,FXF,monthly,
-6M,,none,,0.00033,,,,,,,,none,"no micro, no ETF: watch-only"
-DX,,none,,,,,,,,,UUP,monthly,
-BTC,MBT,confirmed,0.1,2436.36,487.0,97000.0,,,,,IBIT,weekly,
-ETH,MET,confirmed,0.1,106.017,21.0,4000.0,,,,,ETHA,weekly,
-CL,MCL,confirmed,100.0,4.65571,931.0,186000.0,,,,,USO,weekly,roll drag on multi-week holds
-NG,MNG,confirmed,1000.0,0.161286,323.0,65000.0,,,,,UNG,weekly,heavy roll drag on multi-week holds
-RB,,none,,0.133257,,,,,,,UGA,monthly,roll drag
-HO,,none,,0.200021,,,,,,,,none,no ETF: watch-only
-GC,MGC,confirmed,10.0,77.5714,1551.0,310000.0,,,,,GLD,weekly,
-SI,SIL,confirmed,1000.0,1.42822,2856.0,571000.0,,,,,SLV,weekly,
-HG,MHG,confirmed,2500.0,0.0934643,467.0,93000.0,,,,,CPER,monthly,
-PL,,none,,33.4,,,,,,,PPLT,monthly,
+ES,MES,confirmed,5.0,130.982,1310.0,262000.0,NES,0.5,131.0,26000.0,SPY,weekly,
+NQ,MNQ,confirmed,2.0,844.0,3376.0,675000.0,NNQ,0.2,338.0,68000.0,QQQ,weekly,
+RTY,M2K,confirmed,5.0,56.8429,568.0,114000.0,N2K,0.5,57.0,11000.0,IWM,weekly,
+YM,MYM,confirmed,0.5,921.571,922.0,184000.0,NDOW,0.05,92.0,18000.0,DIA,weekly,
+VX,,none,,3.36143,,,,,,,VIX,index,VIX index options (and VIXW weeklies); no shares
+ZT,,none,,0.183594,,,,,,,SHY,monthly,
+ZF,,none,,0.417969,,,,,,,IEI,monthly,
+ZN,,none,,0.602679,,,,,,,IEF,weekly,
+TN,,none,,0.739955,,,,,,,IEF,weekly,
+ZB,,none,,1.11384,,,,,,,TLT,weekly,
+UB,,none,,1.30804,,,,,,,TLT,weekly,
+6E,M6E,confirmed,12500.0,0.0060107,150.0,30000.0,,,,,FXE,monthly,
+6J,MJY,confirmed,1250000.0,3.38572e-05,85.0,17000.0,,,,,FXY,monthly,
+6B,M6B,confirmed,6250.0,0.00567858,71.0,14000.0,,,,,FXB,monthly,
+6A,M6A,confirmed,10000.0,0.00349286,70.0,14000.0,,,,,FXA,monthly,
+6C,MCD,confirmed,10000.0,0.00301428,60.0,12000.0,,,,,FXC,monthly,
+6S,MSF,confirmed,12500.0,0.00832501,208.0,42000.0,,,,,FXF,monthly,
+6M,,none,,0.000398572,,,,,,,,none,"no micro, no ETF: watch-only"
+DX,,none,,0.495713,,,,,,,UUP,monthly,
+BTC,MBT,confirmed,0.1,2755.36,551.0,110000.0,,,,,IBIT,weekly,
+ETH,MET,confirmed,0.1,108.66,22.0,4000.0,,,,,ETHA,weekly,
+CL,MCL,confirmed,100.0,5.12429,1025.0,205000.0,,,,,USO,weekly,roll drag on multi-week holds
+NG,MNG,confirmed,1000.0,0.147286,295.0,59000.0,,,,,UNG,weekly,heavy roll drag on multi-week holds
+RB,,none,,0.14245,,,,,,,UGA,monthly,roll drag
+HO,,none,,0.219621,,,,,,,,none,no ETF: watch-only
+GC,MGC,confirmed,10.0,84.9785,1700.0,340000.0,,,,,GLD,weekly,
+SI,SIL,confirmed,1000.0,1.46993,2940.0,588000.0,,,,,SLV,weekly,
+HG,MHG,confirmed,2500.0,,,,,,,,CPER,monthly,
+PL,,none,,33.7071,,,,,,,PPLT,monthly,
 ZC,,none,,6.85714,,,,,,,CORN,monthly,roll drag
-ZS,,none,,16.5179,,,,,,,SOYB,monthly,roll drag
-ZW,,none,,13.6786,,,,,,,WEAT,monthly,roll drag
-KE,,none,,13.5357,,,,,,,WEAT,monthly,"WEAT tracks Chicago wheat, not KC: loose proxy"
-ZL,,none,,1.13286,,,,,,,,none,no ETF: watch-only
-ZM,,none,,6.57857,,,,,,,,none,no ETF: watch-only
-KC,,none,,11.0679,,,,,,,,none,no listed coffee ETF: watch-only
-SB,,none,,0.534286,,,,,,,CANE,monthly,roll drag
-CC,,none,,219.286,,,,,,,,none,no listed cocoa ETF: watch-only
-CT,,none,,1.20928,,,,,,,,none,no listed cotton ETF: watch-only
-LE,,none,,2.27857,,,,,,,,none,no ETF
-HE,,none,,2.24286,,,,,,,,none,no ETF
+ZS,,none,,16.3393,,,,,,,SOYB,monthly,roll drag
+ZW,,none,,13.9286,,,,,,,WEAT,monthly,roll drag
+KE,,none,,13.75,,,,,,,WEAT,monthly,"WEAT tracks Chicago wheat, not KC: loose proxy"
+ZL,,none,,1.24571,,,,,,,,none,no ETF: watch-only
+ZM,,none,,6.33571,,,,,,,,none,no ETF: watch-only
+KC,,none,,10.225,,,,,,,,none,no listed coffee ETF: watch-only
+SB,,none,,0.515,,,,,,,CANE,monthly,roll drag
+CC,,none,,210.5,,,,,,,,none,no listed cocoa ETF: watch-only
+CT,,none,,1.30214,,,,,,,,none,no listed cotton ETF: watch-only
+LE,,none,,2.725,,,,,,,,none,no ETF
+HE,,none,,1.97857,,,,,,,,none,no ETF
