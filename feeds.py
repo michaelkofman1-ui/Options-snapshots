@@ -442,7 +442,11 @@ def run_events(rec: Recorder, now: datetime) -> None:
             rec.add(f"events/{cname}", "todo", "deferred to the next run", 0)
             continue
         try:
-            df = fn(today, not path.exists())           # full history only on the first run
+            if cname == "central_banks" and path.exists():
+                have = pd.read_csv(path, dtype=str).groupby("event").size().to_dict()
+                df = fn(today, False, have)             # backfills any bank still short of history
+            else:
+                df = fn(today, not path.exists())       # full history only on the first run
             status, msg = M.merge_calendar(path, df, ["date", "event"], today)
             errs = getattr(df, "attrs", {}).get("errors")
             if errs:
