@@ -124,17 +124,31 @@ def parse_esmis(html: str) -> tuple[str, list[str]]:
     return (title.group(1).strip() if title else ""), rows
 
 
+def resolve(url: str) -> str:
+    """Final URL after redirects. The Cornell ESMIS links now redirect to
+    esmis.nal.usda.gov and drop query strings, so paging needs the new URL."""
+    import urllib.request
+    from feeds import UA
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.geturl().split("?")[0]
+
+
 def fetch_usda(today: str, full: bool = True) -> pd.DataFrame:
     parts = []
     for event, (pid, t, must) in USDA.items():
-        dates, page = [], 0
-        while page < 120:
-            html = get(f"https://usda.library.cornell.edu/concern/publications/{pid}?locale=en&page={page}").decode("utf-8", "replace")
+        base = resolve(f"https://usda.library.cornell.edu/concern/publications/{pid}")
+        dates, page, first_seen = [], 0, set()
+        while page < 60:
+            html = get(f"{base}?page={page}").decode("utf-8", "replace")
             title, rows = parse_esmis(html)
             if must.lower() not in title.lower():
                 raise ValueError(f"ESMIS {pid} is '{title[:60]}', expected {must}")
             if not rows:
                 break
+            if rows[0] in first_seen:               # the pager was ignored: stop, don't loop
+                raise ValueError(f"ESMIS {event}: page {page} repeats an earlier page")
+            first_seen.add(rows[0])
             dates += rows
             if min(rows) < START or not full:
                 break
