@@ -114,7 +114,7 @@ USDA = {
     "Prospective Plantings": ("x633f100h", "12:00", "Prospective Plantings"),
     "Acreage": ("j098zb09z", "12:00", "Acreage"),
     "Cattle on Feed": ("m326m174z", "15:00", "Cattle on Feed"),
-    "Hogs and Pigs": ("rj430453j", "15:00", "Quarterly Hogs and Pigs"),
+    "Hogs and Pigs": ("rj430453j", "15:00", "Hogs and Pigs"),
 }
 
 
