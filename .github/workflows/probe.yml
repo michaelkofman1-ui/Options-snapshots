@@ -1,0 +1,30 @@
+name: probe
+
+# Development helper: fetch the pages in tools/probe_urls.txt and push the raw
+# bytes to the "probe" branch, so parsers are written against real responses.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch
+        run: python tools/probe.py tools/probe_urls.txt
+      - name: Push to the probe branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q --orphan probe
+          git rm -rq --cached . >/dev/null
+          git add probe
+          git commit -q -m "probe $(date -u +%FT%TZ)"
+          git push -q -f origin probe
