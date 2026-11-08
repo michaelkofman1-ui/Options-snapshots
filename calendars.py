@@ -189,6 +189,44 @@ def parse_boc(html: str) -> list[str]:
     return re.findall(r'data-date="(\d{4}-\d{2}-\d{2})"', html)
 
 
+BOC_DECISION = re.compile(
+    r"^Bank of Canada (maintains|raises|lowers|increases|reduces|cuts|keeps|holds|leaves)\b.*\brate"
+    r"|today (announced that it is )?(maintaining|raising|lowering|increasing|reducing|cutting|"
+    r"maintained|raised|lowered|increased|reduced|cut) its target for the overnight rate", re.I)
+
+
+def parse_boc_releases(html: str) -> list[str]:
+    """Rate-decision dates from one page of BoC press releases."""
+    out = []
+    for art in re.findall(r"<article.*?</article>", html, re.S):
+        d = re.search(r"media-date[^>]*>\s*([A-Z][a-z]+) (\d{1,2}), (\d{4})", art)
+        if not d:
+            continue
+        title = re.search(r'class="media-heading">\s*<a[^>]*>(.*?)</a>', art, re.S)
+        excerpt = re.search(r"class='media-excerpt'>(.*?)</div>", art, re.S)
+        text = " ".join(_text(x.group(1)).strip() for x in (title, excerpt) if x)
+        if BOC_DECISION.search(text):
+            out.append(f"{d.group(3)}-{MON[d.group(1)[:3].lower()]:02d}-{int(d.group(2)):02d}")
+    return out
+
+
+def fetch_boc(full: bool) -> list[str]:
+    out, seen = [], set()
+    for page in range(1, 120 if full else 2):
+        html = get(f"https://www.bankofcanada.ca/press/press-releases/?mt_page={page}").decode("utf-8", "replace")
+        dates = re.findall(r"media-date[^>]*>\s*([A-Z][a-z]+ \d{1,2}, \d{4})", html)
+        if not dates:
+            break
+        if dates[0] in seen:
+            raise ValueError(f"BoC press releases page {page} repeats an earlier page")
+        seen.add(dates[0])
+        out += parse_boc_releases(html)
+        if pd.Timestamp(dates[-1]).strftime("%Y-%m-%d") < START:
+            break
+        time.sleep(0.3)
+    return out
+
+
 def parse_snb(html: str) -> list[str]:
     out = []
     for d, mon, y in re.findall(r"Monetary policy assessment of (\d{1,2}) ([A-Z][a-z]+) (\d{4})", _text(html)):
@@ -209,10 +247,14 @@ def _years(y0, yr, url, parse, enc="utf-8"):
     return out
 
 
-def fetch_central_banks(today: str, full: bool = True) -> pd.DataFrame:
+def fetch_central_banks(today: str, full: bool = True, have: dict | None = None) -> pd.DataFrame:
     """Each bank is collected on its own: one failing source doesn't drop the
-    others. Problems go to df.attrs["errors"], which the feeds log reports."""
+    others. Problems go to df.attrs["errors"], which the feeds log reports.
+    have: decisions already stored per bank; a bank with under 40 gets its
+    full history even on an incremental run."""
     yr = int(today[:4])
+    have = have or {}
+    full_for = {b: full or have.get(b, 0) < 40 for b in ["ECB", "BoJ", "BoE", "RBA", "BoC", "SNB", "Banxico"]}
     y0 = int(START[:4]) if full else yr - 1
     banks = {
         "ECB": (lambda: _years(y0, yr, "https://www.ecb.europa.eu/press/govcdec/mopo/{y}/html/index_include.en.html", parse_ecb),
@@ -225,9 +267,7 @@ def fetch_central_banks(today: str, full: bool = True) -> pd.DataFrame:
         "RBA": (lambda: [d for d in _years(max(2007, y0), yr, "https://www.rba.gov.au/monetary-policy/rba-board-minutes/{y}/", parse_rba)
                          if d >= "2007-12-01"],
                 "overnight", "RBA board decision (Sydney afternoon, the US night before)"),
-        # The key-rate page lists only the latest decisions; the history source is still to come.
-        "BoC": (lambda: parse_boc(get("https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/").decode("utf-8", "replace")),
-                "10:00", "BoC interest rate announcement"),
+        "BoC": (lambda: fetch_boc(full_for["BoC"]), "10:00", "BoC interest rate announcement (press releases)"),
         "SNB": (lambda: parse_snb(get("https://www.snb.ch/en/the-snb/mandates-goals/monetary-policy/decisions").decode("utf-8", "replace")),
                 "03:30", "SNB monetary policy assessment"),
         "Banxico": (lambda: parse_banxico(get("https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/anuncios-politica-monetaria-t.html").decode("latin-1")),
@@ -241,7 +281,7 @@ def fetch_central_banks(today: str, full: bool = True) -> pd.DataFrame:
             errors.append(f"{name}: {type(e).__name__}")
             continue
         hist = int((f["date"] < f"{yr}-01-01").sum())
-        if full and hist < 40:
+        if full_for[name] and hist < 40:
             errors.append(f"{name}: only {hist} past decisions")
         parts.append(f)
     if len(errors) > 2:

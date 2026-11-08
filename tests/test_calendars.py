@@ -43,6 +43,18 @@ def test_central_banks():
     assert K.parse_boe(buf.getvalue()) == ["1997-06-06", "2026-11-05"]
 
 
+def test_boc_releases():
+    def art(day, title, excerpt):
+        return (f"<article class=\"media\"><span class='media-date pull-right'>{day}</span>"
+                f"<h3 class=\"media-heading\"><a href=\"x\">{title}</a></h3>"
+                f"<div class='media-excerpt'>{excerpt}</div></article>")
+    html = (art("October 28, 2026", "Bank of Canada raises the policy rate by 25 basis points to 2½%", "The Bank today...")
+            + art("September 3, 2026", "Bank of Canada unveils new vertical $20 bank note", "Her Excellency...")
+            + art("January 20, 2009", "Bank of Canada lowers overnight rate target by 1/2 percentage point to 1 per cent", "")
+            + art("June 10, 2008", "Statement", "The Bank of Canada today announced that it is maintaining its target for the overnight rate at 3 per cent."))
+    assert K.parse_boc_releases(html) == ["2026-10-28", "2009-01-20", "2008-06-10"]
+
+
 def test_fomc_history():
     html = ("<h5>January 29-30 Meeting - 2008</h5><h5>January 21 Conference Call</h5>"
             "<h5>April/May 30-1 Meeting - 2013</h5><h5>October 7 (unscheduled) Meeting - 2008</h5>")
@@ -58,6 +70,7 @@ if __name__ == "__main__":
     test_eia()
     test_esmis()
     test_central_banks()
+    test_boc_releases()
     test_fomc_history()
     test_frame_drops_old_and_dupes()
     print("all checks passed")
