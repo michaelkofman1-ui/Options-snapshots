@@ -190,9 +190,9 @@ def parse_boc(html: str) -> list[str]:
 
 
 BOC_DECISION = re.compile(
-    r"^Bank of Canada (maintains|raises|lowers|increases|reduces|cuts|keeps|holds|leaves)\b.*\brate"
-    r"|today (announced that it is )?(maintaining|raising|lowering|increasing|reducing|cutting|"
-    r"maintained|raised|lowered|increased|reduced|cut) its target for the overnight rate", re.I)
+    r"^Bank of Canada (maintains|raises|lowers|increases|reduces|cuts|keeps|holds|leaves|will hold)\b.*\brate"
+    r"|today (announced that it is )?(maintaining|raising|lowering|increasing|reducing|cutting|holding|keeping|"
+    r"maintained|raised|lowered|increased|reduced|cut|held|kept) its target for the overnight rate", re.I)
 
 
 def parse_boc_releases(html: str) -> list[str]:

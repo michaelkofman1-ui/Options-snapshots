@@ -53,6 +53,9 @@ def test_boc_releases():
             + art("January 20, 2009", "Bank of Canada lowers overnight rate target by 1/2 percentage point to 1 per cent", "")
             + art("June 10, 2008", "Statement", "The Bank of Canada today announced that it is maintaining its target for the overnight rate at 3 per cent."))
     assert K.parse_boc_releases(html) == ["2026-10-28", "2009-01-20", "2008-06-10"]
+    held = art("March 10, 2021", "Bank of Canada will maintain current level of policy rate until inflation objective is sustainably achieved",
+               "The Bank of Canada today held its target for the overnight rate at the effective lower bound of ¼ percent.")
+    assert K.parse_boc_releases(held) == ["2021-03-10"]
 
 
 def test_fomc_history():
