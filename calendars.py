@@ -32,9 +32,19 @@ START = "2006-01-01"
 MON = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
 
 
+LOG: list[str] = []
+
+
 def get(url: str) -> bytes:
     from feeds import http_get
-    return http_get(url)
+    t0 = time.monotonic()
+    try:
+        body = http_get(url, tries=2, timeout=30)
+        LOG.append(f"{time.monotonic() - t0:6.1f}s {len(body):>8} {url}")
+        return body
+    except Exception as e:
+        LOG.append(f"{time.monotonic() - t0:6.1f}s FAIL {type(e).__name__} {url}")
+        raise
 
 
 def _text(html: str) -> str:
@@ -80,7 +90,7 @@ def parse_wpsr_archive(html: str) -> list[str]:
     return sorted({f"{y}-{m}-{d}" for y, m, d in ds})
 
 
-def fetch_eia(today: str) -> pd.DataFrame:
+def fetch_eia(today: str, full: bool = True) -> pd.DataFrame:
     hol = federal_holidays()
     arch = parse_wpsr_archive(get("https://www.eia.gov/petroleum/supply/weekly/archive/").decode("utf-8", "replace"))
     if len(arch) < 500:
@@ -114,7 +124,7 @@ def parse_esmis(html: str) -> tuple[str, list[str]]:
     return (title.group(1).strip() if title else ""), rows
 
 
-def fetch_usda(today: str) -> pd.DataFrame:
+def fetch_usda(today: str, full: bool = True) -> pd.DataFrame:
     parts = []
     for event, (pid, t, must) in USDA.items():
         dates, page = [], 0
@@ -126,11 +136,11 @@ def fetch_usda(today: str) -> pd.DataFrame:
             if not rows:
                 break
             dates += rows
-            if min(rows) < START:
+            if min(rows) < START or not full:
                 break
             page += 1
             time.sleep(0.5)
-        if len([d for d in dates if d >= START]) < 15:
+        if full and len([d for d in dates if d >= START]) < 15:
             raise ValueError(f"ESMIS {event}: only {len(dates)} releases")
         parts.append(frame(dates, event, t, must))
     return pd.concat(parts, ignore_index=True)
@@ -177,23 +187,24 @@ def parse_banxico(html: str) -> list[str]:
             re.findall(r'class=bmdateview aria-label="[^"]*"><SPAN aria-hidden=true>(\d{2})/(\d{2})/(\d{2})', html)]
 
 
-def fetch_central_banks(today: str) -> pd.DataFrame:
+def fetch_central_banks(today: str, full: bool = True) -> pd.DataFrame:
     yr = int(today[:4])
+    y0 = int(START[:4]) if full else yr - 1
     parts = []
     ecb = []
-    for y in range(int(START[:4]), yr + 1):
+    for y in range(y0, yr + 1):
         ecb += parse_ecb(get(f"https://www.ecb.europa.eu/press/govcdec/mopo/{y}/html/index_include.en.html").decode("utf-8", "replace"))
         time.sleep(0.3)
     parts.append(frame(ecb, "ECB", "08:15", "ECB monetary policy decision"))
     boj = []
-    for y in range(int(START[:4]), yr + 1):
+    for y in range(y0, yr + 1):
         boj += parse_boj(get(f"https://www.boj.or.jp/en/mopo/mpmdeci/state_{y}/index.htm").decode("utf-8", "replace"))
         time.sleep(0.3)
     parts.append(frame(boj, "BoJ", "overnight", "BoJ monetary policy statement (Tokyo midday, the US night before)"))
     parts.append(frame(parse_boe(get("https://www.bankofengland.co.uk/-/media/boe/files/monetary-policy-summary-and-minutes/mpcvoting.xlsx")),
                        "BoE", "07:00", "BoE Bank Rate decision"))
     rba = []
-    for y in range(2007, yr + 1):
+    for y in range(max(2007, y0), yr + 1):
         rba += parse_rba(get(f"https://www.rba.gov.au/monetary-policy/rba-board-minutes/{y}/").decode("utf-8", "replace"))
         time.sleep(0.3)
     # Same-day decision statements began with the December 2007 meeting.
@@ -207,7 +218,8 @@ def fetch_central_banks(today: str) -> pd.DataFrame:
                        "Banxico", "14:00", "Banxico monetary policy announcement"))
     df = pd.concat(parts, ignore_index=True)
     counts = df[df["date"] < f"{yr}-01-01"].groupby("event").size()
-    short = [e for e in ["ECB", "BoJ", "BoE", "RBA", "BoC", "SNB", "Banxico"] if counts.get(e, 0) < 40]
+    need = 40 if full else 1
+    short = [e for e in ["ECB", "BoJ", "BoE", "RBA", "BoC", "SNB", "Banxico"] if counts.get(e, 0) < need]
     if short:
         raise ValueError("central bank parse too short: " + ", ".join(f"{e} {counts.get(e, 0)}" for e in short))
     return df
@@ -227,7 +239,7 @@ def parse_fomc_history(html: str, year: int) -> list[str]:
     return out
 
 
-def fetch_fomc_history(today: str) -> pd.DataFrame:
+def fetch_fomc_history(today: str, full: bool = True) -> pd.DataFrame:
     ds = []
     for y in range(2000, 2021):
         ds += parse_fomc_history(get(f"https://www.federalreserve.gov/monetarypolicy/fomchistorical{y}.htm").decode("utf-8", "replace"), y)
@@ -238,10 +250,10 @@ def fetch_fomc_history(today: str) -> pd.DataFrame:
 
 
 SOURCES = {
+    "fomc_history": fetch_fomc_history,
+    "central_banks": fetch_central_banks,
     "eia": fetch_eia,
     "usda": fetch_usda,
-    "central_banks": fetch_central_banks,
-    "fomc_history": fetch_fomc_history,
 }
 
 
@@ -253,8 +265,9 @@ if __name__ == "__main__":
     today = date.today().isoformat()
     for name, fn in SOURCES.items():
         try:
-            df = fn(today)
+            df = fn(today, True)
             df.to_csv(out / f"{name}.csv", index=False)
-            print(name, "ok", len(df), df.groupby("event").size().to_dict(), flush=True)
+            LOG.append(f"== {name} ok {len(df)} {df.groupby('event').size().to_dict()}")
         except Exception as e:
-            print(name, "FAIL", type(e).__name__, str(e)[:200], flush=True)
+            LOG.append(f"== {name} FAIL {type(e).__name__} {str(e)[:200]}")
+        (out / "log.txt").write_text("\n".join(LOG) + "\n")

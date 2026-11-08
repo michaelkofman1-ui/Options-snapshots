@@ -432,6 +432,23 @@ def run_events(rec: Recorder, now: datetime) -> None:
         except Exception as e:
             status, msg = "FAIL", f"{type(e).__name__}: {str(e)[:250]}"
         rec.add(name, status, msg, time.monotonic() - t0)
+    import calendars as K
+    for cname, fn in K.SOURCES.items():
+        t0 = time.monotonic()
+        path = ev / f"{cname}.csv"
+        if cname == "fomc_history" and path.exists():
+            continue                                    # 2000-2020 is fixed history
+        if out_of_time():
+            rec.add(f"events/{cname}", "todo", "deferred to the next run", 0)
+            continue
+        try:
+            df = fn(today, not path.exists())           # full history only on the first run
+            status, msg = M.merge_calendar(path, df, ["date", "event"], today)
+        except Exception as e:
+            status, msg = "FAIL", f"{type(e).__name__}: {str(e)[:250]}"
+        rec.add(f"events/{cname}", status, msg, time.monotonic() - t0)
+    rec.add("events/opec", "warn", "not collected: opec.org refuses automated requests (403); "
+            "CL/RB/HO use the EIA petroleum report only", 0)
     allev = M.combine_events(ev, today)
     if not allev.empty:
         allev.to_csv(ev / "events.csv", index=False)

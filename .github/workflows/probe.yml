@@ -11,18 +11,20 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Fetch
+        timeout-minutes: 35
         run: |
           pip install -q pandas openpyxl xlrd
           python tools/probe.py tools/probe_urls.txt
           python calendars.py probe/calendars
       - name: Push to the probe branch
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

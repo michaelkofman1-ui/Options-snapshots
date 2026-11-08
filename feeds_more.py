@@ -241,6 +241,14 @@ def combine_events(ev_dir: Path, today: str) -> pd.DataFrame:
         p = ev_dir / f"{name}.csv"
         if p.exists():
             parts.append(pd.read_csv(p, dtype=str).assign(symbol=""))
+    # market-specific calendars (calendars.py); a derived date says so in detail
+    for name in ["fomc_history", "eia", "usda", "central_banks"]:
+        p = ev_dir / f"{name}.csv"
+        if p.exists():
+            c = pd.read_csv(p, dtype=str)
+            derived = c.get("basis", pd.Series("", index=c.index)).fillna("") == "standard schedule"
+            c.loc[derived, "detail"] = c.loc[derived, "detail"] + " (standard schedule)"
+            parts.append(c.drop(columns=["basis"], errors="ignore").assign(symbol=""))
     p = ev_dir / "earnings.csv"
     if p.exists():
         e = pd.read_csv(p, dtype=str)
@@ -253,5 +261,6 @@ def combine_events(ev_dir: Path, today: str) -> pd.DataFrame:
     if not parts:
         return pd.DataFrame()
     ev = pd.concat(parts, ignore_index=True)[["date", "time_et", "event", "symbol", "detail"]]
+    ev = ev.drop_duplicates(["date", "event", "symbol"], keep="first")
     ev["scheduled"] = ev["date"] > today
     return ev.sort_values(["date", "time_et", "event", "symbol"]).reset_index(drop=True)
