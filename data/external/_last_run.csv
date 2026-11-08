@@ -1,39 +1,39 @@
 feed,status,detail,seconds
-vol/VIX,same,"9311 rows, unchanged.",0.2
-vol/VIX9D,same,"3985 rows, unchanged.",0.1
+vol/VIX,same,"9311 rows, unchanged.",0.3
+vol/VIX9D,same,"3985 rows, unchanged.",0.2
 vol/VIX3M,same,"4311 rows, unchanged.",0.1
-vol/VIX6M,same,"4743 rows, unchanged.",0.1
+vol/VIX6M,same,"4743 rows, unchanged.",0.2
 vol/VVIX,same,"5142 rows, unchanged.",0.1
-vol/VXN,same,"4317 rows, unchanged.",0.1
+vol/VXN,same,"4317 rows, unchanged.",0.2
 vol/RVX,same,"4308 rows, unchanged.",0.1
 vol/SKEW,same,"9265 rows, unchanged.",0.1
-vol/GVZ,same,"4309 rows, unchanged.",0.1
+vol/GVZ,same,"4309 rows, unchanged.",0.2
 vol/OVX,same,"4309 rows, unchanged.",0.1
 vol/VXEEM,same,"3932 rows, unchanged.",0.2
-cot/legacy/2026,same,"15934 rows, unchanged.",1.3
-cot/tff/2026,same,"3920 rows, unchanged.",0.8
-cot/disagg/2026,same,"12014 rows, unchanged.",1.1
+cot/legacy/2026,same,"15934 rows, unchanged.",0.7
+cot/tff/2026,same,"3920 rows, unchanged.",0.7
+cot/disagg/2026,same,"12014 rows, unchanged.",1.0
 fred/BAA10Y,same,"10212 rows, unchanged.",0.4
-fred/AAA10Y,same,"10959 rows, unchanged.",0.4
-fred/BAMLH0A0HYM2,warn,"792 rows, unchanged. source no longer has 6 rows we hold; kept them.",0.4
+fred/AAA10Y,same,"10959 rows, unchanged.",0.3
+fred/BAMLH0A0HYM2,warn,"792 rows, unchanged. source no longer has 6 rows we hold; kept them.",0.2
 fred/BAMLC0A0CM,warn,"791 rows, unchanged. source no longer has 6 rows we hold; kept them.",0.4
-fred/NASDAQ100,same,"10294 rows, unchanged.",0.4
-fred/NASDAQCOM,same,"14058 rows, unchanged.",0.4
+fred/NASDAQ100,same,"10294 rows, unchanged.",0.3
+fred/NASDAQCOM,same,"14058 rows, unchanged.",0.3
 fred/VXNCLS,same,"6479 rows, unchanged.",0.3
-fred/DGS3MO,same,"11295 rows, unchanged.",0.3
-fred/DGS2,same,"12605 rows, unchanged.",0.5
-fred/DGS10,same,"16197 rows, unchanged.",0.3
+fred/DGS3MO,same,"11295 rows, unchanged.",0.2
+fred/DGS2,same,"12605 rows, unchanged.",0.3
+fred/DGS10,same,"16197 rows, unchanged.",0.4
 fred/T10Y2Y,same,"12606 rows, unchanged.",0.3
-fred/T10Y3M,same,"11215 rows, unchanged.",0.4
-fred/DFII10,same,"5966 rows, unchanged.",0.3
+fred/T10Y3M,same,"11215 rows, unchanged.",0.3
+fred/DFII10,same,"5966 rows, unchanged.",0.4
 fred/T10YIE,same,"5967 rows, unchanged.",0.3
-fred/NFCI,same,"2913 rows, unchanged.",0.3
-fred/ANFCI,same,"2913 rows, unchanged.",0.3
-fred/WALCL,same,"1247 rows, unchanged.",0.4
-fred/RRPONTSYD,same,"3363 rows, unchanged.",0.3
-fred/WTREGEN,same,"1247 rows, unchanged.",0.3
-fred/DTWEXBGS,same,"5222 rows, unchanged.",0.3
-fred/DCOILWTICO,same,"9537 rows, unchanged.",0.4
+fred/NFCI,same,"2913 rows, unchanged.",0.5
+fred/ANFCI,same,"2913 rows, unchanged.",0.2
+fred/WALCL,same,"1247 rows, unchanged.",0.5
+fred/RRPONTSYD,same,"3363 rows, unchanged.",0.4
+fred/WTREGEN,same,"1247 rows, unchanged.",0.4
+fred/DTWEXBGS,same,"5222 rows, unchanged.",0.2
+fred/DCOILWTICO,same,"9537 rows, unchanged.",0.3
 fred/ICSA,same,"3122 rows, unchanged.",0.3
 bars/QQQ,same,"6960 rows, unchanged.",0.0
 bars/SPY,same,"8502 rows, unchanged.",0.0
@@ -105,7 +105,7 @@ bars/RTY=F,same,"2350 rows, unchanged.",0.0
 bars/YM=F,same,"6191 rows, unchanged.",0.0
 bars/ZT=F,same,"6628 rows, unchanged.",0.0
 bars/ZF=F,same,"6574 rows, unchanged.",0.0
-bars/ZN=F,FAIL,no data from Yahoo,0.0
+bars/ZN=F,same,"6562 rows, unchanged.",0.0
 bars/TN=F,same,"3072 rows, unchanged.",0.0
 bars/ZB=F,same,"6568 rows, unchanged.",0.0
 bars/UB=F,same,"4232 rows, unchanged.",0.0
@@ -120,13 +120,13 @@ bars/DX-Y.NYB,same,"14181 rows, unchanged.",0.0
 bars/BTC=F,same,"2239 rows, unchanged.",0.0
 bars/ETH=F,same,"1451 rows, unchanged.",0.0
 bars/CL=F,same,"6581 rows, unchanged.",0.0
-bars/NG=F,saved,6578 rows (+0). 1 values revised.,0.0
+bars/NG=F,same,"6578 rows, unchanged.",0.0
 bars/RB=F,same,"6536 rows, unchanged.",0.0
 bars/HO=F,same,"6575 rows, unchanged.",0.0
 bars/GC=F,same,"6573 rows, unchanged.",0.0
 bars/SI=F,same,"6574 rows, unchanged.",0.0
 bars/HG=F,same,"6577 rows, unchanged.",0.0
-bars/PL=F,saved,6600 rows (+0). 5 values revised.,0.0
+bars/PL=F,same,"6600 rows, unchanged.",0.0
 bars/ZC=F,same,"6584 rows, unchanged.",0.0
 bars/ZS=F,same,"6576 rows, unchanged.",0.0
 bars/ZW=F,same,"6596 rows, unchanged.",0.0
@@ -135,15 +135,15 @@ bars/ZL=F,same,"6625 rows, unchanged.",0.0
 bars/ZM=F,same,"6587 rows, unchanged.",0.0
 bars/KC=F,same,"6732 rows, unchanged.",0.0
 bars/SB=F,same,"6695 rows, unchanged.",0.0
-bars/CC=F,saved,6734 rows (+0). 1 values revised.,0.0
+bars/CC=F,same,"6734 rows, unchanged.",0.0
 bars/CT=F,same,"6734 rows, unchanged.",0.0
 bars/LE=F,same,"6439 rows, unchanged.",0.0
 bars/HE=F,same,"6507 rows, unchanged.",0.0
 bars/^VIX,same,"9283 rows, unchanged.",0.0
-events/macro,same,"3183 rows, unchanged",6.3
+events/macro,same,"3183 rows, unchanged",4.1
 events/fomc,same,"58 rows, unchanged",0.1
-events/earnings,saved,1007 rows (12 upcoming),6.8
-events/central_banks,warn,1097 rows (1 upcoming). Missing: BoC: only 5 past decisions,44.8
-events/eia,same,"2192 rows, unchanged",0.3
-events/usda,saved,723 rows (0 upcoming),39.6
+events/earnings,same,"1007 rows, unchanged",7.3
+events/central_banks,saved,1254 rows (1 upcoming),33.9
+events/eia,same,"2192 rows, unchanged",0.2
+events/usda,same,"723 rows, unchanged",4.1
 events/opec,warn,not collected: opec.org refuses automated requests (403); CL/RB/HO use the EIA petroleum report only,0.0
