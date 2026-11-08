@@ -201,41 +201,53 @@ def parse_banxico(html: str) -> list[str]:
             re.findall(r'class=bmdateview aria-label="[^"]*"><SPAN aria-hidden=true>(\d{2})/(\d{2})/(\d{2})', html)]
 
 
+def _years(y0, yr, url, parse, enc="utf-8"):
+    out = []
+    for y in range(y0, yr + 1):
+        out += parse(get(url.format(y=y)).decode(enc, "replace"))
+        time.sleep(0.3)
+    return out
+
+
 def fetch_central_banks(today: str, full: bool = True) -> pd.DataFrame:
+    """Each bank is collected on its own: one failing source doesn't drop the
+    others. Problems go to df.attrs["errors"], which the feeds log reports."""
     yr = int(today[:4])
     y0 = int(START[:4]) if full else yr - 1
-    parts = []
-    ecb = []
-    for y in range(y0, yr + 1):
-        ecb += parse_ecb(get(f"https://www.ecb.europa.eu/press/govcdec/mopo/{y}/html/index_include.en.html").decode("utf-8", "replace"))
-        time.sleep(0.3)
-    parts.append(frame(ecb, "ECB", "08:15", "ECB monetary policy decision"))
-    boj = []
-    for y in range(y0, yr + 1):
-        boj += parse_boj(get(f"https://www.boj.or.jp/en/mopo/mpmdeci/state_{y}/index.htm").decode("utf-8", "replace"))
-        time.sleep(0.3)
-    parts.append(frame(boj, "BoJ", "overnight", "BoJ monetary policy statement (Tokyo midday, the US night before)"))
-    parts.append(frame(parse_boe(get("https://www.bankofengland.co.uk/-/media/boe/files/monetary-policy-summary-and-minutes/mpcvoting.xlsx")),
-                       "BoE", "07:00", "BoE Bank Rate decision"))
-    rba = []
-    for y in range(max(2007, y0), yr + 1):
-        rba += parse_rba(get(f"https://www.rba.gov.au/monetary-policy/rba-board-minutes/{y}/").decode("utf-8", "replace"))
-        time.sleep(0.3)
-    # Same-day decision statements began with the December 2007 meeting.
-    parts.append(frame([d for d in rba if d >= "2007-12-01"], "RBA", "overnight",
-                       "RBA board decision (Sydney afternoon, the US night before)"))
-    parts.append(frame(parse_boc(get("https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/history-key-interest-rate/").decode("utf-8", "replace")),
-                       "BoC", "10:00", "BoC interest rate announcement"))
-    parts.append(frame(parse_snb(get("https://www.snb.ch/en/the-snb/mandates-goals/monetary-policy/decisions").decode("utf-8", "replace")),
-                       "SNB", "03:30", "SNB monetary policy assessment"))
-    parts.append(frame(parse_banxico(get("https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/anuncios-politica-monetaria-t.html").decode("latin-1")),
-                       "Banxico", "14:00", "Banxico monetary policy announcement"))
+    banks = {
+        "ECB": (lambda: _years(y0, yr, "https://www.ecb.europa.eu/press/govcdec/mopo/{y}/html/index_include.en.html", parse_ecb),
+                "08:15", "ECB monetary policy decision"),
+        "BoJ": (lambda: _years(y0, yr, "https://www.boj.or.jp/en/mopo/mpmdeci/state_{y}/index.htm", parse_boj),
+                "overnight", "BoJ monetary policy statement (Tokyo midday, the US night before)"),
+        "BoE": (lambda: parse_boe(get("https://www.bankofengland.co.uk/-/media/boe/files/monetary-policy-summary-and-minutes/mpcvoting.xlsx")),
+                "07:00", "BoE Bank Rate decision"),
+        # Same-day decision statements began with the December 2007 meeting.
+        "RBA": (lambda: [d for d in _years(max(2007, y0), yr, "https://www.rba.gov.au/monetary-policy/rba-board-minutes/{y}/", parse_rba)
+                         if d >= "2007-12-01"],
+                "overnight", "RBA board decision (Sydney afternoon, the US night before)"),
+        # The key-rate page lists only the latest decisions; the history source is still to come.
+        "BoC": (lambda: parse_boc(get("https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/").decode("utf-8", "replace")),
+                "10:00", "BoC interest rate announcement"),
+        "SNB": (lambda: parse_snb(get("https://www.snb.ch/en/the-snb/mandates-goals/monetary-policy/decisions").decode("utf-8", "replace")),
+                "03:30", "SNB monetary policy assessment"),
+        "Banxico": (lambda: parse_banxico(get("https://www.banxico.org.mx/publicaciones-y-prensa/anuncios-de-las-decisiones-de-politica-monetaria/anuncios-politica-monetaria-t.html").decode("latin-1")),
+                    "14:00", "Banxico monetary policy announcement"),
+    }
+    parts, errors = [], []
+    for name, (fn, t, detail) in banks.items():
+        try:
+            f = frame(fn(), name, t, detail)
+        except Exception as e:
+            errors.append(f"{name}: {type(e).__name__}")
+            continue
+        hist = int((f["date"] < f"{yr}-01-01").sum())
+        if full and hist < 40:
+            errors.append(f"{name}: only {hist} past decisions")
+        parts.append(f)
+    if len(errors) > 2:
+        raise ValueError("central banks: " + "; ".join(errors))
     df = pd.concat(parts, ignore_index=True)
-    counts = df[df["date"] < f"{yr}-01-01"].groupby("event").size()
-    need = 40 if full else 1
-    short = [e for e in ["ECB", "BoJ", "BoE", "RBA", "BoC", "SNB", "Banxico"] if counts.get(e, 0) < need]
-    if short:
-        raise ValueError("central bank parse too short: " + ", ".join(f"{e} {counts.get(e, 0)}" for e in short))
+    df.attrs["errors"] = errors
     return df
 
 
@@ -281,7 +293,7 @@ if __name__ == "__main__":
         try:
             df = fn(today, True)
             df.to_csv(out / f"{name}.csv", index=False)
-            LOG.append(f"== {name} ok {len(df)} {df.groupby('event').size().to_dict()}")
+            LOG.append(f"== {name} ok {len(df)} {df.groupby('event').size().to_dict()} errors={df.attrs.get('errors')}")
         except Exception as e:
             LOG.append(f"== {name} FAIL {type(e).__name__} {str(e)[:200]}")
         (out / "log.txt").write_text("\n".join(LOG) + "\n")

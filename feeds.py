@@ -444,6 +444,9 @@ def run_events(rec: Recorder, now: datetime) -> None:
         try:
             df = fn(today, not path.exists())           # full history only on the first run
             status, msg = M.merge_calendar(path, df, ["date", "event"], today)
+            errs = getattr(df, "attrs", {}).get("errors")
+            if errs:
+                status, msg = "warn", msg + ". Missing: " + "; ".join(errs)[:200]
         except Exception as e:
             status, msg = "FAIL", f"{type(e).__name__}: {str(e)[:250]}"
         rec.add(f"events/{cname}", status, msg, time.monotonic() - t0)
