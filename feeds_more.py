@@ -37,6 +37,10 @@ BARS = [
     "TLT", "IEF", "SHY", "HYG", "LQD", "UUP",
     # commodities and other proxies
     "GLD", "SLV", "USO", "UNG", "DBA", "XLE", "XLF", "EEM", "FXI",
+    # ETF proxies from the instrument map not listed above, for the ETF-proxy
+    # pass of the swing backtests (Nov 7, 2026)
+    "IEI", "FXE", "FXY", "FXB", "FXA", "FXC", "FXF", "IBIT", "ETHA", "UGA", "CPER",
+    "PPLT", "CORN", "SOYB", "WEAT", "CANE",
     # crypto
     "BTC-USD", "ETH-USD", "SOL-USD",
     # overseas legs of the AI trade, for cross-market news failures
