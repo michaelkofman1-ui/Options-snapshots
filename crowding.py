@@ -104,6 +104,9 @@ GROUPS = {
     "levfund": ("tff", "lev_money_positions_long", "lev_money_positions_short"),
     "assetmgr": ("tff", "asset_mgr_positions_long", "asset_mgr_positions_short"),
     "mm": ("disagg", "m_money_positions_long_all", "m_money_positions_short_all"),
+    # added Nov 8, 2026 for the who-is-crowded tests: hedgers and small specs
+    "comm": ("legacy", "comm_positions_long_all", "comm_positions_short_all"),
+    "smallspec": ("legacy", "nonrept_positions_long_all", "nonrept_positions_short_all"),
 }
 
 
