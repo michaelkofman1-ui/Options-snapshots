@@ -8477,9 +8477,9 @@ date,time_et,event,symbol,detail,scheduled
 2026-11-06,08:30,Jobs report,,Employment Situation,False
 2026-11-10,08:30,CPI,,Consumer Price Index,False
 2026-11-10,12:00,WASDE,,World Agricultural Supply and Demand Estimates,False
-2026-11-12,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,True
-2026-11-12,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),True
-2026-11-12,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),True
+2026-11-12,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
+2026-11-12,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
+2026-11-12,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2026-11-13,08:30,PPI,,Producer Price Index,True
 2026-11-17,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,True
 2026-11-17,16:00,Earnings,NVDA,after close,True
@@ -8530,10 +8530,10 @@ date,time_et,event,symbol,detail,scheduled
 2027-02-02,16:00,Earnings,AMD,after close,True
 2027-02-03,16:00,Earnings,GOOGL,after close,True
 2027-02-04,16:00,Earnings,AMZN,after close,True
-2027-03-17,14:00,FOMC,,"scheduled, with projections (SEP)",True
+2027-03-17,14:00,FOMC,,scheduled,True
 2027-04-28,14:00,FOMC,,scheduled,True
-2027-06-09,14:00,FOMC,,"scheduled, with projections (SEP)",True
+2027-06-09,14:00,FOMC,,scheduled,True
 2027-07-28,14:00,FOMC,,scheduled,True
-2027-09-15,14:00,FOMC,,"scheduled, with projections (SEP)",True
+2027-09-15,14:00,FOMC,,scheduled,True
 2027-10-27,14:00,FOMC,,scheduled,True
-2027-12-08,14:00,FOMC,,"scheduled, with projections (SEP)",True
+2027-11-17,14:00,FOMC,,scheduled,True
