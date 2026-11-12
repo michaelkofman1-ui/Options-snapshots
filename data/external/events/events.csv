@@ -195,20 +195,20 @@ date,time_et,event,symbol,detail,scheduled
 2002-05-10,08:30,PPI,,Producer Price Index,False
 2002-05-14,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2002-05-15,08:30,CPI,,Consumer Price Index,False
-2002-05-22,16:00,Earnings,NVDA,"after close, surprise +2.4%",False
+2002-05-22,16:00,Earnings,NVDA,"after close, surprise -20.4%",False
 2002-05-24,08:30,GDP,,Gross Domestic Product,False
 2002-05-28,08:30,PCE / personal income,,Personal Income and Outlays,False
 2002-06-07,08:30,Jobs report,,Employment Situation,False
 2002-06-13,08:30,PPI,,Producer Price Index,False
 2002-06-13,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2002-06-18,08:30,CPI,,Consumer Price Index,False
-2002-06-18,16:00,Earnings,ORCL,"after close, surprise +18.8%",False
+2002-06-18,16:00,Earnings,ORCL,"after close, surprise +5.4%",False
 2002-06-27,08:30,GDP,,Gross Domestic Product,False
 2002-06-28,08:30,PCE / personal income,,Personal Income and Outlays,False
 2002-07-05,08:30,Jobs report,,Employment Situation,False
 2002-07-11,08:30,PPI,,Producer Price Index,False
 2002-07-12,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
-2002-07-16,16:00,Earnings,AAPL,"after close, surprise +2.5%",False
+2002-07-16,16:00,Earnings,AAPL,"after close, surprise +13.4%",False
 2002-07-17,17:00,Earnings,AMD,"after close, surprise -22.7%",False
 2002-07-18,16:00,Earnings,MSFT,after close,False
 2002-07-19,08:30,CPI,,Consumer Price Index,False
@@ -226,7 +226,7 @@ date,time_et,event,symbol,detail,scheduled
 2002-09-06,08:30,Jobs report,,Employment Situation,False
 2002-09-13,08:30,PPI,,Producer Price Index,False
 2002-09-13,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
-2002-09-17,16:00,Earnings,ORCL,"after close, surprise +16.0%",False
+2002-09-17,16:00,Earnings,ORCL,"after close, surprise -1.4%",False
 2002-09-18,08:30,CPI,,Consumer Price Index,False
 2002-09-27,08:30,GDP,,Gross Domestic Product,False
 2002-09-30,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -431,7 +431,7 @@ date,time_et,event,symbol,detail,scheduled
 2004-07-14,16:00,Earnings,AMD,"after close, surprise -2.8%",False
 2004-07-15,08:30,PPI,,Producer Price Index,False
 2004-07-16,08:30,CPI,,Consumer Price Index,False
-2004-07-22,16:00,Earnings,AMZN,"after close, surprise +28.6%",False
+2004-07-22,16:00,Earnings,AMZN,"after close, surprise -5.0%",False
 2004-07-22,16:00,Earnings,MSFT,"after close, surprise -1.4%",False
 2004-07-29,03:00,Earnings,TSM,"before open, surprise +9.0%",False
 2004-07-30,08:30,GDP,,Gross Domestic Product,False
@@ -452,11 +452,11 @@ date,time_et,event,symbol,detail,scheduled
 2004-09-30,08:30,PCE / personal income,,Personal Income and Outlays,False
 2004-10-07,16:00,Earnings,AMD,"after close, surprise -3.3%",False
 2004-10-08,08:30,Jobs report,,Employment Situation,False
-2004-10-13,16:00,Earnings,AAPL,"after close, surprise +52.6%",False
+2004-10-13,16:00,Earnings,AAPL,"after close, surprise +47.9%",False
 2004-10-15,08:30,PPI,,Producer Price Index,False
 2004-10-15,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2004-10-19,08:30,CPI,,Consumer Price Index,False
-2004-10-21,16:00,Earnings,AMZN,"after close, surprise +30.0%",False
+2004-10-21,16:00,Earnings,AMZN,"after close, surprise -2.3%",False
 2004-10-21,16:00,Earnings,GOOGL,"after close, surprise +184.5%",False
 2004-10-21,16:00,Earnings,MSFT,"after close, surprise +2.5%",False
 2004-10-26,03:00,Earnings,TSM,"before open, surprise +14.9%",False
@@ -486,8 +486,8 @@ date,time_et,event,symbol,detail,scheduled
 2005-01-27,16:00,Earnings,MSFT,"after close, surprise +6.4%",False
 2005-01-28,08:30,GDP,,Gross Domestic Product,False
 2005-01-31,08:30,PCE / personal income,,Personal Income and Outlays,False
-2005-02-01,16:00,Earnings,GOOGL,"after close, surprise +29.1%",False
-2005-02-02,16:00,Earnings,AMZN,"after close, surprise +130.7%",False
+2005-02-01,16:00,Earnings,GOOGL,"after close, surprise +19.5%",False
+2005-02-02,16:00,Earnings,AMZN,"after close, surprise -12.9%",False
 2005-02-04,08:30,Jobs report,,Employment Situation,False
 2005-02-15,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2005-02-17,16:00,Earnings,NVDA,"after close, surprise +21.6%",False
@@ -506,13 +506,13 @@ date,time_et,event,symbol,detail,scheduled
 2005-03-31,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2005-04-01,08:30,Jobs report,,Employment Situation,False
 2005-04-13,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
-2005-04-13,16:00,Earnings,AAPL,"after close, surprise +52.9%",False
+2005-04-13,16:00,Earnings,AAPL,"after close, surprise +49.9%",False
 2005-04-13,16:00,Earnings,AMD,"after close, surprise -314.5%",False
 2005-04-19,08:30,PPI,,Producer Price Index,False
 2005-04-20,08:30,CPI,,Consumer Price Index,False
-2005-04-21,16:00,Earnings,GOOGL,"after close, surprise +65.0%",False
+2005-04-21,16:00,Earnings,GOOGL,"after close, surprise +39.4%",False
 2005-04-26,03:00,Earnings,TSM,"before open, surprise -14.7%",False
-2005-04-26,16:00,Earnings,AMZN,"after close, surprise -2.2%",False
+2005-04-26,16:00,Earnings,AMZN,"after close, surprise +12.5%",False
 2005-04-28,08:30,GDP,,Gross Domestic Product,False
 2005-04-28,16:00,Earnings,MSFT,"after close, surprise +0.8%",False
 2005-04-29,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -558,7 +558,7 @@ date,time_et,event,symbol,detail,scheduled
 2005-09-29,08:30,GDP,,Gross Domestic Product,False
 2005-09-30,08:30,PCE / personal income,,Personal Income and Outlays,False
 2005-10-07,08:30,Jobs report,,Employment Situation,False
-2005-10-11,16:00,Earnings,AAPL,"after close, surprise +38.8%",False
+2005-10-11,16:00,Earnings,AAPL,"after close, surprise +3.4%",False
 2005-10-11,16:00,Earnings,AMD,"after close, surprise +119.2%",False
 2005-10-14,08:30,CPI,,Consumer Price Index,False
 2005-10-14,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
@@ -613,7 +613,7 @@ date,time_et,event,symbol,detail,scheduled
 2006-02-01,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2006-02-02,08:15,ECB,,ECB monetary policy decision,False
 2006-02-02,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2006-02-02,16:00,Earnings,AMZN,"after close, surprise +21.5%",False
+2006-02-02,16:00,Earnings,AMZN,"after close, surprise +1.1%",False
 2006-02-03,08:30,Jobs report,,Employment Situation,False
 2006-02-08,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2006-02-09,07:00,BoE,,BoE Bank Rate decision,False
@@ -680,7 +680,7 @@ date,time_et,event,symbol,detail,scheduled
 2006-04-21,14:00,Banxico,,Banxico monetary policy announcement,False
 2006-04-21,15:00,Cattle on Feed,,Cattle on Feed,False
 2006-04-25,10:00,BoC,,BoC interest rate announcement (press releases),False
-2006-04-25,16:00,Earnings,AMZN,"after close, surprise +17.6%",False
+2006-04-25,16:00,Earnings,AMZN,"after close, surprise +2.4%",False
 2006-04-26,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2006-04-27,03:00,Earnings,TSM,"before open, surprise +10.9%",False
 2006-04-27,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -753,13 +753,13 @@ date,time_et,event,symbol,detail,scheduled
 2006-07-18,08:30,PPI,,Producer Price Index,False
 2006-07-19,08:30,CPI,,Consumer Price Index,False
 2006-07-19,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
-2006-07-19,16:00,Earnings,AAPL,"after close, surprise +23.9%",False
+2006-07-19,16:00,Earnings,AAPL,"after close, surprise +23.3%",False
 2006-07-20,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2006-07-20,16:00,Earnings,AMD,"after close, surprise -10.0%",False
-2006-07-20,16:00,Earnings,GOOGL,"after close, surprise +19.0%",False
+2006-07-20,16:00,Earnings,GOOGL,"after close, surprise +11.8%",False
 2006-07-20,16:00,Earnings,MSFT,"after close, surprise +3.1%",False
 2006-07-21,15:00,Cattle on Feed,,Cattle on Feed,False
-2006-07-25,16:00,Earnings,AMZN,"after close, surprise -22.1%",False
+2006-07-25,16:00,Earnings,AMZN,"after close, surprise +3.5%",False
 2006-07-26,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2006-07-27,01:00,Earnings,TSM,"before open, surprise +2.3%",False
 2006-07-27,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -831,9 +831,9 @@ date,time_et,event,symbol,detail,scheduled
 2006-10-18,16:00,Earnings,AAPL,"after close, surprise +21.2%",False
 2006-10-18,16:00,Earnings,AMD,"after close, surprise -1.9%",False
 2006-10-19,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2006-10-19,16:00,Earnings,GOOGL,"after close, surprise +13.1%",False
+2006-10-19,16:00,Earnings,GOOGL,"after close, surprise +9.6%",False
 2006-10-20,15:00,Cattle on Feed,,Cattle on Feed,False
-2006-10-24,16:00,Earnings,AMZN,"after close, surprise +59.2%",False
+2006-10-24,16:00,Earnings,AMZN,"after close, surprise +96.8%",False
 2006-10-25,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2006-10-25,14:00,FOMC,,FOMC decision (Fed historical materials),False
 2006-10-26,01:00,Earnings,TSM,"before open, surprise +0.3%",False
@@ -903,7 +903,7 @@ date,time_et,event,symbol,detail,scheduled
 2007-01-12,12:00,WASDE,,World Agricultural Supply and Demand Estimates,False
 2007-01-16,10:00,BoC,,BoC interest rate announcement (press releases),False
 2007-01-17,08:30,PPI,,Producer Price Index,False
-2007-01-17,16:00,Earnings,AAPL,"after close, surprise +48.2%",False
+2007-01-17,16:00,Earnings,AAPL,"after close, surprise +45.8%",False
 2007-01-18,08:30,CPI,,Consumer Price Index,False
 2007-01-18,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2007-01-18,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
@@ -988,12 +988,12 @@ date,time_et,event,symbol,detail,scheduled
 2007-04-18,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2007-04-19,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2007-04-19,16:00,Earnings,AMD,"after close, surprise -108.7%",False
-2007-04-19,16:00,Earnings,GOOGL,"after close, surprise +8.8%",False
+2007-04-19,16:00,Earnings,GOOGL,"after close, surprise +11.2%",False
 2007-04-20,15:00,Cattle on Feed,,Cattle on Feed,False
 2007-04-24,10:00,BoC,,BoC interest rate announcement (press releases),False
 2007-04-24,16:00,Earnings,AMZN,"after close, surprise +66.7%",False
 2007-04-25,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
-2007-04-25,16:00,Earnings,AAPL,"after close, surprise +39.4%",False
+2007-04-25,16:00,Earnings,AAPL,"after close, surprise +36.5%",False
 2007-04-26,03:00,Earnings,TSM,"before open, surprise -1.4%",False
 2007-04-26,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2007-04-26,16:00,Earnings,MSFT,"after close, surprise +9.2%",False
@@ -1145,7 +1145,7 @@ date,time_et,event,symbol,detail,scheduled
 2007-10-17,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2007-10-18,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2007-10-18,16:00,Earnings,AMD,"after close, surprise +19.9%",False
-2007-10-18,16:00,Earnings,GOOGL,"after close, surprise +4.6%",False
+2007-10-18,16:00,Earnings,GOOGL,"after close, surprise +3.4%",False
 2007-10-19,15:00,Cattle on Feed,,Cattle on Feed,False
 2007-10-22,16:00,Earnings,AAPL,"after close, surprise +20.4%",False
 2007-10-23,16:00,Earnings,AMZN,"after close, surprise +3.6%",False
@@ -1306,12 +1306,12 @@ date,time_et,event,symbol,detail,scheduled
 2008-04-16,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2008-04-17,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2008-04-17,16:00,Earnings,AMD,"after close, surprise -7.7%",False
-2008-04-17,16:00,Earnings,GOOGL,"after close, surprise +5.0%",False
+2008-04-17,16:00,Earnings,GOOGL,"after close, surprise +6.9%",False
 2008-04-18,14:00,Banxico,,Banxico monetary policy announcement,False
 2008-04-18,15:00,Cattle on Feed,,Cattle on Feed,False
 2008-04-22,10:00,BoC,,BoC interest rate announcement (press releases),False
 2008-04-23,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
-2008-04-23,16:00,Earnings,AAPL,"after close, surprise +9.4%",False
+2008-04-23,16:00,Earnings,AAPL,"after close, surprise +8.0%",False
 2008-04-23,16:00,Earnings,AMZN,"after close, surprise +4.9%",False
 2008-04-24,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2008-04-24,16:00,Earnings,MSFT,"after close, surprise +6.4%",False
@@ -1399,7 +1399,7 @@ date,time_et,event,symbol,detail,scheduled
 2008-07-18,14:00,Banxico,,Banxico monetary policy announcement,False
 2008-07-21,16:00,Earnings,AAPL,"after close, surprise +10.0%",False
 2008-07-23,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
-2008-07-23,16:00,Earnings,AMZN,"after close, surprise +42.3%",False
+2008-07-23,16:00,Earnings,AMZN,"after close, surprise +42.9%",False
 2008-07-24,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2008-07-25,15:00,Cattle on Feed,,Cattle on Feed,False
 2008-07-30,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
@@ -1477,13 +1477,13 @@ date,time_et,event,symbol,detail,scheduled
 2008-10-16,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2008-10-16,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2008-10-16,16:00,Earnings,AMD,"after close, surprise +53.3%",False
-2008-10-16,16:00,Earnings,GOOGL,"after close, surprise +4.0%",False
+2008-10-16,16:00,Earnings,GOOGL,"after close, surprise +3.7%",False
 2008-10-17,14:00,Banxico,,Banxico monetary policy announcement,False
 2008-10-17,15:00,Cattle on Feed,,Cattle on Feed,False
 2008-10-21,10:00,BoC,,BoC interest rate announcement (press releases),False
-2008-10-21,16:00,Earnings,AAPL,"after close, surprise +13.5%",False
+2008-10-21,16:00,Earnings,AAPL,"after close, surprise +13.1%",False
 2008-10-22,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
-2008-10-22,16:00,Earnings,AMZN,"after close, surprise +8.6%",False
+2008-10-22,16:00,Earnings,AMZN,"after close, surprise +3.9%",False
 2008-10-23,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2008-10-23,16:00,Earnings,MSFT,"after close, surprise +1.9%",False
 2008-10-28,12:00,WASDE,,World Agricultural Supply and Demand Estimates,False
@@ -1565,13 +1565,13 @@ date,time_et,event,symbol,detail,scheduled
 2009-01-22,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2009-01-22,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2009-01-22,16:00,Earnings,AMD,"after close, surprise -22.3%",False
-2009-01-22,16:00,Earnings,GOOGL,"after close, surprise -70.9%",False
+2009-01-22,16:00,Earnings,GOOGL,"after close, surprise +3.2%",False
 2009-01-22,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
 2009-01-23,15:00,Cattle on Feed,,Cattle on Feed,False
 2009-01-28,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2009-01-28,14:00,FOMC,,FOMC decision (Fed historical materials),False
 2009-01-29,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2009-01-29,16:00,Earnings,AMZN,"after close, surprise +34.3%",False
+2009-01-29,16:00,Earnings,AMZN,"after close, surprise +30.5%",False
 2009-01-30,08:30,GDP,,Gross Domestic Product,False
 2009-02-02,08:30,PCE / personal income,,Personal Income and Outlays,False
 2009-02-03,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
@@ -1642,7 +1642,7 @@ date,time_et,event,symbol,detail,scheduled
 2009-04-15,08:30,CPI,,Consumer Price Index,False
 2009-04-15,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2009-04-16,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2009-04-16,16:00,Earnings,GOOGL,"after close, surprise +7.3%",False
+2009-04-16,16:00,Earnings,GOOGL,"after close, surprise +4.9%",False
 2009-04-17,14:00,Banxico,,Banxico monetary policy announcement,False
 2009-04-17,15:00,Cattle on Feed,,Cattle on Feed,False
 2009-04-21,10:00,BoC,,BoC interest rate announcement (press releases),False
@@ -1650,7 +1650,7 @@ date,time_et,event,symbol,detail,scheduled
 2009-04-22,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2009-04-22,16:00,Earnings,AAPL,"after close, surprise +21.6%",False
 2009-04-23,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2009-04-23,16:00,Earnings,AMZN,"after close, surprise +33.5%",False
+2009-04-23,16:00,Earnings,AMZN,"after close, surprise +34.5%",False
 2009-04-23,16:00,Earnings,MSFT,"after close, surprise +0.3%",False
 2009-04-29,08:30,GDP,,Gross Domestic Product,False
 2009-04-29,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
@@ -1834,7 +1834,7 @@ date,time_et,event,symbol,detail,scheduled
 2009-10-15,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2009-10-15,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2009-10-15,16:00,Earnings,AMD,"after close, surprise +60.3%",False
-2009-10-15,16:00,Earnings,GOOGL,"after close, surprise +9.0%",False
+2009-10-15,16:00,Earnings,GOOGL,"after close, surprise +8.7%",False
 2009-10-16,14:00,Banxico,,Banxico monetary policy announcement,False
 2009-10-16,15:00,Cattle on Feed,,Cattle on Feed,False
 2009-10-19,16:00,Earnings,AAPL,"after close, surprise +27.4%",False
@@ -1933,16 +1933,16 @@ date,time_et,event,symbol,detail,scheduled
 2010-01-21,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2010-01-21,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2010-01-21,16:00,Earnings,AMD,"after close, surprise -58.4%",False
-2010-01-21,16:00,Earnings,GOOGL,"after close, surprise +8.6%",False
+2010-01-21,16:00,Earnings,GOOGL,"after close, surprise +4.9%",False
 2010-01-22,15:00,Cattle on Feed,,Cattle on Feed,False
-2010-01-25,16:00,Earnings,AAPL,"after close, surprise +76.2%",False
+2010-01-25,16:00,Earnings,AAPL,"after close, surprise +74.9%",False
 2010-01-26,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
 2010-01-27,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2010-01-27,14:00,FOMC,,FOMC decision (Fed historical materials),False
 2010-01-28,02:00,Earnings,TSM,"before open, surprise +3.9%",False
 2010-01-28,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2010-01-28,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2010-01-28,16:00,Earnings,AMZN,"after close, surprise +18.3%",False
+2010-01-28,16:00,Earnings,AMZN,"after close, surprise +19.4%",False
 2010-01-28,16:00,Earnings,MSFT,"after close, surprise +25.3%",False
 2010-01-29,08:30,GDP,,Gross Domestic Product,False
 2010-02-01,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -2028,7 +2028,7 @@ date,time_et,event,symbol,detail,scheduled
 2010-04-15,15:00,Earnings,AMD,"time not confirmed, surprise +181.2%",False
 2010-04-16,14:00,Banxico,,Banxico monetary policy announcement,False
 2010-04-20,10:00,BoC,,BoC interest rate announcement (press releases),False
-2010-04-20,20:00,Earnings,AAPL,"after close, surprise +36.1%",False
+2010-04-20,20:00,Earnings,AAPL,"after close, surprise +36.3%",False
 2010-04-21,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2010-04-22,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2010-04-22,08:30,PPI,,Producer Price Index,False
@@ -2047,7 +2047,7 @@ date,time_et,event,symbol,detail,scheduled
 2010-05-03,08:30,PCE / personal income,,Personal Income and Outlays,False
 2010-05-04,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2010-05-05,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
-2010-05-05,19:00,Earnings,GOOGL,"after close, surprise +3.5%",False
+2010-05-05,19:00,Earnings,GOOGL,"after close, surprise +2.4%",False
 2010-05-06,08:15,ECB,,ECB monetary policy decision,False
 2010-05-06,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2010-05-06,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -2132,7 +2132,7 @@ date,time_et,event,symbol,detail,scheduled
 2010-07-21,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2010-07-22,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2010-07-22,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2010-07-22,16:00,Earnings,AMZN,"after close, surprise -16.3%",False
+2010-07-22,16:00,Earnings,AMZN,"after close, surprise -15.0%",False
 2010-07-22,16:00,Earnings,MSFT,"after close, surprise +9.9%",False
 2010-07-23,15:00,Cattle on Feed,,Cattle on Feed,False
 2010-07-28,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
@@ -2222,16 +2222,16 @@ date,time_et,event,symbol,detail,scheduled
 2010-10-14,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2010-10-14,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2010-10-14,16:00,Earnings,AMD,"after close, surprise +94.0%",False
-2010-10-14,16:00,Earnings,GOOGL,"after close, surprise +14.1%",False
+2010-10-14,16:00,Earnings,GOOGL,"after close, surprise +14.9%",False
 2010-10-15,08:30,CPI,,Consumer Price Index,False
 2010-10-15,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2010-10-15,14:00,Banxico,,Banxico monetary policy announcement,False
-2010-10-18,16:00,Earnings,AAPL,"after close, surprise +14.3%",False
+2010-10-18,16:00,Earnings,AAPL,"after close, surprise +13.6%",False
 2010-10-19,10:00,BoC,,BoC interest rate announcement (press releases),False
 2010-10-20,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2010-10-21,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2010-10-21,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2010-10-21,16:00,Earnings,AMZN,"after close, surprise +8.5%",False
+2010-10-21,16:00,Earnings,AMZN,"after close, surprise +5.8%",False
 2010-10-22,15:00,Cattle on Feed,,Cattle on Feed,False
 2010-10-27,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2010-10-28,06:00,Earnings,TSM,"before open, surprise +17.9%",False
@@ -2326,7 +2326,7 @@ date,time_et,event,symbol,detail,scheduled
 2011-01-20,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2011-01-20,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2011-01-20,16:00,Earnings,AMD,"after close, surprise +33.3%",False
-2011-01-20,16:00,Earnings,GOOGL,"after close, surprise +9.8%",False
+2011-01-20,16:00,Earnings,GOOGL,"after close, surprise +9.2%",False
 2011-01-21,14:00,Banxico,,Banxico monetary policy announcement,False
 2011-01-21,15:00,Cattle on Feed,,Cattle on Feed,False
 2011-01-25,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
@@ -2425,12 +2425,12 @@ date,time_et,event,symbol,detail,scheduled
 2011-04-15,08:30,CPI,,Consumer Price Index,False
 2011-04-15,14:00,Banxico,,Banxico monetary policy announcement,False
 2011-04-20,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
-2011-04-20,16:00,Earnings,AAPL,"after close, surprise +19.9%",False
+2011-04-20,16:00,Earnings,AAPL,"after close, surprise +19.6%",False
 2011-04-21,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2011-04-21,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2011-04-21,15:00,Cattle on Feed,,Cattle on Feed,False
 2011-04-21,16:00,Earnings,AMD,"after close, surprise +58.6%",False
-2011-04-26,16:00,Earnings,AMZN,"after close, surprise -26.6%",False
+2011-04-26,16:00,Earnings,AMZN,"after close, surprise -28.2%",False
 2011-04-27,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2011-04-27,14:00,FOMC,,FOMC decision (Fed historical materials),False
 2011-04-28,02:00,Earnings,TSM,"before open, surprise -0.3%",False
@@ -2521,17 +2521,17 @@ date,time_et,event,symbol,detail,scheduled
 2011-07-14,08:30,PPI,,Producer Price Index,False
 2011-07-14,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2011-07-14,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2011-07-14,16:00,Earnings,GOOGL,"after close, surprise +12.8%",False
+2011-07-14,16:00,Earnings,GOOGL,"after close, surprise +11.8%",False
 2011-07-15,08:30,CPI,,Consumer Price Index,False
 2011-07-19,10:00,BoC,,BoC interest rate announcement (press releases),False
-2011-07-19,16:00,Earnings,AAPL,"after close, surprise +33.1%",False
+2011-07-19,16:00,Earnings,AAPL,"after close, surprise +33.4%",False
 2011-07-20,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2011-07-21,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2011-07-21,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2011-07-21,16:00,Earnings,AMD,"after close, surprise +12.8%",False
 2011-07-21,16:00,Earnings,MSFT,"after close, surprise +19.4%",False
 2011-07-22,15:00,Cattle on Feed,,Cattle on Feed,False
-2011-07-26,16:00,Earnings,AMZN,"after close, surprise +22.9%",False
+2011-07-26,16:00,Earnings,AMZN,"after close, surprise +21.5%",False
 2011-07-27,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
 2011-07-28,01:00,Earnings,TSM,"before open, surprise +0.4%",False
 2011-07-28,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
@@ -2617,11 +2617,11 @@ date,time_et,event,symbol,detail,scheduled
 2011-10-13,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2011-10-13,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2011-10-13,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2011-10-13,16:00,Earnings,GOOGL,"after close, surprise +9.1%",False
+2011-10-13,16:00,Earnings,GOOGL,"after close, surprise +10.9%",False
 2011-10-14,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2011-10-14,14:00,Banxico,,Banxico monetary policy announcement,False
 2011-10-18,08:30,PPI,,Producer Price Index,False
-2011-10-18,16:00,Earnings,AAPL,"after close, surprise -3.8%",False
+2011-10-18,16:00,Earnings,AAPL,"after close, surprise -3.1%",False
 2011-10-19,08:30,CPI,,Consumer Price Index,False
 2011-10-19,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2011-10-20,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
@@ -2629,7 +2629,7 @@ date,time_et,event,symbol,detail,scheduled
 2011-10-20,16:00,Earnings,MSFT,"after close, surprise +0.3%",False
 2011-10-21,15:00,Cattle on Feed,,Cattle on Feed,False
 2011-10-25,10:00,BoC,,BoC interest rate announcement (press releases),False
-2011-10-25,16:00,Earnings,AMZN,"after close, surprise -38.2%",False
+2011-10-25,16:00,Earnings,AMZN,"after close, surprise -44.2%",False
 2011-10-26,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2011-10-27,02:00,Earnings,TSM,"before open, surprise +4.1%",False
 2011-10-27,08:30,GDP,,Gross Domestic Product,False
@@ -2722,7 +2722,7 @@ date,time_et,event,symbol,detail,scheduled
 2012-01-19,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2012-01-19,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2012-01-19,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2012-01-19,16:00,Earnings,GOOGL,"after close, surprise -10.1%",False
+2012-01-19,16:00,Earnings,GOOGL,"after close, surprise -9.4%",False
 2012-01-19,16:00,Earnings,MSFT,"after close, surprise +3.1%",False
 2012-01-20,14:00,Banxico,,Banxico monetary policy announcement,False
 2012-01-20,15:00,Cattle on Feed,,Cattle on Feed,False
@@ -2735,7 +2735,7 @@ date,time_et,event,symbol,detail,scheduled
 2012-01-26,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2012-01-27,08:30,GDP,,Gross Domestic Product,False
 2012-01-30,08:30,PCE / personal income,,Personal Income and Outlays,False
-2012-01-31,16:00,Earnings,AMZN,"after close, surprise +139.6%",False
+2012-01-31,16:00,Earnings,AMZN,"after close, surprise +105.8%",False
 2012-02-01,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2012-02-02,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2012-02-02,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -2816,7 +2816,7 @@ date,time_et,event,symbol,detail,scheduled
 2012-04-12,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2012-04-12,08:30,PPI,,Producer Price Index,False
 2012-04-12,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2012-04-12,16:00,Earnings,GOOGL,"after close, surprise +4.5%",False
+2012-04-12,16:00,Earnings,GOOGL,"after close, surprise +4.2%",False
 2012-04-13,08:30,CPI,,Consumer Price Index,False
 2012-04-16,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2012-04-17,10:00,BoC,,BoC interest rate announcement (press releases),False
@@ -2934,7 +2934,7 @@ date,time_et,event,symbol,detail,scheduled
 2012-07-26,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2012-07-26,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2012-07-26,16:00,Earnings,AMZN,"after close, surprise -39.8%",False
-2012-07-26,16:00,Earnings,META,"after close, surprise +43.2%",False
+2012-07-26,16:00,Earnings,META,"after close, surprise +8.8%",False
 2012-07-27,08:30,GDP,,Gross Domestic Product,False
 2012-07-31,08:30,PCE / personal income,,Personal Income and Outlays,False
 2012-08-01,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -3030,7 +3030,7 @@ date,time_et,event,symbol,detail,scheduled
 2012-10-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2012-10-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2012-10-25,16:00,Earnings,AAPL,"after close, surprise -0.8%",False
-2012-10-25,16:00,Earnings,AMZN,"after close, surprise -518.6%",False
+2012-10-25,16:00,Earnings,AMZN,"after close, surprise -777.2%",False
 2012-10-26,08:30,GDP,,Gross Domestic Product,False
 2012-10-26,14:00,Banxico,,Banxico monetary policy announcement,False
 2012-10-29,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -3119,7 +3119,7 @@ date,time_et,event,symbol,detail,scheduled
 2013-01-17,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2013-01-18,14:00,Banxico,,Banxico monetary policy announcement,False
 2013-01-22,16:00,Earnings,AMD,"after close, surprise +32.9%",False
-2013-01-22,16:00,Earnings,GOOGL,"after close, surprise +0.6%",False
+2013-01-22,16:00,Earnings,GOOGL,"after close, surprise +0.8%",False
 2013-01-22,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
 2013-01-23,10:00,BoC,,BoC interest rate announcement (press releases),False
 2013-01-23,16:00,Earnings,AAPL,"after close, surprise +2.0%",False
@@ -3223,18 +3223,18 @@ date,time_et,event,symbol,detail,scheduled
 2013-04-18,16:00,Earnings,GOOGL,"after close, surprise +12.7%",False
 2013-04-18,16:00,Earnings,MSFT,"after close, surprise +7.9%",False
 2013-04-19,15:00,Cattle on Feed,,Cattle on Feed,False
-2013-04-23,16:00,Earnings,AAPL,"after close, surprise +0.8%",False
+2013-04-23,16:00,Earnings,AAPL,"after close, surprise +0.9%",False
 2013-04-24,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2013-04-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2013-04-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2013-04-25,16:00,Earnings,AMZN,"after close, surprise +126.1%",False
+2013-04-25,16:00,Earnings,AMZN,"after close, surprise +104.5%",False
 2013-04-26,08:30,GDP,,Gross Domestic Product,False
 2013-04-26,14:00,Banxico,,Banxico monetary policy announcement,False
 2013-04-26,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
 2013-04-29,08:30,PCE / personal income,,Personal Income and Outlays,False
 2013-05-01,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2013-05-01,14:00,FOMC,,FOMC decision (Fed historical materials),False
-2013-05-01,16:00,Earnings,META,"after close, surprise +18.1%",False
+2013-05-01,16:00,Earnings,META,"after close, surprise -4.1%",False
 2013-05-02,08:15,ECB,,ECB monetary policy decision,False
 2013-05-02,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2013-05-02,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -3322,12 +3322,12 @@ date,time_et,event,symbol,detail,scheduled
 2013-07-18,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2013-07-18,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2013-07-18,16:00,Earnings,AMD,"after close, surprise +27.5%",False
-2013-07-18,16:00,Earnings,GOOGL,"after close, surprise +5.9%",False
+2013-07-18,16:00,Earnings,GOOGL,"after close, surprise -11.3%",False
 2013-07-18,16:00,Earnings,MSFT,"after close, surprise -11.4%",False
 2013-07-19,15:00,Cattle on Feed,,Cattle on Feed,False
 2013-07-23,16:00,Earnings,AAPL,"after close, surprise +2.5%",False
 2013-07-24,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2013-07-24,16:00,Earnings,META,"after close, surprise +38.4%",False
+2013-07-24,16:00,Earnings,META,"after close, surprise +52.7%",False
 2013-07-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2013-07-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2013-07-25,16:00,Earnings,AMZN,"after close, surprise -154.1%",False
@@ -3415,7 +3415,7 @@ date,time_et,event,symbol,detail,scheduled
 2013-10-17,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2013-10-17,15:00,Cattle on Feed,,Cattle on Feed,False
 2013-10-17,16:00,Earnings,AMD,"after close, surprise +80.8%",False
-2013-10-17,16:00,Earnings,GOOGL,"after close, surprise +2.7%",False
+2013-10-17,16:00,Earnings,GOOGL,"after close, surprise +3.0%",False
 2013-10-21,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2013-10-22,08:30,Jobs report,,Employment Situation,False
 2013-10-23,10:00,BoC,,BoC interest rate announcement (press releases),False
@@ -3423,7 +3423,7 @@ date,time_et,event,symbol,detail,scheduled
 2013-10-24,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2013-10-24,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
 2013-10-24,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2013-10-24,16:00,Earnings,AMZN,"after close, surprise -5.1%",False
+2013-10-24,16:00,Earnings,AMZN,"after close, surprise -15.1%",False
 2013-10-24,16:00,Earnings,MSFT,"after close, surprise +14.0%",False
 2013-10-25,14:00,Banxico,,Banxico monetary policy announcement,False
 2013-10-28,16:00,Earnings,AAPL,"after close, surprise +3.8%",False
@@ -3432,7 +3432,7 @@ date,time_et,event,symbol,detail,scheduled
 2013-10-30,08:30,CPI,,Consumer Price Index,False
 2013-10-30,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2013-10-30,14:00,FOMC,,FOMC decision (Fed historical materials),False
-2013-10-30,16:00,Earnings,META,"after close, surprise +40.7%",False
+2013-10-30,16:00,Earnings,META,"after close, surprise +34.6%",False
 2013-10-31,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2013-10-31,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2013-10-31,15:00,Cattle on Feed,,Cattle on Feed,False
@@ -3535,7 +3535,7 @@ date,time_et,event,symbol,detail,scheduled
 2014-01-30,08:30,GDP,,Gross Domestic Product,False
 2014-01-30,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2014-01-30,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2014-01-30,16:00,Earnings,AMZN,"after close, surprise -25.3%",False
+2014-01-30,16:00,Earnings,AMZN,"after close, surprise -26.4%",False
 2014-01-30,16:00,Earnings,GOOGL,"after close, surprise -3.2%",False
 2014-01-31,08:30,PCE / personal income,,Personal Income and Outlays,False
 2014-01-31,14:00,Banxico,,Banxico monetary policy announcement,False
@@ -3620,7 +3620,7 @@ date,time_et,event,symbol,detail,scheduled
 2014-04-15,08:30,CPI,,Consumer Price Index,False
 2014-04-16,10:00,BoC,,BoC interest rate announcement (press releases),False
 2014-04-16,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2014-04-16,16:00,Earnings,GOOGL,"after close, surprise -4.8%",False
+2014-04-16,16:00,Earnings,GOOGL,"after close, surprise -2.3%",False
 2014-04-17,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2014-04-17,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2014-04-17,16:00,Earnings,AMD,"after close, surprise +271.8%",False
@@ -3629,7 +3629,7 @@ date,time_et,event,symbol,detail,scheduled
 2014-04-23,16:00,Earnings,META,"after close, surprise +50.5%",False
 2014-04-24,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2014-04-24,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2014-04-24,16:00,Earnings,AMZN,"after close, surprise +2.7%",False
+2014-04-24,16:00,Earnings,AMZN,"after close, surprise -2.9%",False
 2014-04-24,16:00,Earnings,MSFT,"after close, surprise +8.2%",False
 2014-04-25,14:00,Banxico,,Banxico monetary policy announcement,False
 2014-04-25,15:00,Cattle on Feed,,Cattle on Feed,False
@@ -3723,7 +3723,7 @@ date,time_et,event,symbol,detail,scheduled
 2014-07-17,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2014-07-17,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2014-07-17,16:00,Earnings,AMD,"after close, surprise -28.9%",False
-2014-07-17,16:00,Earnings,GOOGL,"after close, surprise -1.7%",False
+2014-07-17,16:00,Earnings,GOOGL,"after close, surprise -2.4%",False
 2014-07-22,08:30,CPI,,Consumer Price Index,False
 2014-07-22,16:00,Earnings,AAPL,"after close, surprise +3.8%",False
 2014-07-22,16:00,Earnings,MSFT,"after close, surprise -8.3%",False
@@ -3731,7 +3731,7 @@ date,time_et,event,symbol,detail,scheduled
 2014-07-23,16:00,Earnings,META,"after close, surprise +22.7%",False
 2014-07-24,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2014-07-24,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2014-07-24,16:00,Earnings,AMZN,"after close, surprise -146.8%",False
+2014-07-24,16:00,Earnings,AMZN,"after close, surprise -83.4%",False
 2014-07-25,15:00,Cattle on Feed,,Cattle on Feed,False
 2014-07-30,08:30,GDP,,Gross Domestic Product,False
 2014-07-30,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -3820,17 +3820,17 @@ date,time_et,event,symbol,detail,scheduled
 2014-10-16,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2014-10-16,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2014-10-16,16:00,Earnings,AMD,"after close, surprise -27.9%",False
-2014-10-16,16:00,Earnings,GOOGL,"after close, surprise -23.9%",False
+2014-10-16,16:00,Earnings,GOOGL,"after close, surprise -2.6%",False
 2014-10-20,16:00,Earnings,AAPL,"after close, surprise +8.6%",False
 2014-10-22,08:30,CPI,,Consumer Price Index,False
 2014-10-22,10:00,BoC,,BoC interest rate announcement (press releases),False
 2014-10-22,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2014-10-23,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2014-10-23,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2014-10-23,16:00,Earnings,AMZN,"after close, surprise -26.1%",False
+2014-10-23,16:00,Earnings,AMZN,"after close, surprise -23.7%",False
 2014-10-23,16:00,Earnings,MSFT,"after close, surprise +19.9%",False
 2014-10-24,15:00,Cattle on Feed,,Cattle on Feed,False
-2014-10-28,16:00,Earnings,META,"after close, surprise -3.1%",False
+2014-10-28,16:00,Earnings,META,"after close, surprise +2.9%",False
 2014-10-29,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2014-10-29,14:00,FOMC,,FOMC decision (Fed historical materials),False
 2014-10-30,08:30,GDP,,Gross Domestic Product,False
@@ -3928,12 +3928,12 @@ date,time_et,event,symbol,detail,scheduled
 2015-01-27,16:00,Earnings,AAPL,"after close, surprise +17.4%",False
 2015-01-28,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2015-01-28,14:00,FOMC,,FOMC decision (Fed historical materials),False
-2015-01-28,16:00,Earnings,META,"after close, surprise +9.7%",False
+2015-01-28,16:00,Earnings,META,"after close, surprise +11.0%",False
 2015-01-29,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2015-01-29,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2015-01-29,14:00,Banxico,,Banxico monetary policy announcement,False
-2015-01-29,16:00,Earnings,AMZN,"after close, surprise +173.1%",False
-2015-01-29,16:00,Earnings,GOOGL,"after close, surprise +22.6%",False
+2015-01-29,16:00,Earnings,AMZN,"after close, surprise +152.5%",False
+2015-01-29,16:00,Earnings,GOOGL,"after close, surprise -3.5%",False
 2015-01-30,08:30,GDP,,Gross Domestic Product,False
 2015-02-02,08:30,PCE / personal income,,Personal Income and Outlays,False
 2015-02-03,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
@@ -4023,7 +4023,7 @@ date,time_et,event,symbol,detail,scheduled
 2015-04-22,16:00,Earnings,META,"after close, surprise +10.2%",False
 2015-04-23,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2015-04-23,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2015-04-23,16:00,Earnings,AMZN,"after close, surprise -28.5%",False
+2015-04-23,16:00,Earnings,AMZN,"after close, surprise -12.2%",False
 2015-04-23,16:00,Earnings,GOOGL,"after close, surprise -2.0%",False
 2015-04-23,16:00,Earnings,MSFT,"after close, surprise +17.3%",False
 2015-04-24,15:00,Cattle on Feed,,Cattle on Feed,False
@@ -4128,7 +4128,7 @@ date,time_et,event,symbol,detail,scheduled
 2015-07-24,15:00,Cattle on Feed,,Cattle on Feed,False
 2015-07-29,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2015-07-29,14:00,FOMC,,FOMC decision (Fed historical materials),False
-2015-07-29,16:00,Earnings,META,"after close, surprise +4.2%",False
+2015-07-29,16:00,Earnings,META,"after close, surprise +6.2%",False
 2015-07-30,08:30,GDP,,Gross Domestic Product,False
 2015-07-30,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2015-07-30,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -4219,8 +4219,8 @@ date,time_et,event,symbol,detail,scheduled
 2015-10-22,08:15,ECB,,ECB monetary policy decision,False
 2015-10-22,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2015-10-22,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2015-10-22,16:00,Earnings,AMZN,"after close, surprise +262.5%",False
-2015-10-22,16:00,Earnings,GOOGL,"after close, surprise -0.7%",False
+2015-10-22,16:00,Earnings,AMZN,"after close, surprise +231.2%",False
+2015-10-22,16:00,Earnings,GOOGL,"after close, surprise +2.0%",False
 2015-10-22,16:00,Earnings,MSFT,"after close, surprise +14.5%",False
 2015-10-23,15:00,Cattle on Feed,,Cattle on Feed,False
 2015-10-27,16:00,Earnings,AAPL,"after close, surprise +4.7%",False
@@ -4235,7 +4235,7 @@ date,time_et,event,symbol,detail,scheduled
 2015-11-03,16:00,Earnings,TSLA,"after close, surprise +1.9%",False
 2015-11-03,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2015-11-04,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2015-11-04,16:00,Earnings,META,"after close, surprise +9.6%",False
+2015-11-04,16:00,Earnings,META,"after close, surprise +13.8%",False
 2015-11-05,07:00,BoE,,BoE Bank Rate decision,False
 2015-11-05,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2015-11-05,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -4322,7 +4322,7 @@ date,time_et,event,symbol,detail,scheduled
 2016-01-27,16:00,Earnings,META,"after close, surprise +27.6%",False
 2016-01-28,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2016-01-28,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2016-01-28,16:00,Earnings,AMZN,"after close, surprise -37.0%",False
+2016-01-28,16:00,Earnings,AMZN,"after close, surprise -37.3%",False
 2016-01-28,16:00,Earnings,MSFT,"after close, surprise +10.0%",False
 2016-01-29,08:30,GDP,,Gross Domestic Product,False
 2016-01-29,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
@@ -4414,7 +4414,7 @@ date,time_et,event,symbol,detail,scheduled
 2016-04-21,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2016-04-21,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2016-04-21,16:00,Earnings,AMD,"after close, surprise +5.2%",False
-2016-04-21,16:00,Earnings,GOOGL,"after close, surprise -4.2%",False
+2016-04-21,16:00,Earnings,GOOGL,"after close, surprise -5.8%",False
 2016-04-21,16:00,Earnings,MSFT,"after close, surprise -3.0%",False
 2016-04-22,15:00,Cattle on Feed,,Cattle on Feed,False
 2016-04-26,16:00,Earnings,AAPL,"after close, surprise -5.1%",False
@@ -4516,11 +4516,11 @@ date,time_et,event,symbol,detail,scheduled
 2016-07-26,16:00,Earnings,AAPL,"after close, surprise +2.7%",False
 2016-07-27,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2016-07-27,14:00,FOMC,,FOMC decision (Fed historical materials),False
-2016-07-27,16:00,Earnings,META,"after close, surprise +25.2%",False
+2016-07-27,16:00,Earnings,META,"after close, surprise +18.7%",False
 2016-07-28,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2016-07-28,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2016-07-28,16:00,Earnings,AMZN,"after close, surprise +63.7%",False
-2016-07-28,16:00,Earnings,GOOGL,"after close, surprise +4.8%",False
+2016-07-28,16:00,Earnings,GOOGL,"after close, surprise +9.2%",False
 2016-07-29,08:30,GDP,,Gross Domestic Product,False
 2016-07-29,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
 2016-08-02,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -4615,7 +4615,7 @@ date,time_et,event,symbol,detail,scheduled
 2016-10-26,16:00,Earnings,TSLA,"after close, surprise +3034.4%",False
 2016-10-27,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2016-10-27,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2016-10-27,16:00,Earnings,AMZN,"after close, surprise -33.8%",False
+2016-10-27,16:00,Earnings,AMZN,"after close, surprise -35.7%",False
 2016-10-27,16:00,Earnings,GOOGL,"after close, surprise +8.1%",False
 2016-10-28,08:30,GDP,,Gross Domestic Product,False
 2016-10-31,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -4706,7 +4706,7 @@ date,time_et,event,symbol,detail,scheduled
 2017-01-25,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2017-01-26,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2017-01-26,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2017-01-26,16:00,Earnings,GOOGL,"after close, surprise -0.5%",False
+2017-01-26,16:00,Earnings,GOOGL,"after close, surprise -2.7%",False
 2017-01-26,16:00,Earnings,MSFT,"after close, surprise +7.0%",False
 2017-01-27,08:30,GDP,,Gross Domestic Product,False
 2017-01-27,15:00,Cattle on Feed,,Cattle on Feed,False
@@ -4716,7 +4716,7 @@ date,time_et,event,symbol,detail,scheduled
 2017-01-31,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
 2017-02-01,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2017-02-01,14:00,FOMC,,FOMC decision (Fed historical materials),False
-2017-02-01,16:00,Earnings,META,"after close, surprise +15.9%",False
+2017-02-01,16:00,Earnings,META,"after close, surprise +7.4%",False
 2017-02-02,07:00,BoE,,BoE Bank Rate decision,False
 2017-02-02,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2017-02-02,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -4806,8 +4806,8 @@ date,time_et,event,symbol,detail,scheduled
 2017-04-27,08:15,ECB,,ECB monetary policy decision,False
 2017-04-27,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2017-04-27,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2017-04-27,16:00,Earnings,AMZN,"after close, surprise +34.4%",False
-2017-04-27,16:00,Earnings,GOOGL,"after close, surprise +5.0%",False
+2017-04-27,16:00,Earnings,AMZN,"after close, surprise +34.3%",False
+2017-04-27,16:00,Earnings,GOOGL,"after close, surprise +6.2%",False
 2017-04-27,16:00,Earnings,MSFT,"after close, surprise +4.7%",False
 2017-04-27,overnight,BoJ,,"BoJ monetary policy statement (Tokyo midday, the US night before)",False
 2017-04-28,08:30,GDP,,Gross Domestic Product,False
@@ -4817,7 +4817,7 @@ date,time_et,event,symbol,detail,scheduled
 2017-05-02,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2017-05-03,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2017-05-03,14:00,FOMC,,FOMC decision (Fed historical materials),False
-2017-05-03,16:00,Earnings,META,"after close, surprise +19.8%",False
+2017-05-03,16:00,Earnings,META,"after close, surprise +21.4%",False
 2017-05-03,16:00,Earnings,TSLA,"after close, surprise -65.9%",False
 2017-05-04,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2017-05-04,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -4905,7 +4905,7 @@ date,time_et,event,symbol,detail,scheduled
 2017-07-25,16:00,Earnings,AMD,"after close, surprise +7900.0%",False
 2017-07-26,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2017-07-26,14:00,FOMC,,FOMC decision (Fed historical materials),False
-2017-07-26,16:00,Earnings,META,"after close, surprise +17.8%",False
+2017-07-26,16:00,Earnings,META,"after close, surprise +17.5%",False
 2017-07-27,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2017-07-27,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2017-07-27,16:00,Earnings,AMZN,"after close, surprise -71.4%",False
@@ -5001,8 +5001,8 @@ date,time_et,event,symbol,detail,scheduled
 2017-10-26,08:15,ECB,,ECB monetary policy decision,False
 2017-10-26,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2017-10-26,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2017-10-26,16:00,Earnings,AMZN,"after close, surprise +6290.5%",False
-2017-10-26,16:00,Earnings,GOOGL,"after close, surprise +14.7%",False
+2017-10-26,16:00,Earnings,AMZN,"after close, surprise +3900.0%",False
+2017-10-26,16:00,Earnings,GOOGL,"after close, surprise +13.1%",False
 2017-10-26,16:00,Earnings,MSFT,"after close, surprise +15.4%",False
 2017-10-27,08:30,GDP,,Gross Domestic Product,False
 2017-10-30,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -5106,8 +5106,8 @@ date,time_et,event,symbol,detail,scheduled
 2018-02-01,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2018-02-01,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2018-02-01,16:00,Earnings,AAPL,"after close, surprise +1.1%",False
-2018-02-01,16:00,Earnings,AMZN,"after close, surprise +104.1%",False
-2018-02-01,16:00,Earnings,GOOGL,"after close, surprise -143.3%",False
+2018-02-01,16:00,Earnings,AMZN,"after close, surprise +16.4%",False
+2018-02-01,16:00,Earnings,GOOGL,"after close, surprise -2.0%",False
 2018-02-02,08:30,Jobs report,,Employment Situation,False
 2018-02-06,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
 2018-02-06,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
@@ -5186,7 +5186,7 @@ date,time_et,event,symbol,detail,scheduled
 2018-04-19,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2018-04-19,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2018-04-20,15:00,Cattle on Feed,,Cattle on Feed,False
-2018-04-23,16:00,Earnings,GOOGL,"after close, surprise +43.7%",False
+2018-04-23,16:00,Earnings,GOOGL,"after close, surprise +2.3%",False
 2018-04-25,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2018-04-25,16:00,Earnings,AMD,"after close, surprise +25.7%",False
 2018-04-25,16:00,Earnings,META,"after close, surprise +24.8%",False
@@ -5286,11 +5286,11 @@ date,time_et,event,symbol,detail,scheduled
 2018-07-23,16:00,Earnings,GOOGL,"after close, surprise +21.8%",False
 2018-07-25,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2018-07-25,16:00,Earnings,AMD,"after close, surprise +10.3%",False
-2018-07-25,16:00,Earnings,META,"after close, surprise +1.9%",False
+2018-07-25,16:00,Earnings,META,"after close, surprise +2.6%",False
 2018-07-26,08:15,ECB,,ECB monetary policy decision,False
 2018-07-26,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2018-07-26,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2018-07-26,16:00,Earnings,AMZN,"after close, surprise +101.9%",False
+2018-07-26,16:00,Earnings,AMZN,"after close, surprise +99.3%",False
 2018-07-27,08:30,GDP,,Gross Domestic Product,False
 2018-07-31,08:30,GDP,,Gross Domestic Product,False
 2018-07-31,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -5384,7 +5384,7 @@ date,time_et,event,symbol,detail,scheduled
 2018-10-25,08:15,ECB,,ECB monetary policy decision,False
 2018-10-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2018-10-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2018-10-25,16:00,Earnings,AMZN,"after close, surprise +85.1%",False
+2018-10-25,16:00,Earnings,AMZN,"after close, surprise +86.2%",False
 2018-10-25,16:00,Earnings,GOOGL,"after close, surprise +25.5%",False
 2018-10-26,08:30,GDP,,Gross Domestic Product,False
 2018-10-29,08:30,PCE / personal income,,Personal Income and Outlays,False
@@ -5484,7 +5484,7 @@ date,time_et,event,symbol,detail,scheduled
 2019-01-30,16:00,Earnings,TSLA,"after close, surprise -6.5%",False
 2019-01-31,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2019-01-31,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2019-01-31,16:00,Earnings,AMZN,"after close, surprise +8.7%",False
+2019-01-31,16:00,Earnings,AMZN,"after close, surprise +9.5%",False
 2019-02-01,08:30,Jobs report,,Employment Situation,False
 2019-02-04,16:00,Earnings,GOOGL,"after close, surprise +17.6%",False
 2019-02-05,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
@@ -5575,10 +5575,10 @@ date,time_et,event,symbol,detail,scheduled
 2019-04-24,17:00,Earnings,TSLA,"after close, surprise -209.6%",False
 2019-04-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2019-04-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2019-04-25,16:00,Earnings,AMZN,"after close, surprise +51.8%",False
+2019-04-25,16:00,Earnings,AMZN,"after close, surprise +51.6%",False
 2019-04-26,08:30,GDP,,Gross Domestic Product,False
 2019-04-29,08:30,PCE / personal income,,Personal Income and Outlays,False
-2019-04-29,16:00,Earnings,GOOGL,"after close, surprise -5.0%",False
+2019-04-29,16:00,Earnings,GOOGL,"after close, surprise +14.4%",False
 2019-04-30,16:00,Earnings,AAPL,"after close, surprise +4.0%",False
 2019-04-30,16:00,Earnings,AMD,"after close, surprise +5.5%",False
 2019-05-01,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -5664,16 +5664,16 @@ date,time_et,event,symbol,detail,scheduled
 2019-07-18,16:00,Earnings,MSFT,"after close, surprise +12.9%",False
 2019-07-19,15:00,Cattle on Feed,,Cattle on Feed,False
 2019-07-24,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2019-07-24,16:00,Earnings,META,"after close, surprise -50.8%",False
+2019-07-24,16:00,Earnings,META,"after close, surprise +6.1%",False
 2019-07-24,16:00,Earnings,TSLA,"after close, surprise -182.3%",False
 2019-07-25,08:15,ECB,,ECB monetary policy decision,False
 2019-07-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2019-07-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2019-07-25,16:00,Earnings,AMZN,"after close, surprise -6.5%",False
-2019-07-25,16:00,Earnings,GOOGL,"after close, surprise +27.2%",False
+2019-07-25,16:00,Earnings,AMZN,"after close, surprise -5.8%",False
+2019-07-25,16:00,Earnings,GOOGL,"after close, surprise +23.9%",False
 2019-07-26,08:30,GDP,,Gross Domestic Product,False
 2019-07-30,08:30,PCE / personal income,,Personal Income and Outlays,False
-2019-07-30,16:00,Earnings,AAPL,"after close, surprise +3.6%",False
+2019-07-30,16:00,Earnings,AAPL,"after close, surprise +3.7%",False
 2019-07-30,16:00,Earnings,AMD,"after close, surprise +2.3%",False
 2019-07-31,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2019-07-31,14:00,FOMC,,FOMC decision (Fed historical materials),False
@@ -5759,7 +5759,7 @@ date,time_et,event,symbol,detail,scheduled
 2019-10-24,08:15,ECB,,ECB monetary policy decision,False
 2019-10-24,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2019-10-24,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2019-10-24,16:00,Earnings,AMZN,"after close, surprise -7.1%",False
+2019-10-24,16:00,Earnings,AMZN,"after close, surprise -5.8%",False
 2019-10-25,15:00,Cattle on Feed,,Cattle on Feed,False
 2019-10-28,16:00,Earnings,GOOGL,"after close, surprise -18.8%",False
 2019-10-29,16:00,Earnings,AMD,"after close, surprise -2.3%",False
@@ -5864,7 +5864,7 @@ date,time_et,event,symbol,detail,scheduled
 2020-01-30,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2020-01-30,16:00,Earnings,AMZN,"after close, surprise +62.8%",False
 2020-01-31,08:30,PCE / personal income,,Personal Income and Outlays,False
-2020-02-03,16:00,Earnings,GOOGL,"after close, surprise +22.6%",False
+2020-02-03,16:00,Earnings,GOOGL,"after close, surprise +21.9%",False
 2020-02-04,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2020-02-05,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2020-02-06,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
@@ -5954,7 +5954,7 @@ date,time_et,event,symbol,detail,scheduled
 2020-04-23,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2020-04-23,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2020-04-24,15:00,Cattle on Feed,,Cattle on Feed,False
-2020-04-28,16:00,Earnings,GOOGL,"after close, surprise -3.4%",False
+2020-04-28,16:00,Earnings,GOOGL,"after close, surprise -8.3%",False
 2020-04-28,17:00,Earnings,AMD,"after close, surprise -2.3%",False
 2020-04-29,08:30,GDP,,Gross Domestic Product,False
 2020-04-29,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -5967,7 +5967,7 @@ date,time_et,event,symbol,detail,scheduled
 2020-04-30,08:30,PCE / personal income,,Personal Income and Outlays,False
 2020-04-30,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2020-04-30,17:00,Earnings,AAPL,"after close, surprise +12.9%",False
-2020-04-30,17:00,Earnings,AMZN,"after close, surprise -18.0%",False
+2020-04-30,17:00,Earnings,AMZN,"after close, surprise -19.8%",False
 2020-05-05,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2020-05-06,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2020-05-07,07:00,BoE,,BoE Bank Rate decision,False
@@ -6059,10 +6059,10 @@ date,time_et,event,symbol,detail,scheduled
 2020-07-30,08:30,GDP,,Gross Domestic Product,False
 2020-07-30,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2020-07-30,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2020-07-30,16:00,Earnings,AAPL,"after close, surprise +24.4%",False
+2020-07-30,16:00,Earnings,AAPL,"after close, surprise +24.5%",False
 2020-07-30,16:00,Earnings,AMZN,"after close, surprise +582.2%",False
-2020-07-30,16:00,Earnings,GOOGL,"after close, surprise +24.1%",False
-2020-07-30,16:00,Earnings,META,"after close, surprise +31.2%",False
+2020-07-30,16:00,Earnings,GOOGL,"after close, surprise +23.4%",False
+2020-07-30,16:00,Earnings,META,"after close, surprise +28.9%",False
 2020-07-31,08:30,PCE / personal income,,Personal Income and Outlays,False
 2020-08-04,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2020-08-05,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -6153,9 +6153,9 @@ date,time_et,event,symbol,detail,scheduled
 2020-10-29,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2020-10-29,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2020-10-29,16:00,Earnings,AAPL,"after close, surprise +4.5%",False
-2020-10-29,16:00,Earnings,AMZN,"after close, surprise +66.2%",False
+2020-10-29,16:00,Earnings,AMZN,"after close, surprise +64.2%",False
 2020-10-29,16:00,Earnings,GOOGL,"after close, surprise +46.2%",False
-2020-10-29,16:00,Earnings,META,"after close, surprise +42.0%",False
+2020-10-29,16:00,Earnings,META,"after close, surprise +25.6%",False
 2020-10-30,08:30,PCE / personal income,,Personal Income and Outlays,False
 2020-11-03,08:30,GDP,,Gross Domestic Product,False
 2020-11-03,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
@@ -6244,13 +6244,13 @@ date,time_et,event,symbol,detail,scheduled
 2021-01-27,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2021-01-27,14:00,FOMC,,scheduled,False
 2021-01-27,16:00,Earnings,AAPL,"after close, surprise +18.7%",False
-2021-01-27,16:00,Earnings,META,"after close, surprise +21.4%",False
+2021-01-27,16:00,Earnings,META,"after close, surprise +19.9%",False
 2021-01-27,16:00,Earnings,TSLA,"after close, surprise -23.9%",False
 2021-01-28,08:30,GDP,,Gross Domestic Product,False
 2021-01-28,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2021-01-28,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2021-01-29,08:30,PCE / personal income,,Personal Income and Outlays,False
-2021-02-02,16:00,Earnings,AMZN,"after close, surprise +97.4%",False
+2021-02-02,16:00,Earnings,AMZN,"after close, surprise +100.1%",False
 2021-02-02,16:00,Earnings,GOOGL,"after close, surprise +41.9%",False
 2021-02-02,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2021-02-03,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -6348,7 +6348,7 @@ date,time_et,event,symbol,detail,scheduled
 2021-04-29,08:30,GDP,,Gross Domestic Product,False
 2021-04-29,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2021-04-29,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2021-04-29,16:00,Earnings,AMZN,"after close, surprise +64.1%",False
+2021-04-29,16:00,Earnings,AMZN,"after close, surprise +67.3%",False
 2021-04-30,08:30,PCE / personal income,,Personal Income and Outlays,False
 2021-05-04,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2021-05-05,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -6433,17 +6433,17 @@ date,time_et,event,symbol,detail,scheduled
 2021-07-22,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2021-07-23,15:00,Cattle on Feed,,Cattle on Feed,False
 2021-07-26,16:00,Earnings,TSLA,"after close, surprise +49.9%",False
-2021-07-27,16:00,Earnings,AAPL,"after close, surprise +28.6%",False
+2021-07-27,16:00,Earnings,AAPL,"after close, surprise +28.2%",False
 2021-07-27,16:00,Earnings,AMD,"after close, surprise +16.9%",False
-2021-07-27,16:00,Earnings,GOOGL,"after close, surprise +41.4%",False
+2021-07-27,16:00,Earnings,GOOGL,"after close, surprise +42.7%",False
 2021-07-27,16:00,Earnings,MSFT,"after close, surprise +12.7%",False
 2021-07-28,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2021-07-28,14:00,FOMC,,scheduled,False
-2021-07-28,16:00,Earnings,META,"after close, surprise +20.0%",False
+2021-07-28,16:00,Earnings,META,"after close, surprise +17.9%",False
 2021-07-29,08:30,GDP,,Gross Domestic Product,False
 2021-07-29,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2021-07-29,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2021-07-29,16:00,Earnings,AMZN,"after close, surprise +22.6%",False
+2021-07-29,16:00,Earnings,AMZN,"after close, surprise +23.1%",False
 2021-07-30,08:30,PCE / personal income,,Personal Income and Outlays,False
 2021-08-03,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2021-08-04,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -6528,9 +6528,9 @@ date,time_et,event,symbol,detail,scheduled
 2021-10-21,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2021-10-21,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2021-10-22,15:00,Cattle on Feed,,Cattle on Feed,False
-2021-10-25,16:00,Earnings,META,"after close, surprise +1.3%",False
+2021-10-25,16:00,Earnings,META,"after close, surprise +1.5%",False
 2021-10-26,16:00,Earnings,AMD,"after close, surprise +10.0%",False
-2021-10-26,16:00,Earnings,GOOGL,"after close, surprise +20.0%",False
+2021-10-26,16:00,Earnings,GOOGL,"after close, surprise +20.4%",False
 2021-10-26,16:00,Earnings,MSFT,"after close, surprise +9.3%",False
 2021-10-27,10:00,BoC,,BoC interest rate announcement (press releases),False
 2021-10-27,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -6539,7 +6539,7 @@ date,time_et,event,symbol,detail,scheduled
 2021-10-28,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2021-10-28,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2021-10-28,16:00,Earnings,AAPL,"after close, surprise +0.2%",False
-2021-10-28,16:00,Earnings,AMZN,"after close, surprise -30.9%",False
+2021-10-28,16:00,Earnings,AMZN,"after close, surprise -31.2%",False
 2021-10-29,08:30,GDP,,Gross Domestic Product,False
 2021-10-29,08:30,PCE / personal income,,Personal Income and Outlays,False
 2021-11-02,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
@@ -6641,7 +6641,7 @@ date,time_et,event,symbol,detail,scheduled
 2022-02-03,08:15,ECB,,ECB monetary policy decision,False
 2022-02-03,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2022-02-03,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2022-02-03,16:00,Earnings,AMZN,"after close, surprise +641.9%",False
+2022-02-03,16:00,Earnings,AMZN,"after close, surprise +657.1%",False
 2022-02-04,08:30,Jobs report,,Employment Situation,False
 2022-02-08,08:30,CPI,,Consumer Price Index,False
 2022-02-09,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -6722,15 +6722,15 @@ date,time_et,event,symbol,detail,scheduled
 2022-04-21,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2022-04-22,15:00,Cattle on Feed,,Cattle on Feed,False
 2022-04-25,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
-2022-04-26,16:00,Earnings,GOOGL,"after close, surprise -4.4%",False
+2022-04-26,16:00,Earnings,GOOGL,"after close, surprise -3.7%",False
 2022-04-26,16:00,Earnings,MSFT,"after close, surprise +1.1%",False
 2022-04-27,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2022-04-27,16:00,Earnings,META,"after close, surprise +6.8%",False
+2022-04-27,16:00,Earnings,META,"after close, surprise +7.6%",False
 2022-04-28,08:30,GDP,,Gross Domestic Product,False
 2022-04-28,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2022-04-28,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2022-04-28,16:00,Earnings,AAPL,"after close, surprise +6.5%",False
-2022-04-28,16:00,Earnings,AMZN,"after close, surprise -191.6%",False
+2022-04-28,16:00,Earnings,AMZN,"after close, surprise -190.6%",False
 2022-04-29,08:30,PCE / personal income,,Personal Income and Outlays,False
 2022-05-03,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
 2022-05-03,16:00,Earnings,AMD,"after close, surprise +22.2%",False
@@ -6817,11 +6817,11 @@ date,time_et,event,symbol,detail,scheduled
 2022-07-21,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2022-07-21,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2022-07-22,15:00,Cattle on Feed,,Cattle on Feed,False
-2022-07-26,16:00,Earnings,GOOGL,"after close, surprise -5.0%",False
+2022-07-26,16:00,Earnings,GOOGL,"after close, surprise -6.0%",False
 2022-07-26,16:00,Earnings,MSFT,"after close, surprise -2.7%",False
 2022-07-27,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2022-07-27,14:00,FOMC,,scheduled,False
-2022-07-27,16:00,Earnings,META,"after close, surprise -3.4%",False
+2022-07-27,16:00,Earnings,META,"after close, surprise -3.6%",False
 2022-07-28,08:30,GDP,,Gross Domestic Product,False
 2022-07-28,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2022-07-28,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -6912,17 +6912,17 @@ date,time_et,event,symbol,detail,scheduled
 2022-10-20,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2022-10-20,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2022-10-21,15:00,Cattle on Feed,,Cattle on Feed,False
-2022-10-25,16:00,Earnings,GOOGL,"after close, surprise -15.3%",False
+2022-10-25,16:00,Earnings,GOOGL,"after close, surprise -16.0%",False
 2022-10-25,16:00,Earnings,MSFT,"after close, surprise +1.9%",False
 2022-10-26,10:00,BoC,,BoC interest rate announcement (press releases),False
 2022-10-26,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2022-10-26,16:00,Earnings,META,"after close, surprise -12.1%",False
+2022-10-26,16:00,Earnings,META,"after close, surprise -11.3%",False
 2022-10-27,08:15,ECB,,ECB monetary policy decision,False
 2022-10-27,08:30,GDP,,Gross Domestic Product,False
 2022-10-27,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2022-10-27,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2022-10-27,16:00,Earnings,AAPL,"after close, surprise +1.4%",False
-2022-10-27,16:00,Earnings,AMZN,"after close, surprise +33.0%",False
+2022-10-27,16:00,Earnings,AMZN,"after close, surprise +35.5%",False
 2022-10-28,08:30,PCE / personal income,,Personal Income and Outlays,False
 2022-11-01,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
 2022-11-01,16:00,Earnings,AMD,"after close, surprise -4.8%",False
@@ -7024,8 +7024,8 @@ date,time_et,event,symbol,detail,scheduled
 2023-02-02,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2023-02-02,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2023-02-02,16:00,Earnings,AAPL,"after close, surprise -3.8%",False
-2023-02-02,16:00,Earnings,AMZN,"after close, surprise -81.7%",False
-2023-02-02,16:00,Earnings,GOOGL,"after close, surprise -11.9%",False
+2023-02-02,16:00,Earnings,AMZN,"after close, surprise -82.2%",False
+2023-02-02,16:00,Earnings,GOOGL,"after close, surprise -12.3%",False
 2023-02-03,08:30,Jobs report,,Employment Situation,False
 2023-02-07,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2023-02-08,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -7108,14 +7108,14 @@ date,time_et,event,symbol,detail,scheduled
 2023-04-20,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2023-04-21,15:00,Cattle on Feed,,Cattle on Feed,False
 2023-04-24,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
-2023-04-25,16:00,Earnings,GOOGL,"after close, surprise +9.5%",False
+2023-04-25,16:00,Earnings,GOOGL,"after close, surprise +9.4%",False
 2023-04-25,16:00,Earnings,MSFT,"after close, surprise +9.8%",False
 2023-04-26,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2023-04-26,16:00,Earnings,META,"after close, surprise +11.2%",False
 2023-04-27,08:30,GDP,,Gross Domestic Product,False
 2023-04-27,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2023-04-27,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2023-04-27,16:00,Earnings,AMZN,"after close, surprise +46.8%",False
+2023-04-27,16:00,Earnings,AMZN,"after close, surprise +44.3%",False
 2023-04-28,08:30,PCE / personal income,,Personal Income and Outlays,False
 2023-05-02,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
 2023-05-02,16:00,Earnings,AMD,"after close, surprise +6.5%",False
@@ -7125,7 +7125,7 @@ date,time_et,event,symbol,detail,scheduled
 2023-05-04,08:15,ECB,,ECB monetary policy decision,False
 2023-05-04,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2023-05-04,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2023-05-04,16:00,Earnings,AAPL,"after close, surprise +6.4%",False
+2023-05-04,16:00,Earnings,AAPL,"after close, surprise +6.3%",False
 2023-05-05,08:30,Jobs report,,Employment Situation,False
 2023-05-08,16:00,Earnings,PLTR,"after close, surprise +25.0%",False
 2023-05-10,08:30,CPI,,Consumer Price Index,False
@@ -7205,7 +7205,7 @@ date,time_et,event,symbol,detail,scheduled
 2023-07-20,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2023-07-20,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2023-07-21,15:00,Cattle on Feed,,Cattle on Feed,False
-2023-07-25,16:00,Earnings,GOOGL,"after close, surprise +7.2%",False
+2023-07-25,16:00,Earnings,GOOGL,"after close, surprise +7.3%",False
 2023-07-25,16:00,Earnings,MSFT,"after close, surprise +5.6%",False
 2023-07-26,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2023-07-26,14:00,FOMC,,scheduled,False
@@ -7300,11 +7300,11 @@ date,time_et,event,symbol,detail,scheduled
 2023-10-19,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2023-10-19,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2023-10-20,15:00,Cattle on Feed,,Cattle on Feed,False
-2023-10-24,16:00,Earnings,GOOGL,"after close, surprise +6.7%",False
+2023-10-24,16:00,Earnings,GOOGL,"after close, surprise +7.0%",False
 2023-10-24,16:00,Earnings,MSFT,"after close, surprise +12.8%",False
 2023-10-25,10:00,BoC,,BoC interest rate announcement (press releases),False
 2023-10-25,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2023-10-25,16:00,Earnings,META,"after close, surprise +20.9%",False
+2023-10-25,16:00,Earnings,META,"after close, surprise +22.0%",False
 2023-10-26,08:15,ECB,,ECB monetary policy decision,False
 2023-10-26,08:30,GDP,,Gross Domestic Product,False
 2023-10-26,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
@@ -7319,7 +7319,7 @@ date,time_et,event,symbol,detail,scheduled
 2023-11-02,07:00,Earnings,PLTR,"before open, surprise +25.1%",False
 2023-11-02,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2023-11-02,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2023-11-02,16:00,Earnings,AAPL,"after close, surprise +4.9%",False
+2023-11-02,16:00,Earnings,AAPL,"after close, surprise +4.8%",False
 2023-11-03,08:30,Jobs report,,Employment Situation,False
 2023-11-07,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
 2023-11-09,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
@@ -7412,7 +7412,7 @@ date,time_et,event,symbol,detail,scheduled
 2024-02-01,07:00,BoE,,BoE Bank Rate decision,False
 2024-02-01,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2024-02-01,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2024-02-01,16:00,Earnings,AAPL,"after close, surprise +3.5%",False
+2024-02-01,16:00,Earnings,AAPL,"after close, surprise +3.7%",False
 2024-02-01,16:00,Earnings,AMZN,"after close, surprise +24.4%",False
 2024-02-01,16:00,Earnings,META,"after close, surprise +7.9%",False
 2024-02-02,08:30,Jobs report,,Employment Situation,False
@@ -7498,7 +7498,7 @@ date,time_et,event,symbol,detail,scheduled
 2024-04-23,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2024-04-23,16:00,Earnings,TSLA,"after close, surprise -8.1%",False
 2024-04-24,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2024-04-24,16:00,Earnings,META,"after close, surprise +8.9%",False
+2024-04-24,16:00,Earnings,META,"after close, surprise +8.1%",False
 2024-04-25,08:30,GDP,,Gross Domestic Product,False
 2024-04-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2024-04-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -7512,7 +7512,7 @@ date,time_et,event,symbol,detail,scheduled
 2024-05-01,14:00,FOMC,,scheduled,False
 2024-05-02,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2024-05-02,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2024-05-02,16:00,Earnings,AAPL,"after close, surprise +2.0%",False
+2024-05-02,16:00,Earnings,AAPL,"after close, surprise +1.5%",False
 2024-05-03,08:30,Jobs report,,Employment Situation,False
 2024-05-06,16:00,Earnings,PLTR,"after close, surprise +4.1%",False
 2024-05-07,overnight,RBA,,"RBA board decision (Sydney afternoon, the US night before)",False
@@ -7591,7 +7591,7 @@ date,time_et,event,symbol,detail,scheduled
 2024-07-18,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2024-07-18,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2024-07-19,15:00,Cattle on Feed,,Cattle on Feed,False
-2024-07-23,16:00,Earnings,GOOGL,"after close, surprise +2.4%",False
+2024-07-23,16:00,Earnings,GOOGL,"after close, surprise +2.5%",False
 2024-07-23,20:00,Earnings,TSLA,"after close, surprise -16.1%",False
 2024-07-24,10:00,BoC,,BoC interest rate announcement (press releases),False
 2024-07-24,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
@@ -7791,14 +7791,14 @@ date,time_et,event,symbol,detail,scheduled
 2025-01-29,10:00,BoC,,BoC interest rate announcement (press releases),False
 2025-01-29,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2025-01-29,14:00,FOMC,,scheduled,False
-2025-01-29,16:00,Earnings,META,"after close, surprise +18.7%",False
+2025-01-29,16:00,Earnings,META,"after close, surprise +19.0%",False
 2025-01-29,16:00,Earnings,MSFT,"after close, surprise +3.5%",False
 2025-01-29,16:00,Earnings,TSLA,"after close, surprise -5.1%",False
 2025-01-30,08:15,ECB,,ECB monetary policy decision,False
 2025-01-30,08:30,GDP,,Gross Domestic Product,False
 2025-01-30,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2025-01-30,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2025-01-30,16:00,Earnings,AAPL,"after close, surprise +2.5%",False
+2025-01-30,16:00,Earnings,AAPL,"after close, surprise +2.3%",False
 2025-01-31,08:30,PCE / personal income,,Personal Income and Outlays,False
 2025-02-03,16:00,Earnings,PLTR,"after close, surprise +23.7%",False
 2025-02-04,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
@@ -7809,7 +7809,7 @@ date,time_et,event,symbol,detail,scheduled
 2025-02-06,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2025-02-06,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2025-02-06,14:00,Banxico,,Banxico monetary policy announcement,False
-2025-02-06,16:00,Earnings,AMZN,"after close, surprise +25.4%",False
+2025-02-06,16:00,Earnings,AMZN,"after close, surprise +25.3%",False
 2025-02-07,08:30,Jobs report,,Employment Situation,False
 2025-02-11,12:00,WASDE,,World Agricultural Supply and Demand Estimates,False
 2025-02-12,08:30,CPI,,Consumer Price Index,False
@@ -7886,18 +7886,18 @@ date,time_et,event,symbol,detail,scheduled
 2025-04-23,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2025-04-24,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2025-04-24,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2025-04-24,16:00,Earnings,GOOGL,"after close, surprise +40.1%",False
+2025-04-24,16:00,Earnings,GOOGL,"after close, surprise +39.8%",False
 2025-04-25,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2025-04-29,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
 2025-04-30,08:30,GDP,,Gross Domestic Product,False
 2025-04-30,08:30,PCE / personal income,,Personal Income and Outlays,False
 2025-04-30,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2025-04-30,16:00,Earnings,META,"after close, surprise +23.1%",False
+2025-04-30,16:00,Earnings,META,"after close, surprise +23.5%",False
 2025-04-30,16:00,Earnings,MSFT,"after close, surprise +7.4%",False
 2025-05-01,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2025-05-01,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2025-05-01,16:00,Earnings,AAPL,"after close, surprise +1.7%",False
-2025-05-01,16:00,Earnings,AMZN,"after close, surprise +17.1%",False
+2025-05-01,16:00,Earnings,AMZN,"after close, surprise +16.8%",False
 2025-05-02,08:30,Jobs report,,Employment Situation,False
 2025-05-05,16:00,Earnings,PLTR,"after close, surprise +1.1%",False
 2025-05-06,16:00,Earnings,AMD,"after close, surprise +2.8%",False
@@ -7989,13 +7989,13 @@ date,time_et,event,symbol,detail,scheduled
 2025-07-30,10:00,BoC,,BoC interest rate announcement (press releases),False
 2025-07-30,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2025-07-30,14:00,FOMC,,scheduled,False
-2025-07-30,16:00,Earnings,META,"after close, surprise +21.0%",False
+2025-07-30,16:00,Earnings,META,"after close, surprise +21.8%",False
 2025-07-30,16:00,Earnings,MSFT,"after close, surprise +8.1%",False
 2025-07-31,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2025-07-31,08:30,PCE / personal income,,Personal Income and Outlays,False
 2025-07-31,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2025-07-31,16:00,Earnings,AAPL,"after close, surprise +10.1%",False
-2025-07-31,16:00,Earnings,AMZN,"after close, surprise +26.1%",False
+2025-07-31,16:00,Earnings,AAPL,"after close, surprise +9.5%",False
+2025-07-31,16:00,Earnings,AMZN,"after close, surprise +27.2%",False
 2025-08-01,08:30,Jobs report,,Employment Situation,False
 2025-08-04,16:00,Earnings,PLTR,"after close, surprise +15.6%",False
 2025-08-05,16:00,Earnings,AMD,"after close, surprise -3.5%",False
@@ -8074,7 +8074,7 @@ date,time_et,event,symbol,detail,scheduled
 2025-10-29,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2025-10-29,14:00,FOMC,,scheduled,False
 2025-10-29,16:00,Earnings,GOOGL,"after close, surprise +26.9%",False
-2025-10-29,16:00,Earnings,META,"after close, surprise -84.3%",False
+2025-10-29,16:00,Earnings,META,"after close, surprise +8.7%",False
 2025-10-29,16:00,Earnings,MSFT,"after close, surprise +12.7%",False
 2025-10-30,08:15,ECB,,ECB monetary policy decision,False
 2025-10-30,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
@@ -8166,7 +8166,7 @@ date,time_et,event,symbol,detail,scheduled
 2026-01-28,16:00,Earnings,TSLA,"after close, surprise +11.0%",False
 2026-01-29,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2026-01-29,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2026-01-29,16:00,Earnings,AAPL,"after close, surprise +6.3%",False
+2026-01-29,16:00,Earnings,AAPL,"after close, surprise +6.2%",False
 2026-01-30,08:30,PPI,,Producer Price Index,False
 2026-02-02,16:00,Earnings,PLTR,"after close, surprise +8.6%",False
 2026-02-03,16:00,Earnings,AMD,"after close, surprise +15.5%",False
@@ -8263,7 +8263,7 @@ date,time_et,event,symbol,detail,scheduled
 2026-04-29,14:00,FOMC,,scheduled,False
 2026-04-29,16:00,Earnings,AMZN,"after close, surprise +68.2%",False
 2026-04-29,16:00,Earnings,GOOGL,"after close, surprise +91.6%",False
-2026-04-29,16:00,Earnings,META,"after close, surprise +56.8%",False
+2026-04-29,16:00,Earnings,META,"after close, surprise +7.2%",False
 2026-04-29,16:00,Earnings,MSFT,"after close, surprise +4.8%",False
 2026-04-30,07:00,BoE,,BoE Bank Rate decision,False
 2026-04-30,08:15,ECB,,ECB monetary policy decision,False
@@ -8399,7 +8399,7 @@ date,time_et,event,symbol,detail,scheduled
 2026-09-01,10:00,JOLTS,,Job Openings and Labor Turnover Survey,False
 2026-09-02,10:00,BoC,,BoC interest rate announcement (press releases),False
 2026-09-02,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
-2026-09-02,16:00,Earnings,AVGO,"after close, surprise +2.5%",False
+2026-09-02,16:00,Earnings,AVGO,after close,False
 2026-09-03,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2026-09-03,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2026-09-04,08:30,Jobs report,,Employment Situation,False
