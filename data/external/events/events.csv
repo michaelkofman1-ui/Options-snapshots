@@ -8479,7 +8479,7 @@ date,time_et,event,symbol,detail,scheduled
 2026-11-10,12:00,WASDE,,World Agricultural Supply and Demand Estimates,False
 2026-11-12,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2026-11-12,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
-2026-11-12,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),False
+2026-11-12,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2026-11-13,08:30,PPI,,Producer Price Index,True
 2026-11-17,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,True
 2026-11-17,16:00,Earnings,NVDA,after close,True
