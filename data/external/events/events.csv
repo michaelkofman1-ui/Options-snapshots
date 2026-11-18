@@ -8483,7 +8483,7 @@ date,time_et,event,symbol,detail,scheduled
 2026-11-13,08:30,PPI,,Producer Price Index,False
 2026-11-17,08:30,Retail sales,,Advance Monthly Sales for Retail and Food Services,False
 2026-11-17,16:00,Earnings,NVDA,"after close, surprise +8.4%",False
-2026-11-18,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),True
+2026-11-18,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2026-11-19,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,True
 2026-11-19,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),True
 2026-11-25,08:30,GDP,,Gross Domestic Product,True
@@ -8532,6 +8532,7 @@ date,time_et,event,symbol,detail,scheduled
 2027-02-02,16:00,Earnings,AMD,after close,True
 2027-02-03,16:00,Earnings,GOOGL,after close,True
 2027-02-04,16:00,Earnings,AMZN,after close,True
+2027-02-24,16:00,Earnings,NVDA,after close,True
 2027-03-17,14:00,FOMC,,scheduled,True
 2027-04-28,14:00,FOMC,,scheduled,True
 2027-06-09,14:00,FOMC,,scheduled,True
