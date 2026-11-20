@@ -1,15 +1,15 @@
 symbol,status,detail
-_SPX,saved,"2026-11-19 intraday @ 15:55 NY, 11897 contracts"
-_NDX,saved,"2026-11-19 intraday @ 15:55 NY, 7541 contracts"
-_VIX,saved,"2026-11-19 intraday @ 15:55 NY, 616 contracts"
-SPY,saved,"2026-11-19 intraday @ 15:55 NY, 3185 contracts"
-QQQ,saved,"2026-11-19 intraday @ 15:55 NY, 2815 contracts"
-IWM,saved,"2026-11-19 intraday @ 15:55 NY, 1214 contracts"
-GLD,saved,"2026-11-19 intraday @ 15:55 NY, 1599 contracts"
-SLV,saved,"2026-11-19 intraday @ 15:55 NY, 902 contracts"
-TLT,saved,"2026-11-19 intraday @ 15:55 NY, 518 contracts"
-USO,saved,"2026-11-19 intraday @ 15:55 NY, 1452 contracts"
-XLE,saved,"2026-11-19 intraday @ 15:55 NY, 580 contracts"
-EEM,saved,"2026-11-19 intraday @ 15:55 NY, 534 contracts"
-NVDA,saved,"2026-11-19 intraday @ 15:55 NY, 812 contracts"
-TSLA,saved,"2026-11-19 intraday @ 15:55 NY, 1144 contracts"
+_SPX,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+_NDX,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+_VIX,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+SPY,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+QQQ,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+IWM,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+GLD,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+SLV,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+TLT,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+USO,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+XLE,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+EEM,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+NVDA,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
+TSLA,FAIL,fetch failed after 4 tries: HTTP Error 403: Forbidden
