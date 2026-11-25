@@ -8487,11 +8487,11 @@ date,time_et,event,symbol,detail,scheduled
 2026-11-19,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
 2026-11-19,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
 2026-11-20,15:00,Cattle on Feed,,Cattle on Feed,False
-2026-11-25,08:30,GDP,,Gross Domestic Product,True
-2026-11-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,True
-2026-11-25,08:30,PCE / personal income,,Personal Income and Outlays,True
-2026-11-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),True
-2026-11-25,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),True
+2026-11-25,08:30,GDP,,Gross Domestic Product,False
+2026-11-25,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,False
+2026-11-25,08:30,PCE / personal income,,Personal Income and Outlays,False
+2026-11-25,10:30,EIA gas storage,,Weekly Natural Gas Storage Report (standard schedule),False
+2026-11-25,10:30,EIA petroleum,,Weekly Petroleum Status Report,False
 2026-12-01,10:00,JOLTS,,Job Openings and Labor Turnover Survey,True
 2026-12-02,10:30,EIA petroleum,,Weekly Petroleum Status Report (standard schedule),True
 2026-12-03,08:30,Jobless claims,,Unemployment Insurance Weekly Claims Report,True
