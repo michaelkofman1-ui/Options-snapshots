@@ -212,7 +212,7 @@ date,time_et,event,symbol,detail,scheduled
 2002-07-17,17:00,Earnings,AMD,"after close, surprise -22.7%",False
 2002-07-18,16:00,Earnings,MSFT,after close,False
 2002-07-19,08:30,CPI,,Consumer Price Index,False
-2002-07-23,17:00,Earnings,AMZN,"after close, surprise +23.3%",False
+2002-07-23,17:00,Earnings,AMZN,"after close, surprise +82.3%",False
 2002-07-25,04:00,Earnings,TSM,"before open, surprise -6.9%",False
 2002-07-31,08:30,GDP,,Gross Domestic Product,False
 2002-08-02,08:30,Jobs report,,Employment Situation,False
